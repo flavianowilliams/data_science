@@ -1,3 +1,3 @@
 ---
-title: "Aprenda sobre estatística, programação e ciência de dados"
+title: "Aprenda estatística, programação e ciência de dados"
 ---

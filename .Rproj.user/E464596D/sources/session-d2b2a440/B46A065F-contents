@@ -12,4 +12,20 @@ categories: [inferencia_estatistica]
 
 * Amostra: Subconjunto representativo da população.
 
-![](populacao_amostra.jpg){width=70%}
+![População e amostra formada por objetos de quatro cores distintas](populacao_amostra.jpg){#fig-populacao_amostra width=70%}
+
+# Viés
+
+Erros de amostragem produzidos de maneira sistemática diferentemente de erros aleatórios. A consequência é que o viés reduz a representatividade da sua amostra.
+
+::: {#fig-vieses layout-ncol=2}
+
+![Arma não viesada](arma_nao_viesada.jpg){#fig-naoviesada}
+
+![Arma viesada](arma_viesada.jpg){#fig-viesada}
+
+Exemplo de um tipo de viés
+
+:::
+
+Um exemplo de viés podemos citar a pesquisa eleitoral da literary digest.

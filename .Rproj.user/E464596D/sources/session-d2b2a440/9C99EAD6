@@ -3,7 +3,7 @@
     "path": "~/Documentos/GitHub/data_science/_quarto.yml",
     "project_path": "_quarto.yml",
     "type": "yaml",
-    "hash": "767699418",
+    "hash": "779110669",
     "contents": "",
     "dirty": false,
     "created": 1785497711648.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "13,37",
+        "cursorPosition": "5,155",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1785517392,
+    "lastKnownWriteTime": 1785537872,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1785517392089,
+    "last_content_update": 1785537872543,
     "read_only": false,
     "read_only_alternatives": []
 }
