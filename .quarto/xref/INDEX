@@ -1,0 +1,62 @@
+{
+  "index.qmd": {
+    "index.html": "f0c9a199"
+  },
+  "about.qmd": {
+    "about.html": "b1d46816"
+  },
+  "blog.qmd": {
+    "blog.html": "1b0559ec"
+  },
+  "posts/planejamento_pesquisa/index.qmd": {
+    "index.html": "99370dd3"
+  },
+  "posts/amostragem/index.qmd": {
+    "index.html": "aefbb880"
+  },
+  "curso.qmd": {
+    "curso.html": "43cb4532"
+  },
+  "curso/planejamento_pesquisa/index.qmd": {
+    "index.html": "fd0bc823"
+  },
+  "curso/amostragem/index.qmd": {
+    "index.html": "96c211ed"
+  },
+  "curso/index.qmd": {
+    "index.html": "9bd2fbcc"
+  },
+  "estatistica.qmd": {
+    "estatistica.html": "dc398dc1"
+  },
+  "curso/estatistica/planejamento_pesquisa/index.qmd": {
+    "index.html": "700e11e4"
+  },
+  "curso/estatistica/estatistica.qmd": {
+    "estatistica.html": "03340727"
+  },
+  "curso/estatistica/curso_estatistica.qmd": {
+    "curso_estatistica.html": "e0110493"
+  },
+  "curso/estatistica/amostragem/index.qmd": {
+    "index.html": "4f7529ac"
+  },
+  "curso/r/curso_r.qmd": {
+    "curso_r.html": "22b6b0ad"
+  },
+  "curso/r/r_base/index.qmd": {
+    "index.html": "b3dc7a0b"
+  },
+  "curso_r.qmd": {
+    "curso_r.html": "234326e0"
+  },
+  "curso/r/wrangling/wrangling.qmd": {
+    "wrangling.html": "010bfba1"
+  },
+  "curso/r/ggplot2/ggplot2.qmd": {
+    "ggplot2.html": "66aa60b0"
+  },
+  "curso/r/r_base/r_base.qmd": {
+    "r_base.html": "b1b55d63"
+  }
+}

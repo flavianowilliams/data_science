@@ -1,0 +1,31 @@
+project:
+  type: website
+
+website:
+  page-navigation: true
+  title: "Ciência de dados"
+  navbar:
+    left:
+      - text: Curso
+        menu:
+          - text: Estatística
+            href: curso/estatistica/curso_estatistica.qmd
+          - text: R
+            href: curso/r/curso_r.qmd
+      - blog.qmd
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/flavianowilliams/education
+  
+format:
+  html:
+    theme:
+      - sketchy
+      - brand
+    css: styles.css
+    toc: true
+bibliography: bibliografia.bib
+csl: abnt.csl
+lang: "pt-BR"
+date-format: DD/MM/YYYY

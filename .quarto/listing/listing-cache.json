@@ -1,0 +1,16 @@
+{
+  "listingMap": {
+    "blog.qmd": [
+      "posts"
+    ],
+    "curso/r/curso_r.qmd": [
+      "r_base/r_base.qmd",
+      "wrangling/wrangling.qmd",
+      "ggplot2/ggplot2.qmd"
+    ],
+    "curso/estatistica/curso_estatistica.qmd": [
+      "planejamento_pesquisa/index.qmd",
+      "amostragem/index.qmd"
+    ]
+  }
+}
