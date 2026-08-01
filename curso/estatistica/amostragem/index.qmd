@@ -18,14 +18,53 @@ categories: [inferencia_estatistica]
 
 Erros de amostragem produzidos de maneira sistemática diferentemente de erros aleatórios. A consequência é que o viés reduz a representatividade da sua amostra.
 
+Suponha uma arma de fogo que realiza vários disparos em um alvo. Se a mira da arma estiver calibrada, podemos dizer que os disparos de aproximarão do alvo (neste caso todos os disparos não atingirão exatamente o alvo devido a influência de fatores externos não controláveis, como velocidade do vento, variação da densidade do ar, força da gravidade, raio de curvatura da Terra, etc). Entretanto se a mira estiver ligeiramente descalibrada para a esquerda, os disparos ocorrerão aproximadamente em um lugar à direita do alvo. Podemos dizer que no segundo caso a arma está viesada pela mira mal calibrada, e este viés destruiu a representatividade dessa arma em relação as demais armas de precisão, cuja estimativa é acertar o alvo.
+
 ::: {#fig-vieses layout-ncol=2}
 
-![Arma não viesada](arma_nao_viesada.jpg){#fig-naoviesada}
+![Arma não viesada](arma_nao_viesada.jpg){#fig-naoviesada width=70%}
 
-![Arma viesada](arma_viesada.jpg){#fig-viesada}
+![Arma viesada](arma_viesada.jpg){#fig-viesada width=70%}
 
 Exemplo de um tipo de viés
 
 :::
 
-Um exemplo de viés podemos citar a pesquisa eleitoral da literary digest.
+::: {.callout-note} 
+
+Um bom exemplo de como o viés afeta a nossa pesquisa, podemos citar como exemplo a pesquisa eleitoral da literary digest. A revista previu uma vitória esmagadora do candidato republicado "Al Landon" contra o democrata "Franklin Roosevelt". Convencida de que para obter uma boa previsão seria necessário coletar o maior número possível de informações. Para isso ela aplicou uma pesquisa como toda a sua base de assinantes, além de listas adicionais como listas telefônicas assinantes de outras revistas e participantes de clubes privados. Por outro lado, o estatístico George Gallup afirmou que a vitória seria do partido democrata. Gallup chegou a essa conclusão realizando uma pesquisa bem menor e aplicando métodos de amostragem por cotas. Após o resultado das eleições, Roosevelt venceu com uma margem de votos próxima do resultado previsto por Gallup. Podemos dizer que o erro cometido pela literay digest se resume principalmente no processo de amostragem, enviesado pelo nível social dos eleitores que não representavam toda a comunidade dos EUA.
+
+:::
+
+## Tipos de viés
+
+* Viés de seleção;
+
+  - Processo de amostragem inadequado.
+
+* Viés de informação;
+
+* Viés de confundimento;
+
+::: {.callout-tip title = "Aleatoriedade e representatividade"}
+
+Na prática, a maneira eficiente de reduzir os vieses e aumentar a representatividade da sua amostra está diretamente associado com a aleatoriedade na coleta dos dados.
+
+:::
+
+# Delineamento experimental
+
+Conjunto de regras que determina como o experimento deverá acontecer, como o processo de amostragem deverá acontecer. Este processo se baseia em três tipos distintos.
+
+* Levantamento amostral
+
+A amostra é obtida de uma população conhecida utilizando protocolos bem definidos
+
+* Planejamento experimental
+
+Processo de amostragem cujo objetivo principal é analisar o efeito de uma variável (variável independente) sobre outra (variável dependente). O experimento é geralmente realizado em laboratório e ambientes controlados. Pode apresentar custo elevado, tem alta reprodutibilidade e baixa representatividade.
+
+* Levantamento observacional: O objetivo principal é analisar a relação entre variáveis, e geralmente é feito sem a intervenção do pesquisador. Geralmente possui custo menor que o anterior, tem baixa reprodutibilidade e alta representatividade.
+
+## Principais processos de amostragem
+

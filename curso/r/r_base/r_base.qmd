@@ -13,13 +13,6 @@ knitr::opts_chunk$set(
 
 ## Sobre o R
 
-```{css, echo=FALSE}
-figcaption {
-  margin: auto;
-  text-align: center;
-}
-```
-
 > "R é uma linguagem de programação dinâmica em um desenvolvimento em tempo real. Especialmente voltada para trabalhos em análises estatísticas, como a manipulação, análise e visualização de dados."
 >
 > "Seu nome surge das iniciais dos seus criadores (<span style="color:red;">R</span>oss Ihaka e <span style="color:red;">R</span>obert Gentleman)."

@@ -177,7 +177,14 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#população-versus-amostra" id="toc-população-versus-amostra" class="nav-link active" data-scroll-target="#população-versus-amostra">População versus amostra</a></li>
-  <li><a href="#viés" id="toc-viés" class="nav-link" data-scroll-target="#viés">Viés</a></li>
+  <li><a href="#viés" id="toc-viés" class="nav-link" data-scroll-target="#viés">Viés</a>
+  <ul class="collapse">
+  <li><a href="#tipos-de-viés" id="toc-tipos-de-viés" class="nav-link" data-scroll-target="#tipos-de-viés">Tipos de viés</a></li>
+  </ul></li>
+  <li><a href="#delineamento-experimental" id="toc-delineamento-experimental" class="nav-link" data-scroll-target="#delineamento-experimental">Delineamento experimental</a>
+  <ul class="collapse">
+  <li><a href="#principais-processos-de-amostragem" id="toc-principais-processos-de-amostragem" class="nav-link" data-scroll-target="#principais-processos-de-amostragem">Principais processos de amostragem</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -208,6 +215,7 @@ Figura&nbsp;1: População e amostra formada por objetos de quatro cores distint
 <section id="viés" class="level1">
 <h1>Viés</h1>
 <p>Erros de amostragem produzidos de maneira sistemática diferentemente de erros aleatórios. A consequência é que o viés reduz a representatividade da sua amostra.</p>
+<p>Suponha uma arma de fogo que realiza vários disparos em um alvo. Se a mira da arma estiver calibrada, podemos dizer que os disparos de aproximarão do alvo (neste caso todos os disparos não atingirão exatamente o alvo devido a influência de fatores externos não controláveis, como velocidade do vento, variação da densidade do ar, força da gravidade, raio de curvatura da Terra, etc). Entretanto se a mira estiver ligeiramente descalibrada para a esquerda, os disparos ocorrerão aproximadamente em um lugar à direita do alvo. Podemos dizer que no segundo caso a arma está viesada pela mira mal calibrada, e este viés destruiu a representatividade dessa arma em relação as demais armas de precisão, cuja estimativa é acertar o alvo.</p>
 <div id="fig-vieses" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-vieses-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -216,7 +224,7 @@ Figura&nbsp;1: População e amostra formada por objetos de quatro cores distint
 <div id="fig-naoviesada" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-naoviesada-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="arma_nao_viesada.jpg" class="img-fluid figure-img" data-ref-parent="fig-vieses">
+<img src="arma_nao_viesada.jpg" class="img-fluid figure-img" style="width:70.0%" data-ref-parent="fig-vieses">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-naoviesada-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) Arma não viesada
@@ -228,7 +236,7 @@ Figura&nbsp;1: População e amostra formada por objetos de quatro cores distint
 <div id="fig-viesada" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-viesada-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="arma_viesada.jpg" class="img-fluid figure-img" data-ref-parent="fig-vieses">
+<img src="arma_viesada.jpg" class="img-fluid figure-img" style="width:70.0%" data-ref-parent="fig-vieses">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-viesada-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b) Arma viesada
@@ -243,9 +251,63 @@ Figura&nbsp;2: Exemplo de um tipo de viés
 </figcaption>
 </figure>
 </div>
-<p>Um exemplo de viés podemos citar a pesquisa eleitoral da literary digest.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Um bom exemplo de como o viés afeta a nossa pesquisa, podemos citar como exemplo a pesquisa eleitoral da literary digest. A revista previu uma vitória esmagadora do candidato republicado “Al Landon” contra o democrata “Franklin Roosevelt”. Convencida de que para obter uma boa previsão seria necessário coletar o maior número possível de informações. Para isso ela aplicou uma pesquisa como toda a sua base de assinantes, além de listas adicionais como listas telefônicas assinantes de outras revistas e participantes de clubes privados. Por outro lado, o estatístico George Gallup afirmou que a vitória seria do partido democrata. Gallup chegou a essa conclusão realizando uma pesquisa bem menor e aplicando métodos de amostragem por cotas. Após o resultado das eleições, Roosevelt venceu com uma margem de votos próxima do resultado previsto por Gallup. Podemos dizer que o erro cometido pela literay digest se resume principalmente no processo de amostragem, enviesado pelo nível social dos eleitores que não representavam toda a comunidade dos EUA.</p>
+</div>
+</div>
+<section id="tipos-de-viés" class="level2">
+<h2 class="anchored" data-anchor-id="tipos-de-viés">Tipos de viés</h2>
+<ul>
+<li><p>Viés de seleção;</p>
+<ul>
+<li>Processo de amostragem inadequado.</li>
+</ul></li>
+<li><p>Viés de informação;</p></li>
+<li><p>Viés de confundimento;</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Aleatoriedade e representatividade">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Dica</span>Aleatoriedade e representatividade
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Na prática, a maneira eficiente de reduzir os vieses e aumentar a representatividade da sua amostra está diretamente associado com a aleatoriedade na coleta dos dados.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="delineamento-experimental" class="level1">
+<h1>Delineamento experimental</h1>
+<p>Conjunto de regras que determina como o experimento deverá acontecer, como o processo de amostragem deverá acontecer. Este processo se baseia em três tipos distintos.</p>
+<ul>
+<li>Levantamento amostral</li>
+</ul>
+<p>A amostra é obtida de uma população conhecida utilizando protocolos bem definidos</p>
+<ul>
+<li>Planejamento experimental</li>
+</ul>
+<p>Processo de amostragem cujo objetivo principal é analisar o efeito de uma variável (variável independente) sobre outra (variável dependente). O experimento é geralmente realizado em laboratório e ambientes controlados. Pode apresentar custo elevado, tem alta reprodutibilidade e baixa representatividade.</p>
+<ul>
+<li>Levantamento observacional: O objetivo principal é analisar a relação entre variáveis, e geralmente é feito sem a intervenção do pesquisador. Geralmente possui custo menor que o anterior, tem baixa reprodutibilidade e alta representatividade.</li>
+</ul>
+<section id="principais-processos-de-amostragem" class="level2">
+<h2 class="anchored" data-anchor-id="principais-processos-de-amostragem">Principais processos de amostragem</h2>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

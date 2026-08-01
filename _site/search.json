@@ -368,6 +368,20 @@
     "href": "curso/estatistica/amostragem/index.html",
     "title": "Amostragem",
     "section": "",
-    "text": "População versus amostra\n\nPopulação: Conjunto de todos os indivíduos de interesse do pesquisador;\nAmostra: Subconjunto representativo da população.\n\n\n\n\n\n\n\nFigura 1: População e amostra formada por objetos de quatro cores distintas\n\n\n\n\n\nViés\nErros de amostragem produzidos de maneira sistemática diferentemente de erros aleatórios. A consequência é que o viés reduz a representatividade da sua amostra.\n\n\n\n\n\n\n\n\n\n\n\n(a) Arma não viesada\n\n\n\n\n\n\n\n\n\n\n\n(b) Arma viesada\n\n\n\n\n\n\n\nFigura 2: Exemplo de um tipo de viés\n\n\n\nUm exemplo de viés podemos citar a pesquisa eleitoral da literary digest."
+    "text": "População: Conjunto de todos os indivíduos de interesse do pesquisador;\nAmostra: Subconjunto representativo da população.\n\n\n\n\n\n\n\nFigura 1: População e amostra formada por objetos de quatro cores distintas"
+  },
+  {
+    "objectID": "curso/estatistica/amostragem/index.html#tipos-de-viés",
+    "href": "curso/estatistica/amostragem/index.html#tipos-de-viés",
+    "title": "Amostragem",
+    "section": "Tipos de viés",
+    "text": "Tipos de viés\n\nViés de seleção;\n\nProcesso de amostragem inadequado.\n\nViés de informação;\nViés de confundimento;\n\n\n\n\n\n\n\nDicaAleatoriedade e representatividade\n\n\n\nNa prática, a maneira eficiente de reduzir os vieses e aumentar a representatividade da sua amostra está diretamente associado com a aleatoriedade na coleta dos dados."
+  },
+  {
+    "objectID": "curso/estatistica/amostragem/index.html#principais-processos-de-amostragem",
+    "href": "curso/estatistica/amostragem/index.html#principais-processos-de-amostragem",
+    "title": "Amostragem",
+    "section": "Principais processos de amostragem",
+    "text": "Principais processos de amostragem"
   }
 ]

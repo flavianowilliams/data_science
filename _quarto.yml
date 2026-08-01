@@ -3,7 +3,8 @@ project:
 
 website:
   page-navigation: true
-  page-footer: "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/'><img src='https://mirrors.creativecommons.org/presskit/logos/cc.logo.large.png' style='width:100px'></a>"
+  page-footer: 
+    center: "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/'><img src='https://mirrors.creativecommons.org/presskit/logos/cc.logo.large.png' style='width:100px'></a>"
   title: "Ciência de dados"
   navbar:
     left:
