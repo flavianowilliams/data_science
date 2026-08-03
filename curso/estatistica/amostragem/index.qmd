@@ -66,5 +66,48 @@ Processo de amostragem cujo objetivo principal é analisar o efeito de uma vari�
 
 * Levantamento observacional: O objetivo principal é analisar a relação entre variáveis, e geralmente é feito sem a intervenção do pesquisador. Geralmente possui custo menor que o anterior, tem baixa reprodutibilidade e alta representatividade.
 
-## Principais processos de amostragem
+## Levantamento amostral
 
+Os principais processos de amostragem se resumem especificamente em processos aleatórios ou probabilísticos e não aleatórios ou não probabilísticos. O conceito de amostragem probabilística se deve ao fato de que todos os indivíduos da população possuem a mesma probabilidade de serem escolhidos em cada amostragem. Neste caso, existe uma certa aleatoriedade na escolha dos indivíduos que irão compor a amostra. A @fig-amostragem apresenta os principais processos de amostragem aleatória e não aleatória.
+
+:::{.callout-important title="Amostragem com ou sem reposição"}
+
+O processo de amostragem pode ser feita com ou sem reposição dos indivíduos coletados. Entretando, os resultados são obtidos de maneira diferente em cada caso. Modelos estatísticos mais simples são pensado de maneira que os processos de amostragem são feitas <span style = "color:red">com reposição dos indivíduos</span>.
+
+:::
+
+![Principais processos de amostragem](amostragem.jpg){#fig-amostragem width=80%}
+
+## Amostragem aleatória simples
+
+Neste tipo de amostragem os indivíduos são escolhidos ao acaso.
+
+### Vantagens
+
+* O processo garante total aleatoriedade na amostragem e a máxima redução de vieses.
+
+### Desvantagens
+
+* Ocorre o risco da não representatividade de parte da população.
+
+:::{.callout-important}
+
+Os modelos estatísticos são feitos e pensados em cima da suposição de que as amostras foram obtidas utilizando o processo de amostragem AAS. A @fig-amostragem_aas define bem como esse processo acontece. Os indivíduos são sorteados ao acaso dentro da população.
+
+:::
+
+![Amostragem aleatória simples](amostragem_aas.jpg){#fig-amostragem_aas width=80%}
+
+## Amostragem aleatória extratificada
+
+Neste tipo de amostragem, antes da coleta os indivíduos são agrupados de acordo com as suas características e a amostra é formada por integrantes de cada grupo de acordo com a sua quantidade. Na @fig-extratificada, os individuos são inicialmente agrupados de acordo com a sua cor. Os individuos da cor amarela contribuem com o dobro de elementos em comparação aos demais membros.
+
+### Vantagens
+
+* O processo garante a representatividade de todos os individuos da população.
+
+### Desvantagens
+
+* Requer mais trabalho em relação ao método AAS, além do conhecimento de informações antecipadas a respeito da população.
+
+![Amostragem aleatória extratificada](amostragem_extratificada.jpg){#fig-amostragem_extratificada width=80%}

@@ -378,10 +378,24 @@
     "text": "Tipos de viés\n\nViés de seleção;\n\nProcesso de amostragem inadequado.\n\nViés de informação;\nViés de confundimento;\n\n\n\n\n\n\n\nDicaAleatoriedade e representatividade\n\n\n\nNa prática, a maneira eficiente de reduzir os vieses e aumentar a representatividade da sua amostra está diretamente associado com a aleatoriedade na coleta dos dados."
   },
   {
-    "objectID": "curso/estatistica/amostragem/index.html#principais-processos-de-amostragem",
-    "href": "curso/estatistica/amostragem/index.html#principais-processos-de-amostragem",
+    "objectID": "curso/estatistica/amostragem/index.html#levantamento-amostral",
+    "href": "curso/estatistica/amostragem/index.html#levantamento-amostral",
     "title": "Amostragem",
-    "section": "Principais processos de amostragem",
-    "text": "Principais processos de amostragem"
+    "section": "Levantamento amostral",
+    "text": "Levantamento amostral\nOs principais processos de amostragem se resumem especificamente em processos aleatórios ou probabilísticos e não aleatórios ou não probabilísticos. O conceito de amostragem probabilística se deve ao fato de que todos os indivíduos da população possuem a mesma probabilidade de serem escolhidos em cada amostragem. Neste caso, existe uma certa aleatoriedade na escolha dos indivíduos que irão compor a amostra. A Figura 3 apresenta os principais processos de amostragem aleatória e não aleatória.\n\n\n\n\n\n\nImportanteAmostragem com ou sem reposição\n\n\n\nO processo de amostragem pode ser feita com ou sem reposição dos indivíduos coletados. Entretando, os resultados são obtidos de maneira diferente em cada caso. Modelos estatísticos mais simples são pensado de maneira que os processos de amostragem são feitas com reposição dos indivíduos.\n\n\n\n\n\n\n\n\nFigura 3: Principais processos de amostragem"
+  },
+  {
+    "objectID": "curso/estatistica/amostragem/index.html#amostragem-aleatória-simples",
+    "href": "curso/estatistica/amostragem/index.html#amostragem-aleatória-simples",
+    "title": "Amostragem",
+    "section": "Amostragem aleatória simples",
+    "text": "Amostragem aleatória simples\nNeste tipo de amostragem os indivíduos são escolhidos ao acaso.\n\nVantagens\n\nO processo garante total aleatoriedade na amostragem e a máxima redução de vieses.\n\n\n\nDesvantagens\n\nOcorre o risco da não representatividade de parte da população.\n\n\n\n\n\n\n\nImportante\n\n\n\nOs modelos estatísticos são feitos e pensados em cima da suposição de que as amostras foram obtidas utilizando o processo de amostragem AAS. A Figura 4 define bem como esse processo acontece. Os indivíduos são sorteados ao acaso dentro da população.\n\n\n\n\n\n\n\n\nFigura 4: Amostragem aleatória simples"
+  },
+  {
+    "objectID": "curso/estatistica/amostragem/index.html#amostragem-aleatória-extratificada",
+    "href": "curso/estatistica/amostragem/index.html#amostragem-aleatória-extratificada",
+    "title": "Amostragem",
+    "section": "Amostragem aleatória extratificada",
+    "text": "Amostragem aleatória extratificada\nNeste tipo de amostragem, antes da coleta os indivíduos são agrupados de acordo com as suas características e a amostra é formada por integrantes de cada grupo de acordo com a sua quantidade. Na ?@fig-extratificada, os individuos são inicialmente agrupados de acordo com a sua cor. Os individuos da cor amarela contribuem com o dobro de elementos em comparação aos demais membros.\n\nVantagens\n\nO processo garante a representatividade de todos os individuos da população.\n\n\n\nDesvantagens\n\nRequer mais trabalho em relação ao método AAS, além do conhecimento de informações antecipadas a respeito da população.\n\n\n\n\n\n\n\nFigura 5: Amostragem aleatória extratificada"
   }
 ]
