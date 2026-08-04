@@ -375,27 +375,62 @@
     "href": "curso/estatistica/amostragem/index.html#tipos-de-viés",
     "title": "Amostragem",
     "section": "Tipos de viés",
-    "text": "Tipos de viés\n\nViés de seleção;\n\nProcesso de amostragem inadequado.\n\nViés de informação;\nViés de confundimento;\n\n\n\n\n\n\n\nDicaAleatoriedade e representatividade\n\n\n\nNa prática, a maneira eficiente de reduzir os vieses e aumentar a representatividade da sua amostra está diretamente associado com a aleatoriedade na coleta dos dados."
+    "text": "Tipos de viés\n\nViés de seleção;\n\nProcesso de amostragem inadequado;\nViés de não resposta.\n\nViés de informação;\n\nViés de memória;\nViés do observador;\nViés de instrumentação.\n\nViés de confundimento;\n\nPresença de variáveis confundidoras que possuem impactos nas variáveis dependente e independente.\n\n\n\n\n\n\n\n\nDicaAleatoriedade e representatividade\n\n\n\nNa prática, a maneira eficiente de reduzir os vieses e aumentar a representatividade da sua amostra está diretamente associado com a aleatoriedade na coleta dos dados."
   },
   {
     "objectID": "curso/estatistica/amostragem/index.html#levantamento-amostral",
     "href": "curso/estatistica/amostragem/index.html#levantamento-amostral",
     "title": "Amostragem",
     "section": "Levantamento amostral",
-    "text": "Levantamento amostral\nOs principais processos de amostragem se resumem especificamente em processos aleatórios ou probabilísticos e não aleatórios ou não probabilísticos. O conceito de amostragem probabilística se deve ao fato de que todos os indivíduos da população possuem a mesma probabilidade de serem escolhidos em cada amostragem. Neste caso, existe uma certa aleatoriedade na escolha dos indivíduos que irão compor a amostra. A Figura 3 apresenta os principais processos de amostragem aleatória e não aleatória.\n\n\n\n\n\n\nImportanteAmostragem com ou sem reposição\n\n\n\nO processo de amostragem pode ser feita com ou sem reposição dos indivíduos coletados. Entretando, os resultados são obtidos de maneira diferente em cada caso. Modelos estatísticos mais simples são pensado de maneira que os processos de amostragem são feitas com reposição dos indivíduos.\n\n\n\n\n\n\n\n\nFigura 3: Principais processos de amostragem"
+    "text": "Levantamento amostral\nOs principais processos de amostragem se resumem especificamente em processos aleatórios ou probabilísticos e não aleatórios ou não probabilísticos. O conceito de amostragem probabilística se deve ao fato de que todos os indivíduos da população possuem a mesma probabilidade de serem escolhidos em cada amostragem. Neste caso, existe uma certa aleatoriedade na escolha dos indivíduos que irão compor a amostra. A Figura 3 apresenta os principais processos de amostragem aleatória e não aleatória.\n\n\n\n\n\n\nImportanteAmostragem com ou sem reposição\n\n\n\nO processo de amostragem pode ser feita com ou sem reposição dos indivíduos coletados. Entretando, os resultados são obtidos de maneira diferente em cada caso. Modelos estatísticos mais simples são pensado de maneira que os processos de amostragem são feitas com reposição dos indivíduos.\n\n\n\n\n\n\n\n\nFigura 3: Principais processos de amostragem."
   },
   {
     "objectID": "curso/estatistica/amostragem/index.html#amostragem-aleatória-simples",
     "href": "curso/estatistica/amostragem/index.html#amostragem-aleatória-simples",
     "title": "Amostragem",
     "section": "Amostragem aleatória simples",
-    "text": "Amostragem aleatória simples\nNeste tipo de amostragem os indivíduos são escolhidos ao acaso.\n\nVantagens\n\nO processo garante total aleatoriedade na amostragem e a máxima redução de vieses.\n\n\n\nDesvantagens\n\nOcorre o risco da não representatividade de parte da população.\n\n\n\n\n\n\n\nImportante\n\n\n\nOs modelos estatísticos são feitos e pensados em cima da suposição de que as amostras foram obtidas utilizando o processo de amostragem AAS. A Figura 4 define bem como esse processo acontece. Os indivíduos são sorteados ao acaso dentro da população.\n\n\n\n\n\n\n\n\nFigura 4: Amostragem aleatória simples"
+    "text": "Amostragem aleatória simples\nNeste tipo de amostragem os elementos são escolhidos ao acaso. Na Figura 4 temos uma população formada por 34 elementos. Foram escolhidos ao acaso cinco para compor a amostra.\n\nVantagens\nO processo garante total aleatoriedade na amostragem e a máxima redução de vieses.\n\n\nDesvantagens\nOcorre o risco da não representatividade de parte da população, principalmente para amostras pequenas.\n\n\n\n\n\n\nImportante\n\n\n\n\nOs modelos estatísticos são feitos e pensados em cima da suposição de que as amostras foram obtidas utilizando o processo de amostragem AAS COM REPOSIÇÃO. A Figura 4 define bem como esse processo acontece. Os elementos são sorteados ao acaso dentro da população;\nNa amostragem AAS, a representatividade da amostra aumenta com o tamanho da amostra.\n\n\n\n\n\n\n\n\n\nFigura 4: Amostragem aleatória simples."
   },
   {
     "objectID": "curso/estatistica/amostragem/index.html#amostragem-aleatória-extratificada",
     "href": "curso/estatistica/amostragem/index.html#amostragem-aleatória-extratificada",
     "title": "Amostragem",
     "section": "Amostragem aleatória extratificada",
-    "text": "Amostragem aleatória extratificada\nNeste tipo de amostragem, antes da coleta os indivíduos são agrupados de acordo com as suas características e a amostra é formada por integrantes de cada grupo de acordo com a sua quantidade. Na ?@fig-extratificada, os individuos são inicialmente agrupados de acordo com a sua cor. Os individuos da cor amarela contribuem com o dobro de elementos em comparação aos demais membros.\n\nVantagens\n\nO processo garante a representatividade de todos os individuos da população.\n\n\n\nDesvantagens\n\nRequer mais trabalho em relação ao método AAS, além do conhecimento de informações antecipadas a respeito da população.\n\n\n\n\n\n\n\nFigura 5: Amostragem aleatória extratificada"
+    "text": "Amostragem aleatória extratificada\nNeste tipo de amostragem, antes da coleta os elementos são agrupados de acordo com as suas características e a amostra é formada por integrantes de cada grupo de acordo com a sua quantidade. Na Figura 5 temos a população formada por 30 elementos. Os elementos foram inicialmente agrupados de acordo com a sua cor. Os elementos da cor amarela contribuem com o dobro em comparação aos demais membros.\n\nVantagens\nO processo garante a representatividade de todos os individuos da população.\n\n\nDesvantagens\nRequer mais trabalho em relação ao método AAS, além do conhecimento de informações antecipadas a respeito da população.\n\n\n\n\n\n\nFigura 5: Amostragem aleatória extratificada.\n\n\n\n\n\nExemplo\nAgrupe todos os alunos do seu interesse de acordo com as características a serem analisadas (gênero, ano, curso, turma, etc)."
+  },
+  {
+    "objectID": "curso/estatistica/amostragem/index.html#amostragem-sistemática",
+    "href": "curso/estatistica/amostragem/index.html#amostragem-sistemática",
+    "title": "Amostragem",
+    "section": "Amostragem sistemática",
+    "text": "Amostragem sistemática\nOrdena-se os indivíduos da população, em seguida os elementos da amostra são obtidos em intervalos pré-determinados. A aleatoriedade do processo acontece quando escolhemos ao acaso o primeiro indivíduo. Na Figura 6 temos a população formada por 30 elementos. Ordenou-se os elementos da população e em seguida foi escolhido aleatoriamente o elemento de ordem dois. Os demais elementos foram escolhidos em intervalos fixos a cada quatro elementos.\n\nDesvantagem\nA ordenação pode levar a subrepresentação de um ou mais grupos.\n\n\n\n\n\n\nFigura 6: Amostragem sistemática.\n\n\n\n\n\nExemplo\nMonte uma amostra seguindo o número de matrícula dos alunos."
+  },
+  {
+    "objectID": "curso/estatistica/amostragem/index.html#amostragem-por-conglomerados",
+    "href": "curso/estatistica/amostragem/index.html#amostragem-por-conglomerados",
+    "title": "Amostragem",
+    "section": "Amostragem por conglomerados",
+    "text": "Amostragem por conglomerados\nNeste caso, elementos individuais não são sorteados, mas sim um grupo de indivíduos. Na Figura 7, os elementos da população foram separados em quatro grupos. Em seguida, o grupo cinza foi escolhido aleatoriamente para que os seus elementos representassem a amostra da população.\n\nVantagem\nRedução de custo e tempo.\n\n\nDesvantagem\nOcorre o risco do grupo sorteado ser mais homogêneo que a população.\n\n\n\n\n\n\nFigura 7: Amostragem por conglomerado.\n\n\n\n\n\nExemplo\nMonte uma amostra contendo alunos de uma sala de aula que foi escolhida ao acaso."
+  },
+  {
+    "objectID": "curso/estatistica/amostragem/index.html#amostragem-por-bola-de-neve",
+    "href": "curso/estatistica/amostragem/index.html#amostragem-por-bola-de-neve",
+    "title": "Amostragem",
+    "section": "Amostragem por bola de neve",
+    "text": "Amostragem por bola de neve\nIdentifica-se poucos elementos que o pesquisador tem acesso. Em seguida, solicita-se que esses elementos indiquem outros indivíduos para compor a amostra. Na Figura 8 dois elementos foram escolhidos convenientemente. Em seguida, cada elemento indicou mais quatro para compor a amostra. O processo continua até que o pesquisador tenha coletado a quantidade suficiente de elementos.\n\nVantagens\nRedução de custo e tempo\n\n\nDesvantagens\n\nOcorre o risco dos indivíduos indicarem outros similares, tornando a amostra mais homogênea que a população;\nForte presença de vieses durante a amostragem.\n\n\n\n\n\n\n\nFigura 8: Amostragem por bola de neve.\n\n\n\n\n\nExemplo\nMonte uma amostra com alunos que você tem acesso e peça indicações para compor a amostra."
+  },
+  {
+    "objectID": "curso/estatistica/amostragem/index.html#amostragem-por-cotas",
+    "href": "curso/estatistica/amostragem/index.html#amostragem-por-cotas",
+    "title": "Amostragem",
+    "section": "Amostragem por cotas",
+    "text": "Amostragem por cotas\nSimilar ao método de amostragem extratificada. Contudo, os elementos não são obtidos aleatoriamente (ao acaso) dentro de cada grupo que chamamos de cota.\n\nDesvantagem\nPode haver vieses durante a coleta em cada grupo.\n\n\nExemplo\nAgrupe alunos que você tem acesso de acordo com as características de interesse (gênero, ano, curso, turma, etc)."
+  },
+  {
+    "objectID": "curso/estatistica/amostragem/index.html#amostragem-por-conveniência",
+    "href": "curso/estatistica/amostragem/index.html#amostragem-por-conveniência",
+    "title": "Amostragem",
+    "section": "Amostragem por conveniência",
+    "text": "Amostragem por conveniência\nA amostra é composta por elementos de fácil acesso.\n\nVantagens\n\nRedução de custo e tempo\n\n\n\nDesvantagem\n\nA amostra pode não ser representativa.\n\n\n\n\n\n\n\nDicaQual amostragem escolher?\n\n\n\nPor questões de representatividade, deve-se priorizar métodos de amostragem probabilísticas, especialmente os métodos AAS e extratificado. Caso não seja possível, métodos de amostragem não-probabilísticas podem ser usadas como alternativa."
   }
 ]

@@ -40,11 +40,18 @@ Um bom exemplo de como o viés afeta a nossa pesquisa, podemos citar como exempl
 
 * Viés de seleção;
 
-  - Processo de amostragem inadequado.
+  - Processo de amostragem inadequado;
+  - Viés de não resposta.
 
 * Viés de informação;
 
+  - Viés de memória;
+  - Viés do observador;
+  - Viés de instrumentação.
+
 * Viés de confundimento;
+
+  - Presença de variáveis confundidoras que possuem impactos nas variáveis dependente e independente.
 
 ::: {.callout-tip title = "Aleatoriedade e representatividade"}
 
@@ -76,38 +83,126 @@ O processo de amostragem pode ser feita com ou sem reposição dos indivíduos c
 
 :::
 
-![Principais processos de amostragem](amostragem.jpg){#fig-amostragem width=80%}
+![Principais processos de amostragem.](amostragem.jpg){#fig-amostragem width=80%}
 
 ## Amostragem aleatória simples
 
-Neste tipo de amostragem os indivíduos são escolhidos ao acaso.
+Neste tipo de amostragem os elementos são escolhidos ao acaso. Na @fig-amostragem_aas temos uma população formada por 34 elementos. Foram escolhidos ao acaso cinco para compor a amostra.
 
 ### Vantagens
 
-* O processo garante total aleatoriedade na amostragem e a máxima redução de vieses.
+O processo garante total aleatoriedade na amostragem e a máxima redução de vieses.
 
 ### Desvantagens
 
-* Ocorre o risco da não representatividade de parte da população.
+Ocorre o risco da não representatividade de parte da população, principalmente para amostras pequenas.
 
 :::{.callout-important}
 
-Os modelos estatísticos são feitos e pensados em cima da suposição de que as amostras foram obtidas utilizando o processo de amostragem AAS. A @fig-amostragem_aas define bem como esse processo acontece. Os indivíduos são sorteados ao acaso dentro da população.
+* Os modelos estatísticos são feitos e pensados em cima da suposição de que as amostras foram obtidas utilizando o processo de amostragem AAS COM REPOSIÇÃO. A @fig-amostragem_aas define bem como esse processo acontece. Os elementos são sorteados ao acaso dentro da população;
+
+* Na amostragem AAS, a representatividade da amostra aumenta com o tamanho da amostra.
 
 :::
 
-![Amostragem aleatória simples](amostragem_aas.jpg){#fig-amostragem_aas width=80%}
+![Amostragem aleatória simples.](amostragem_aas.jpg){#fig-amostragem_aas width=80%}
 
 ## Amostragem aleatória extratificada
 
-Neste tipo de amostragem, antes da coleta os indivíduos são agrupados de acordo com as suas características e a amostra é formada por integrantes de cada grupo de acordo com a sua quantidade. Na @fig-extratificada, os individuos são inicialmente agrupados de acordo com a sua cor. Os individuos da cor amarela contribuem com o dobro de elementos em comparação aos demais membros.
+Neste tipo de amostragem, antes da coleta os elementos são agrupados de acordo com as suas características e a amostra é formada por integrantes de cada grupo de acordo com a sua quantidade. Na @fig-amostragem_extratificada temos a população formada por 30 elementos. Os elementos foram inicialmente agrupados de acordo com a sua cor. Os elementos da cor amarela contribuem com o dobro em comparação aos demais membros.
 
 ### Vantagens
 
-* O processo garante a representatividade de todos os individuos da população.
+O processo garante a representatividade de todos os individuos da população.
 
 ### Desvantagens
 
-* Requer mais trabalho em relação ao método AAS, além do conhecimento de informações antecipadas a respeito da população.
+Requer mais trabalho em relação ao método AAS, além do conhecimento de informações antecipadas a respeito da população.
 
-![Amostragem aleatória extratificada](amostragem_extratificada.jpg){#fig-amostragem_extratificada width=80%}
+![Amostragem aleatória extratificada.](amostragem_extratificada.jpg){#fig-amostragem_extratificada width=80%}
+
+### Exemplo
+
+Agrupe todos os alunos do seu interesse de acordo com as características a serem analisadas (gênero, ano, curso, turma, etc).
+
+## Amostragem sistemática
+
+Ordena-se os indivíduos da população, em seguida os elementos da amostra são obtidos em intervalos pré-determinados. A aleatoriedade do processo acontece quando escolhemos ao acaso o primeiro indivíduo. Na @fig-amostragem_sistematica temos a população formada por 30 elementos. Ordenou-se os elementos da população e em seguida foi escolhido aleatoriamente o elemento de ordem dois. Os demais elementos foram escolhidos em intervalos fixos a cada quatro elementos.
+
+### Desvantagem
+
+A ordenação pode levar a subrepresentação de um ou mais grupos.
+
+![Amostragem sistemática.](amostragem_sistematica.jpg){#fig-amostragem_sistematica width=80%}
+
+### Exemplo
+
+Monte uma amostra seguindo o número de matrícula dos alunos.
+
+## Amostragem por conglomerados
+
+Neste caso, elementos individuais não são sorteados, mas sim um grupo de indivíduos. Na @fig-amostragem_conglomerado, os elementos da população foram separados em quatro grupos. Em seguida, o grupo cinza foi escolhido aleatoriamente para que os seus elementos representassem a amostra da população.
+
+### Vantagem
+
+Redução de custo e tempo.
+
+### Desvantagem
+
+Ocorre o risco do grupo sorteado ser mais homogêneo que a população.
+
+![Amostragem por conglomerado.](amostragem_conglomerado.jpg){#fig-amostragem_conglomerado width=80%}
+
+### Exemplo
+
+Monte uma amostra contendo alunos de uma sala de aula que foi escolhida ao acaso.
+
+## Amostragem por bola de neve
+
+Identifica-se poucos elementos que o pesquisador tem acesso. Em seguida, solicita-se que esses elementos indiquem outros indivíduos para compor a amostra. Na @fig-amostragem_bola_neve dois elementos foram escolhidos convenientemente. Em seguida, cada elemento indicou mais quatro para compor a amostra. O processo continua até que o pesquisador tenha coletado a quantidade suficiente de elementos.
+
+### Vantagens
+
+Redução de custo e tempo
+
+### Desvantagens
+
+* Ocorre o risco dos indivíduos indicarem outros similares, tornando a amostra mais homogênea que a população;
+
+* Forte presença de vieses durante a amostragem.
+
+![Amostragem por bola de neve.](amostragem_bola_neve.jpg){#fig-amostragem_bola_neve width=80%}
+
+### Exemplo
+
+Monte uma amostra com alunos que você tem acesso e peça indicações para compor a amostra.
+
+## Amostragem por cotas
+
+Similar ao método de amostragem extratificada. Contudo, os elementos não são obtidos aleatoriamente (ao acaso) dentro de cada grupo que chamamos de cota.
+
+### Desvantagem
+
+Pode haver vieses durante a coleta em cada grupo.
+
+### Exemplo
+
+Agrupe alunos que você tem acesso de acordo com as características de interesse (gênero, ano, curso, turma, etc).
+
+## Amostragem por conveniência
+
+A amostra é composta por elementos de fácil acesso.
+
+### Vantagens
+
+* Redução de custo e tempo
+
+### Desvantagem
+
+* A amostra pode não ser representativa.
+
+:::{.callout-tip title="Qual amostragem escolher?"}
+
+Por questões de representatividade, deve-se priorizar métodos de amostragem probabilísticas, especialmente os métodos AAS e extratificado. Caso não seja possível, métodos de amostragem não-probabilísticas podem ser usadas como alternativa.
+
+:::
