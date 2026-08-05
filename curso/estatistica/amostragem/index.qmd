@@ -79,7 +79,7 @@ Os principais processos de amostragem se resumem especificamente em processos al
 
 :::{.callout-important title="Amostragem com ou sem reposição"}
 
-O processo de amostragem pode ser feita com ou sem reposição dos indivíduos coletados. Entretando, os resultados são obtidos de maneira diferente em cada caso. Modelos estatísticos mais simples são pensado de maneira que os processos de amostragem são feitas <span style = "color:red">com reposição dos indivíduos</span>.
+O processo de amostragem pode ser feita com ou sem reposição dos indivíduos coletados. Entretando, os resultados são obtidos de maneira diferente em cada caso. Modelos estatísticos mais simples são pensado de maneira que os processos de amostragem são feitas <alerta>com reposição dos indivíduos</alerta>.
 
 :::
 
@@ -201,7 +201,7 @@ A amostra é composta por elementos de fácil acesso.
 
 * A amostra pode não ser representativa.
 
-:::{.callout-tip title="Qual amostragem escolher?"}
+::: {.callout-tip title="Qual amostragem escolher?"}
 
 Por questões de representatividade, deve-se priorizar métodos de amostragem probabilísticas, especialmente os métodos AAS e extratificado. Caso não seja possível, métodos de amostragem não-probabilísticas podem ser usadas como alternativa.
 

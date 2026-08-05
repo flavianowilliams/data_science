@@ -6,9 +6,9 @@
   {
     "listing": "/curso/r/curso_r.html",
     "items": [
-      "/curso/r/r_base/r_base.html",
-      "/curso/r/wrangling/wrangling.html",
-      "/curso/r/ggplot2/ggplot2.html"
+      "/curso/r/r_base/index.html",
+      "/curso/r/wrangling/index.html",
+      "/curso/r/ggplot2/index.html"
     ]
   },
   {

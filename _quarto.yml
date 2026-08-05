@@ -36,3 +36,6 @@ bibliography: bibliografia.bib
 csl: abnt.csl
 lang: "pt-BR"
 date-format: DD/MM/YYYY
+
+execute:
+  freeze: auto

@@ -58,5 +58,11 @@
   },
   "curso/r/r_base/r_base.qmd": {
     "r_base.html": "b1b55d63"
+  },
+  "curso/r/wrangling/index.qmd": {
+    "index.html": "1e53a12f"
+  },
+  "curso/r/ggplot2/index.qmd": {
+    "index.html": "b9578954"
   }
 }

@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-04-08">
 
 <title>Manipulação de dados com o pacote tidyverse – Ciência de dados</title>
 <style>
@@ -189,14 +190,29 @@ div.csl-indent {
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Manipulação de dados com o pacote tidyverse</h1>
-                      </div>
+                                <div class="quarto-categories">
+                <div class="quarto-category">r</div>
+              </div>
+                  </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
       
+      <div>
+      <div class="quarto-title-meta-heading">Data de Publicação</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">04/08/2026</p>
+      </div>
+    </div>
     
+      <div>
+      <div class="quarto-title-meta-heading">Data de Modificação</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">04/08/2026</p>
+      </div>
+    </div>
       
     </div>
     
@@ -209,7 +225,8 @@ div.csl-indent {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#o-que-é-o-tidyverse" id="toc-o-que-é-o-tidyverse" class="nav-link active" data-scroll-target="#o-que-é-o-tidyverse">O que é o tidyverse?</a></li>
+  <li><a href="#o-que-é-o-tidyverse" id="toc-o-que-é-o-tidyverse" class="nav-link active" data-scroll-target="#o-que-é-o-tidyverse">O que é o tidyverse?</a>
+  <ul class="collapse">
   <li><a href="#a-importância-na-preparação-dos-dados" id="toc-a-importância-na-preparação-dos-dados" class="nav-link" data-scroll-target="#a-importância-na-preparação-dos-dados">A importância na preparação dos dados</a></li>
   <li><a href="#tipos-de-variáveis-em-estatística" id="toc-tipos-de-variáveis-em-estatística" class="nav-link" data-scroll-target="#tipos-de-variáveis-em-estatística">Tipos de variáveis em estatística</a></li>
   <li><a href="#dataframes-e-tibbles" id="toc-dataframes-e-tibbles" class="nav-link" data-scroll-target="#dataframes-e-tibbles">Dataframes e tibbles</a></li>
@@ -218,6 +235,7 @@ div.csl-indent {
   <li><a href="#organização-de-dados-tidyr" id="toc-organização-de-dados-tidyr" class="nav-link" data-scroll-target="#organização-de-dados-tidyr">Organização de dados (tidyr)</a></li>
   <li><a href="#operador-pipe-ou" id="toc-operador-pipe-ou" class="nav-link" data-scroll-target="#operador-pipe-ou">Operador pipe (|&gt; ou %&gt;%)</a></li>
   <li><a href="#bibliografia" id="toc-bibliografia" class="nav-link" data-scroll-target="#bibliografia">Bibliografia</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -228,38 +246,31 @@ div.csl-indent {
 
 
 
-<div class="cell" data-layout-align="center">
-<style type="text/css">
-figcaption {
-  margin: auto;
-  text-align: center;
-}
-</style>
-</div>
-<section id="o-que-é-o-tidyverse" class="level2">
-<h2 class="anchored" data-anchor-id="o-que-é-o-tidyverse">O que é o tidyverse?</h2>
+<section id="o-que-é-o-tidyverse" class="level1">
+<h1>O que é o tidyverse?</h1>
 <p>Tidyverse é um ecossistema contendo diversos pacotes especializados na manipulação de dados estatísticos <span class="citation" data-cites="Wickham2019">(<a href="#ref-Wickham2019" role="doc-biblioref">Wickham et al., 2019</a>)</span>.</p>
 <div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/workflow.png"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/workflow.png" class="img-fluid figure-img" style="width:100.0%" alt="Fluxo de trabalho em ciência de dados."></p>
+<p><img src="img/workflow.png" class="img-fluid figure-img" alt="Fluxo de trabalho em ciência de dados."></p>
 <figcaption>Fonte: R for Data Science <span class="citation" data-cites="Wickham">(<a href="#ref-Wickham" role="doc-biblioref"><span>“R for Data Science (2e)”</span>, <em>[S.d.]</em></a>)</span>.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-</section>
 <section id="a-importância-na-preparação-dos-dados" class="level2">
 <h2 class="anchored" data-anchor-id="a-importância-na-preparação-dos-dados">A importância na preparação dos dados</h2>
 <p>Cerca de 60% do trabalho em ciência de dados é gasto na limpeza, transformação e organização dos dados. O que inclui tarefas como…</p>
 <div class="columns">
 <div class="column">
 <div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/spend_time.jpg"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/spend_time.jpg" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="img/spend_time.jpg" class="img-fluid figure-img" width="320"></p>
 <figcaption>Fonte: <span class="citation" data-cites="Sarih2019">(<a href="#ref-Sarih2019" role="doc-biblioref">Sarih et al., 2019</a>)</span></figcaption>
 </figure>
 </div>
@@ -298,45 +309,45 @@ figcaption {
 <div class="column" style="width:50%;">
 <section id="definindo-função-fibonacci" class="level3">
 <h3 class="anchored" data-anchor-id="definindo-função-fibonacci">Definindo função Fibonacci</h3>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fibonacci <span class="ot">&lt;-</span> <span class="cf">function</span>(dataframe, x) {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  vetor <span class="ot">&lt;-</span> dataframe[, x]</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  soma <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">length</span>(vetor))</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(vetor)) {</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    a <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    b <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    num <span class="ot">&lt;-</span> a<span class="sc">+</span>b</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    soma[j] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>vetor[j]) {</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>      num <span class="ot">&lt;-</span> a<span class="sc">+</span>b</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>      a <span class="ot">&lt;-</span> b</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>      b <span class="ot">&lt;-</span> num</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>      soma[j] <span class="ot">&lt;-</span> soma[j]<span class="sc">+</span>a</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(soma)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fibonacci <span class="ot">&lt;-</span> <span class="cf">function</span>(dataframe, x) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  vetor <span class="ot">&lt;-</span> dataframe[, x]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  soma <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">length</span>(vetor))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(vetor)) {</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    a <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    b <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    num <span class="ot">&lt;-</span> a<span class="sc">+</span>b</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    soma[j] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>vetor[j]) {</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>      num <span class="ot">&lt;-</span> a<span class="sc">+</span>b</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>      a <span class="ot">&lt;-</span> b</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>      b <span class="ot">&lt;-</span> num</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>      soma[j] <span class="ot">&lt;-</span> soma[j]<span class="sc">+</span>a</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(soma)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </div><div class="column" style="width:50%;">
 <section id="aplicando-operador-pipe" class="level3">
 <h3 class="anchored" data-anchor-id="aplicando-operador-pipe">Aplicando operador pipe</h3>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dataframe</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">5</span>))</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(dados)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dataframe</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">5</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(dados)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   5 obs. of  1 variable:
  $ a: int  1 2 3 4 5</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># aplicando a função fibonacci</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fibonacci</span>(dados, <span class="st">"a"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># aplicando a função fibonacci</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fibonacci</span>(dados, <span class="st">"a"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  1  2  4  7 12</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># aplicando a função com o operador pipe</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>dados <span class="sc">|&gt;</span> </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fibonacci</span>(<span class="st">"a"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># aplicando a função com o operador pipe</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>dados <span class="sc">|&gt;</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fibonacci</span>(<span class="st">"a"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  1  2  4  7 12</code></pre>
 </div>
@@ -350,6 +361,7 @@ figcaption {
 
 
 
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Bibliografia</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="1" role="list">

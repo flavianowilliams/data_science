@@ -1,0 +1,15 @@
+{
+  "hash": "0280f1adcc2f68673fd948b9deb15c7e",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Manipulação de dados com o pacote tidyverse\"\ndate: \"2026-08-04\"\ndate-modified: today\ncategories: [r]\n---\n\n# O que é o tidyverse?\n\nTidyverse é um ecossistema contendo diversos pacotes especializados na manipulação de dados estatísticos [@Wickham2019].\n\n\n::: {.cell layout-align=\"center\"}\n\n```{.r .cell-code}\nknitr::include_graphics(path = \"img/workflow.png\")\n```\n\n::: {.cell-output-display}\n![Fonte: R for Data Science [@Wickham].](img/workflow.png){fig-align='center' fig-alt='Fluxo de trabalho em ciência de dados.'}\n:::\n:::\n\n\n## A importância na preparação dos dados\n\nCerca de 60% do trabalho em ciência de dados é gasto na limpeza, transformação e organização dos dados. O que inclui tarefas como...\n\n:::: {.columns}\n\n::: {.column}\n\n\n::: {.cell layout-align=\"center\"}\n\n```{.r .cell-code}\nknitr::include_graphics(path = \"img/spend_time.jpg\")\n```\n\n::: {.cell-output-display}\n![Fonte: [@Sarih2019]](img/spend_time.jpg){fig-align='center' width=320}\n:::\n:::\n\n\n:::\n\n::: {.column}\n\n* Verificação de outliers;\n\n* Dados faltantes;\n\n* Dados duplicados;\n\n* Valores invariantes;\n\n* Correta atribuição do tipo de dados;\n\n* Dados não utilizados.\n\n:::\n\n::::\n\n## Tipos de variáveis em estatística\n\n## Dataframes e tibbles\n\n## Importação de dados (readr)\n\n## Transformação de dados (dplyr)\n\n## Organização de dados (tidyr)\n\n## Operador pipe (|> ou %>%)\n\n:::: {.columns}\n\n::: {.column width=\"50%\"}\n### Definindo função Fibonacci\n\n\n::: {.cell}\n\n```{.r .cell-code}\nfibonacci <- function(dataframe, x) {\n  vetor <- dataframe[, x]\n  soma <- rep(0, length(vetor))\n  for (j in 1:length(vetor)) {\n    a <- 0\n    b <- 1\n    num <- a+b\n    soma[j] <- 0\n    for (i in 1:vetor[j]) {\n      num <- a+b\n      a <- b\n      b <- num\n      soma[j] <- soma[j]+a\n    }\n  }\n  return(soma)\n}\n```\n:::\n\n:::\n\n::: {.column width=\"50%\"}\n### Aplicando operador pipe\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# dataframe\ndados <- data.frame(a = seq(1, 5))\nstr(dados)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n'data.frame':\t5 obs. of  1 variable:\n $ a: int  1 2 3 4 5\n```\n\n\n:::\n\n```{.r .cell-code}\n# aplicando a função fibonacci\nfibonacci(dados, \"a\")\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1]  1  2  4  7 12\n```\n\n\n:::\n\n```{.r .cell-code}\n# aplicando a função com o operador pipe\ndados |> \n  fibonacci(\"a\")\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1]  1  2  4  7 12\n```\n\n\n:::\n:::\n\n:::\n\n::::\n\n## Bibliografia\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

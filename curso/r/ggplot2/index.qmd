@@ -1,5 +1,8 @@
 ---
 title: "Visualização de dados com ggplot2"
+date: "2026-08-04"
+date-modified: today
+categories: [r]
 ---
 
 ```{r setup, include=FALSE}

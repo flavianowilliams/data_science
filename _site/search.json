@@ -28,235 +28,123 @@
     "text": "O que é estatística descritiva?\nEmprega métodos numéricos afim de descrever e resumir um conjunto de dados obtidos a partir de uma amostra ou população."
   },
   {
-    "objectID": "curso/r/r_base/r_base.html",
-    "href": "curso/r/r_base/r_base.html",
+    "objectID": "curso/r/r_base/index.html",
+    "href": "curso/r/r_base/index.html",
     "title": "Conceitos básicos da linguagem R",
     "section": "",
-    "text": "“R é uma linguagem de programação dinâmica em um desenvolvimento em tempo real. Especialmente voltada para trabalhos em análises estatísticas, como a manipulação, análise e visualização de dados.”\n“Seu nome surge das iniciais dos seus criadores (Ross Ihaka e Robert Gentleman).”\n\n(Hornik; R Core Team, 2026)"
+    "text": "R é uma linguagem de programação dinâmica em um desenvolvimento em tempo real. Especialmente voltada para trabalhos em análises estatísticas, como a manipulação, análise e visualização de dados. Seu nome surge das iniciais dos seus criadores (Ross Ihaka e Robert Gentleman (Hornik; R Core Team, 2026)).\n\n\n\nFundamentalmente forte em análises estatísticas (teste de hipóteses, análises descritivas, desenvolvimento de modelos estatísticos robustos);\nExcelente para a produção de gráficos e relatórios;\nÉ uma das linguagens mais utilizadas em ciência de dados, especialmente em trabalhos que envolvam análise exploratória (Morettin; Motta Singer, 2025). Entretanto, python ainda é a preferida em trabalhos envolvendo aprendizado de máquina;\nPerde desempenho em trabalhos que envolvam grande volume de dados (como alternativa a linguagem possui recursos extras, como data.tables ou a integração com outras ferramentas como Apache Spark).\nMuito utilizado no meio acadêmico, especialmente em pesquisas experimentais.\nPossui um grande repertório de pacotes e funções, onde muitos são focados em análises estatísticas."
   },
   {
-    "objectID": "curso/r/r_base/r_base.html#sobre-o-r",
-    "href": "curso/r/r_base/r_base.html#sobre-o-r",
+    "objectID": "curso/r/r_base/index.html#aspectos-gerais",
+    "href": "curso/r/r_base/index.html#aspectos-gerais",
     "title": "Conceitos básicos da linguagem R",
     "section": "",
-    "text": "“R é uma linguagem de programação dinâmica em um desenvolvimento em tempo real. Especialmente voltada para trabalhos em análises estatísticas, como a manipulação, análise e visualização de dados.”\n“Seu nome surge das iniciais dos seus criadores (Ross Ihaka e Robert Gentleman).”\n\n(Hornik; R Core Team, 2026)"
+    "text": "Fundamentalmente forte em análises estatísticas (teste de hipóteses, análises descritivas, desenvolvimento de modelos estatísticos robustos);\nExcelente para a produção de gráficos e relatórios;\nÉ uma das linguagens mais utilizadas em ciência de dados, especialmente em trabalhos que envolvam análise exploratória (Morettin; Motta Singer, 2025). Entretanto, python ainda é a preferida em trabalhos envolvendo aprendizado de máquina;\nPerde desempenho em trabalhos que envolvam grande volume de dados (como alternativa a linguagem possui recursos extras, como data.tables ou a integração com outras ferramentas como Apache Spark).\nMuito utilizado no meio acadêmico, especialmente em pesquisas experimentais.\nPossui um grande repertório de pacotes e funções, onde muitos são focados em análises estatísticas."
   },
   {
-    "objectID": "curso/r/r_base/r_base.html#aspectos-gerais",
-    "href": "curso/r/r_base/r_base.html#aspectos-gerais",
-    "title": "Conceitos básicos da linguagem R",
-    "section": "Aspectos gerais",
-    "text": "Aspectos gerais\n\nFundamentalmente forte em análises estatísticas (teste de hipóteses, análises descritivas, desenvolvimento de modelos estatísticos robustos);\nExcelente para a produção de gráficos e relatórios;\nÉ uma das linguagens mais utilizadas em ciência de dados, especialmente em trabalhos que envolvam análise exploratória (Morettin; Motta Singer, 2025). Entretanto, python ainda é a preferida em trabalhos envolvendo aprendizado de máquina;\nPerde desempenho em trabalhos que envolvam grande volume de dados (como alternativa a linguagem possui recursos extras, como data.tables ou a integração com outras ferramentas como Apache Spark).\nMuito utilizado no meio acadêmico, especialmente em pesquisas experimentais.\nPossui um grande repertório de pacotes e funções, onde muitos são focados em análises estatísticas."
-  },
-  {
-    "objectID": "curso/r/r_base/r_base.html#rstudio-a-principal-ide-do-r",
-    "href": "curso/r/r_base/r_base.html#rstudio-a-principal-ide-do-r",
-    "title": "Conceitos básicos da linguagem R",
-    "section": "RStudio: A principal IDE do R",
-    "text": "RStudio: A principal IDE do R\n\n\n\n\n\n\n\nFonte: (“Ciência de Dados em R”, [S.d.])\n\n\n\n\n\n\nEditor: Onde o código é escrito;\nConsole: Onde o R é executado;\nEnvironment: Painel com todos os objetos armazenados na memória;\nOutput: Painel contendo navegador de arquivos, lista pacotes instalados, ajuda e visualização de relatórios, apresentações e dashboards."
-  },
-  {
-    "objectID": "curso/r/r_base/r_base.html#rstudio-online",
-    "href": "curso/r/r_base/r_base.html#rstudio-online",
+    "objectID": "curso/r/r_base/index.html#rstudio-online",
+    "href": "curso/r/r_base/index.html#rstudio-online",
     "title": "Conceitos básicos da linguagem R",
     "section": "RStudio online",
-    "text": "RStudio online\n\nA versão Open Source do RStudio pode ser baixado e instalado gratuitamente nas plataformas windows ou linux, ambas disponíveis na página da Posit (“Posit | Data Science Platform for Enterprise Teams”, [S.d.]).\nA versão online está disponível na página da Posit Cloud (“Posit Cloud”, [S.d.]).\n\n\n\nAtenção!\n\nO “R base” deverá estar previamente instalado no computador."
+    "text": "RStudio online\n\nA versão Open Source do RStudio pode ser baixado e instalado gratuitamente nas plataformas windows ou linux, ambas disponíveis na página da Posit (“Posit | Data Science Platform for Enterprise Teams”, [S.d.]).\nA versão online está disponível na página da Posit Cloud (“Posit Cloud”, [S.d.]).\n\n\n\n\n\n\n\nImportante\n\n\n\nO “R base” deverá estar previamente instalado no computador."
   },
   {
-    "objectID": "curso/r/r_base/r_base.html#objetos-e-funções-no-r",
-    "href": "curso/r/r_base/r_base.html#objetos-e-funções-no-r",
+    "objectID": "curso/r/r_base/index.html#objetos-e-funções-no-r",
+    "href": "curso/r/r_base/index.html#objetos-e-funções-no-r",
     "title": "Conceitos básicos da linguagem R",
     "section": "Objetos e funções no R",
-    "text": "Objetos e funções no R\n\nObjeto é tudo que pode ser criado e armazenado na memória (vetor, lista, função, gráfico, modelo estatístico, etc).\nUm objeto pode ser criado utilizando o operador de atribuição &lt;-,\n\nobjeto &lt;- função\nExemplo:\n\nvalor &lt;- function(x) {return(x)}\nprint(valor)\n\nfunction (x) \n{\n    return(x)\n}"
+    "text": "Objetos e funções no R\n\nObjeto é tudo que pode ser criado e armazenado na memória (vetor, lista, função, gráfico, modelo estatístico, etc);\nUm objeto pode ser criado utilizando o operador de atribuição &lt;-.\n\nobjeto &lt;- função\nExemplo:\n\nvalor &lt;- function(x) {return(x)}\nprint(valor)\n\nfunction (x) \n{\n    return(x)\n}"
   },
   {
-    "objectID": "curso/r/r_base/r_base.html#estrutura-de-dados-principais-no-r",
-    "href": "curso/r/r_base/r_base.html#estrutura-de-dados-principais-no-r",
+    "objectID": "curso/r/r_base/index.html#estrutura-de-dados-principais-no-r",
+    "href": "curso/r/r_base/index.html#estrutura-de-dados-principais-no-r",
     "title": "Conceitos básicos da linguagem R",
     "section": "Estrutura de dados principais no R",
-    "text": "Estrutura de dados principais no R\n\n\n\nVetores atômicos: Formado por elementos do mesmo tipo.\n\n\n  vetor_letras &lt;- c(\"a\", \"b\", \"c\", \"d\")\n  vetor_letras\n\n[1] \"a\" \"b\" \"c\" \"d\"\n\n  vetor_numeros &lt;- c(1, 2, 3, 4)\n  vetor_numeros\n\n[1] 1 2 3 4\n\n\n\n\nVetores recursivos (listas): Podem ser formados por elementos de tipos distintos.\n\n\n  lista &lt;- list(\"a\", 1, TRUE, NA)\n  lista\n\n[[1]]\n[1] \"a\"\n\n[[2]]\n[1] 1\n\n[[3]]\n[1] TRUE\n\n[[4]]\n[1] NA"
+    "text": "Estrutura de dados principais no R\n\nVetores atômicos: Formado por elementos do mesmo tipo.\n\n\n  vetor_letras &lt;- c(\"a\", \"b\", \"c\", \"d\")\n  vetor_letras\n\n[1] \"a\" \"b\" \"c\" \"d\"\n\n  vetor_numeros &lt;- c(1, 2, 3, 4)\n  vetor_numeros\n\n[1] 1 2 3 4\n\n\n\nVetores recursivos (listas): Podem ser formados por elementos de tipos distintos.\n\n\n  lista &lt;- list(\"a\", 1, TRUE, NA)\n  lista\n\n[[1]]\n[1] \"a\"\n\n[[2]]\n[1] 1\n\n[[3]]\n[1] TRUE\n\n[[4]]\n[1] NA"
   },
   {
-    "objectID": "curso/r/r_base/r_base.html#lista-nomeada",
-    "href": "curso/r/r_base/r_base.html#lista-nomeada",
+    "objectID": "curso/r/r_base/index.html#lista-nomeada",
+    "href": "curso/r/r_base/index.html#lista-nomeada",
     "title": "Conceitos básicos da linguagem R",
     "section": "Lista nomeada",
     "text": "Lista nomeada\nOs elementos de uma lista podem ser nomeados\n\n  lista_nomeada &lt;- list(caracter = \"a\", numero = 2, logico = TRUE, dado_faltante = NA)\n  lista_nomeada\n\n$caracter\n[1] \"a\"\n\n$numero\n[1] 2\n\n$logico\n[1] TRUE\n\n$dado_faltante\n[1] NA"
   },
   {
-    "objectID": "curso/r/r_base/r_base.html#lista-nomeada-1",
-    "href": "curso/r/r_base/r_base.html#lista-nomeada-1",
+    "objectID": "curso/r/r_base/index.html#lista-nomeada-1",
+    "href": "curso/r/r_base/index.html#lista-nomeada-1",
     "title": "Conceitos básicos da linguagem R",
     "section": "Lista nomeada",
-    "text": "Lista nomeada\nPara acessar um item da lista, basta usar o operador $.\n\n  lista_nomeada$caracter\n\n[1] \"a\"\n\n  is.na(lista_nomeada$dado_faltante)\n\n[1] TRUE\n\n  as.character(lista_nomeada$numero)\n\n[1] \"2\"\n\n  lista_nomeada$logico &lt;- FALSE\n  lista_nomeada$logico\n\n[1] FALSE"
+    "text": "Lista nomeada\nPara acessar um item da lista, basta usar o operador $.\n\n  lista_nomeada$caracter\n\n[1] \"a\"\n\n  is.na(lista_nomeada$dado_faltante)\n\n[1] TRUE\n\n  as.character(lista_nomeada$numero)\n\n[1] \"2\"\n\n  lista_nomeada$logico &lt;- FALSE\n  lista_nomeada$logico\n\n[1] FALSE\n\n\n\n\n\n\n\n\nDicaExercício\n\n\n\nConstrua uma lista com os seguintes dados de uma pessoa:\n\nNome: João Carlos Silveira\nEndereço: Rua Pedro Koppe, 100, Irati-PR\nEscolaridade: Ensino médio completo\nEstado civil: Solteiro\n\nEm seguida, atualize esta lista mudando o endereço desta pessoa para Rua Trajano Grácia, 240 - Centro, Irati-PR.\n\n\n\n\n\n\n\n\nDicaExercício\n\n\n\nConstrua uma lista com os seguintes elementos:\n\nscore: 1, 2, 3\nnome:João, Leticia, Marcos\npontuação: 100, 90, 75\n\nEm seguida, acesse o score da Letícia à partir desta lista."
   },
   {
-    "objectID": "curso/r/r_base/r_base.html#exercício",
-    "href": "curso/r/r_base/r_base.html#exercício",
-    "title": "Conceitos básicos da linguagem R",
-    "section": "Exercício",
-    "text": "Exercício\nConstrua uma lista com os seguintes dados de uma pessoa:\n\nNome: João Carlos Silveira\nEndereço: Rua Pedro Koppe, 100, Irati-PR\nEscolaridade: Ensino médio completo\nEstado civil: Solteiro\n\nEm seguida, atualize esta lista mudando o endereço desta pessoa para Rua Trajano Grácia, 240 - Centro, Irati-PR."
-  },
-  {
-    "objectID": "curso/r/r_base/r_base.html#exercício-1",
-    "href": "curso/r/r_base/r_base.html#exercício-1",
-    "title": "Conceitos básicos da linguagem R",
-    "section": "Exercício",
-    "text": "Exercício\nConstrua uma lista com os seguintes elementos:\n\nscore: 1, 2, 3\nnome:João, Leticia, Marcos\npontuação: 100, 90, 75\n\nEm seguida, acesse o score da Letícia à partir desta lista."
-  },
-  {
-    "objectID": "curso/r/r_base/r_base.html#vetores-e-listas-aumentadas",
-    "href": "curso/r/r_base/r_base.html#vetores-e-listas-aumentadas",
+    "objectID": "curso/r/r_base/index.html#vetores-e-listas-aumentadas",
+    "href": "curso/r/r_base/index.html#vetores-e-listas-aumentadas",
     "title": "Conceitos básicos da linguagem R",
     "section": "Vetores e listas aumentadas",
     "text": "Vetores e listas aumentadas\nVetores e listas aumentadas são vetores ou listas que possuem atributos. Os atributos podem ser acessados a partir do comando attributes.\n\ndata &lt;- as.Date(\"2026/06/09\")\nattributes(data)\n\n$class\n[1] \"Date\"\n\nvetor_atomico &lt;- c(1, 2, 3, 4)\nattributes(vetor_atomico)\n\nNULL"
   },
   {
-    "objectID": "curso/r/r_base/r_base.html#atributos-de-vetores-aumentados",
-    "href": "curso/r/r_base/r_base.html#atributos-de-vetores-aumentados",
+    "objectID": "curso/r/r_base/index.html#atributos-de-vetores-aumentados",
+    "href": "curso/r/r_base/index.html#atributos-de-vetores-aumentados",
     "title": "Conceitos básicos da linguagem R",
     "section": "Atributos de vetores aumentados",
-    "text": "Atributos de vetores aumentados\n\nNome: Usados para nomear os elementos de uma lista ou um vetor.\n\n\nscores &lt;- c(88, 92, 79)\nattr(scores, \"names\") &lt;- c(\"Alice\", \"Bob\", \"Charlie\")\nnames(scores)\n\n[1] \"Alice\"   \"Bob\"     \"Charlie\"\n\nscores\n\n  Alice     Bob Charlie \n     88      92      79 \n\nattributes(scores)\n\n$names\n[1] \"Alice\"   \"Bob\"     \"Charlie\""
+    "text": "Atributos de vetores aumentados\n\nNome: Usados para nomear os elementos de uma lista ou um vetor.\n\n\nscores &lt;- c(88, 92, 79)\nattr(scores, \"names\") &lt;- c(\"Alice\", \"Bob\", \"Charlie\")\nnames(scores)\n\n[1] \"Alice\"   \"Bob\"     \"Charlie\"\n\nscores\n\n  Alice     Bob Charlie \n     88      92      79 \n\nattributes(scores)\n\n$names\n[1] \"Alice\"   \"Bob\"     \"Charlie\"\n\n\n\nDimensão: Define a dimensão de matrizes e arrays que são construídos a partir de um vetor.\n\n\nvec &lt;- c(1, 2, 3, 4)\nmatriz &lt;- matrix(vec, ncol = 2)\nmatriz\n\n     [,1] [,2]\n[1,]    1    3\n[2,]    2    4\n\ndim(matriz)\n\n[1] 2 2\n\n\nNo comando ao lado, construimos uma matriz com o comando matrix a partir do vetor vec, em seguida acessamos o seu atributo dim, que no caso indica a ordem da matriz de 2 linhas e 2 colunas.\n\n\n\n\n\n\nDicaExercício\n\n\n\nConstrua a matriz abaixo no R.\n\\[\\begin{pmatrix}\n  1 & 4 & 7 \\\\\n  2 & 5 & 8 \\\\\n  3 & 6 & 9\n\\end{pmatrix}\\]\n\n\n\n\n\n\n\n\nDicaExercício\n\n\n\nFaça o produto vetorial abaixo (Dica: utilize o operador %*%).\n\\[\\begin{equation}\n\\begin{pmatrix}\n  1 & 4 & 7 \\\\\n  2 & 5 & 8 \\\\\n  3 & 6 & 9\n\\end{pmatrix}\n\\begin{pmatrix}\n  1 \\\\\n  0 \\\\\n  0\n\\end{pmatrix}\n= ?\n\\end{equation}\\]\n\n\n\n\n\n\n\n\nDicaExercício\n\n\n\nConstrua a mesma matriz anterior a partir de um array e com a utilização do atributo dim."
   },
   {
-    "objectID": "curso/r/r_base/r_base.html#atributos-de-vetores-aumentados-1",
-    "href": "curso/r/r_base/r_base.html#atributos-de-vetores-aumentados-1",
+    "objectID": "curso/r/r_base/index.html#atributos-de-vetores-aumentados-1",
+    "href": "curso/r/r_base/index.html#atributos-de-vetores-aumentados-1",
     "title": "Conceitos básicos da linguagem R",
     "section": "Atributos de vetores aumentados",
-    "text": "Atributos de vetores aumentados\n\nDimensão: Define a dimensão de matrizes e arrays que são construídos a partir de um vetor.\n\n\n\n\nvec &lt;- c(1, 2, 3, 4)\nmatriz &lt;- matrix(vec, ncol = 2)\nmatriz\n\n     [,1] [,2]\n[1,]    1    3\n[2,]    2    4\n\ndim(matriz)\n\n[1] 2 2\n\n\n\nNo comando ao lado, construimos uma matriz com o comando matrix a partir do vetor vec, em seguida acessamos o seu atributo dim, que no caso indica a ordem da matriz de 2 linhas e 2 colunas."
+    "text": "Atributos de vetores aumentados\n\nClasse: Usado para implementar atributos e métodos da programação orientada a objetos.\n\n\n  dados &lt;- data.frame(nome = c(\"Roberto\", \"Vanessa\", \"Carlos\"),\n                      idade = c(12, 17, 21)\n                      )\n#\n  class(dados)\n\n[1] \"data.frame\"\n\n\nÉ possível acessar os métodos de uma função a partir da classe com o comando methods.\n\nmethods(\"as.Date\")\n\n[1] as.Date.character as.Date.default   as.Date.factor    as.Date.numeric  \n[5] as.Date.POSIXct   as.Date.POSIXlt  \nsee '?methods' for accessing help and source code\n\n\n\n\n\n\n\n\nDicaExercício\n\n\n\nAcesse a documentação da função methods utilizando o comando ?methods."
   },
   {
-    "objectID": "curso/r/r_base/r_base.html#exercício-2",
-    "href": "curso/r/r_base/r_base.html#exercício-2",
-    "title": "Conceitos básicos da linguagem R",
-    "section": "Exercício",
-    "text": "Exercício\nConstrua a matriz abaixo no R.\n\\[\\begin{pmatrix}\n  1 & 4 & 7 \\\\\n  2 & 5 & 8 \\\\\n  3 & 6 & 9\n\\end{pmatrix}\\]"
-  },
-  {
-    "objectID": "curso/r/r_base/r_base.html#exercício-3",
-    "href": "curso/r/r_base/r_base.html#exercício-3",
-    "title": "Conceitos básicos da linguagem R",
-    "section": "Exercício",
-    "text": "Exercício\nFaça o produto vetorial abaixo (Dica: utilize o operador %*%).\n\\[\\begin{equation}\n\\begin{pmatrix}\n  1 & 4 & 7 \\\\\n  2 & 5 & 8 \\\\\n  3 & 6 & 9\n\\end{pmatrix}\n\\begin{pmatrix}\n  1 \\\\\n  0 \\\\\n  0\n\\end{pmatrix}\n= ?\n\\end{equation}\\]"
-  },
-  {
-    "objectID": "curso/r/r_base/r_base.html#exercício-4",
-    "href": "curso/r/r_base/r_base.html#exercício-4",
-    "title": "Conceitos básicos da linguagem R",
-    "section": "Exercício",
-    "text": "Exercício\nConstrua a mesma matriz anterior a partir de um array e com a utilização do atributo dim."
-  },
-  {
-    "objectID": "curso/r/r_base/r_base.html#atributos-de-vetores-aumentados-2",
-    "href": "curso/r/r_base/r_base.html#atributos-de-vetores-aumentados-2",
-    "title": "Conceitos básicos da linguagem R",
-    "section": "Atributos de vetores aumentados",
-    "text": "Atributos de vetores aumentados\n\nClasse: Usado para implementar atributos e métodos da programação orientada a objetos.\n\n\n  dados &lt;- data.frame(nome = c(\"Roberto\", \"Vanessa\", \"Carlos\"),\n                      idade = c(12, 17, 21)\n                      )\n#\n  class(dados)\n\n[1] \"data.frame\"\n\n\nÉ possível acessar os métodos de uma função a partir da classe com o comando methods.\n\nmethods(\"as.Date\")\n\n[1] as.Date.character as.Date.default   as.Date.factor    as.Date.numeric  \n[5] as.Date.POSIXct   as.Date.POSIXlt  \nsee '?methods' for accessing help and source code"
-  },
-  {
-    "objectID": "curso/r/r_base/r_base.html#exercício-5",
-    "href": "curso/r/r_base/r_base.html#exercício-5",
-    "title": "Conceitos básicos da linguagem R",
-    "section": "Exercício",
-    "text": "Exercício\nAcesse a documentação da função methods utilizando o comando ?methods."
-  },
-  {
-    "objectID": "curso/r/r_base/r_base.html#funções",
-    "href": "curso/r/r_base/r_base.html#funções",
+    "objectID": "curso/r/r_base/index.html#funções",
+    "href": "curso/r/r_base/index.html#funções",
     "title": "Conceitos básicos da linguagem R",
     "section": "Funções",
-    "text": "Funções\nUma função é definida pelo comando function\n\nfuncao &lt;- function(x) return(x)\nfuncao(4)\n\n[1] 4\n\n\nTambém é possível obter uma função com o comando \\(x, y, ...).\n\nfuncao &lt;- \\(x, y) x+y\nfuncao(4, 5)\n\n[1] 9\n\n\nA princípio o R possui um repertório imenso de funções para diversos tipos de tarefas\n\nexp(1)\n\n[1] 2.718282\n\nsqrt(2500)\n\n[1] 50"
+    "text": "Funções\nUma função é definida pelo comando function\n\nfuncao &lt;- function(x) return(x)\nfuncao(4)\n\n[1] 4\n\n\nTambém é possível obter uma função com o comando \\(x, y, ...).\n\nfuncao &lt;- \\(x, y) x+y\nfuncao(4, 5)\n\n[1] 9\n\n\nA princípio o R possui um repertório imenso de funções para diversos tipos de tarefas\n\nexp(1)\n\n[1] 2.718282\n\nsqrt(2500)\n\n[1] 50\n\n\n\n\n\n\n\n\nDicaExercício\n\n\n\nUse a função polyroot para obter as raízes do polinômio \\(f(x) = x²-3x+2\\) (Dica: Utilize a função Re para extrair somente a parte real da solução)."
   },
   {
-    "objectID": "curso/r/r_base/r_base.html#exercício-6",
-    "href": "curso/r/r_base/r_base.html#exercício-6",
-    "title": "Conceitos básicos da linguagem R",
-    "section": "Exercício",
-    "text": "Exercício\nUse a função polyroot para obter as raízes do polinômio \\(f(x) = x²-3x+2\\) (Dica: Utilize a função Re para extrair somente a parte real da solução)."
-  },
-  {
-    "objectID": "curso/r/r_base/r_base.html#vetorização",
-    "href": "curso/r/r_base/r_base.html#vetorização",
+    "objectID": "curso/r/r_base/index.html#vetorização",
+    "href": "curso/r/r_base/index.html#vetorização",
     "title": "Conceitos básicos da linguagem R",
     "section": "Vetorização",
-    "text": "Vetorização\nPermite aplicar funções a um vetor inteiro de uma só vez. Isso permite realizar o cálculo de maneira mais limpa e rápida, ou seja, mais eficiente.\n\n\n\n  vetor_real &lt;- -2:2\n  vetor_real\n\n[1] -2 -1  0  1  2\n\n  vetor_complexo &lt;- as.complex(vetor_real)\n  vetor_complexo\n\n[1] -2+0i -1+0i  0+0i  1+0i  2+0i\n\n  sqrt(vetor_complexo)\n\n[1] 0.000000+1.414214i 0.000000+1.000000i 0.000000+0.000000i 1.000000+0.000000i\n[5] 1.414214+0.000000i\n\n\n\n\n  vetor_fracoes &lt;- 1:4\n  vetor_fracoes\n\n[1] 1 2 3 4\n\n  vetor_angulo &lt;- pi*vetor_fracoes/2\n  vetor_angulo\n\n[1] 1.570796 3.141593 4.712389 6.283185\n\n  cos(vetor_angulo)**2+sin(vetor_angulo)**2\n\n[1] 1 1 1 1"
+    "text": "Vetorização\nPermite aplicar funções a um vetor inteiro de uma só vez. Isso permite realizar o cálculo de maneira mais limpa e rápida, ou seja, mais eficiente.\n\n  vetor_real &lt;- -2:2\n  vetor_real\n\n[1] -2 -1  0  1  2\n\n  vetor_complexo &lt;- as.complex(vetor_real)\n  vetor_complexo\n\n[1] -2+0i -1+0i  0+0i  1+0i  2+0i\n\n  sqrt(vetor_complexo)\n\n[1] 0.000000+1.414214i 0.000000+1.000000i 0.000000+0.000000i 1.000000+0.000000i\n[5] 1.414214+0.000000i\n\n\n\n  vetor_fracoes &lt;- 1:4\n  vetor_fracoes\n\n[1] 1 2 3 4\n\n  vetor_angulo &lt;- pi*vetor_fracoes/2\n  vetor_angulo\n\n[1] 1.570796 3.141593 4.712389 6.283185\n\n  cos(vetor_angulo)**2+sin(vetor_angulo)**2\n\n[1] 1 1 1 1\n\n\n\n\n\n\n\n\nDicaExercício\n\n\n\nA massa em gramas de cinco amostras foram coletadas e armazenadas em um vetor, amostra = (112, 127, 108, 99, 115). Considerando que a balança não está calibrada, superestimando o valor da massa em 2,5 gramas, gostaríamos de calcular o peso de cada amostra em Newtons. Construa uma função que realiza esta tarefa em uma única operação."
   },
   {
-    "objectID": "curso/r/r_base/r_base.html#exercícios",
-    "href": "curso/r/r_base/r_base.html#exercícios",
-    "title": "Conceitos básicos da linguagem R",
-    "section": "Exercícios",
-    "text": "Exercícios\nA massa em gramas de cinco amostras foram coletadas e armazenadas em um vetor, amostra = (112, 127, 108, 99, 115). Considerando que a balança não está calibrada, superestimando o valor da massa em 2,5 gramas, gostaríamos de calcular o peso de cada amostra em Newtons. Construa uma função que realiza esta tarefa em uma única operação."
-  },
-  {
-    "objectID": "curso/r/r_base/r_base.html#blocos-de-repetição",
-    "href": "curso/r/r_base/r_base.html#blocos-de-repetição",
+    "objectID": "curso/r/r_base/index.html#blocos-de-repetição",
+    "href": "curso/r/r_base/index.html#blocos-de-repetição",
     "title": "Conceitos básicos da linguagem R",
     "section": "Blocos de repetição",
     "text": "Blocos de repetição\nxx"
   },
   {
-    "objectID": "curso/r/r_base/r_base.html#blocos-de-condição",
-    "href": "curso/r/r_base/r_base.html#blocos-de-condição",
+    "objectID": "curso/r/r_base/index.html#blocos-de-condição",
+    "href": "curso/r/r_base/index.html#blocos-de-condição",
     "title": "Conceitos básicos da linguagem R",
     "section": "Blocos de condição",
     "text": "Blocos de condição\nxx"
   },
   {
-    "objectID": "curso/r/wrangling/wrangling.html#o-que-é-o-tidyverse",
-    "href": "curso/r/wrangling/wrangling.html#o-que-é-o-tidyverse",
+    "objectID": "curso/r/wrangling/index.html",
+    "href": "curso/r/wrangling/index.html",
     "title": "Manipulação de dados com o pacote tidyverse",
-    "section": "O que é o tidyverse?",
-    "text": "O que é o tidyverse?\nTidyverse é um ecossistema contendo diversos pacotes especializados na manipulação de dados estatísticos (Wickham et al., 2019).\n\n\n\n\n\nFonte: R for Data Science (“R for Data Science (2e)”, [S.d.])."
+    "section": "",
+    "text": "Tidyverse é um ecossistema contendo diversos pacotes especializados na manipulação de dados estatísticos (Wickham et al., 2019).\n\nknitr::include_graphics(path = \"img/workflow.png\")\n\n\n\n\nFonte: R for Data Science (“R for Data Science (2e)”, [S.d.]).\n\n\n\n\n\n\nCerca de 60% do trabalho em ciência de dados é gasto na limpeza, transformação e organização dos dados. O que inclui tarefas como…\n\n\n\nknitr::include_graphics(path = \"img/spend_time.jpg\")\n\n\n\n\nFonte: (Sarih et al., 2019)\n\n\n\n\n\n\nVerificação de outliers;\nDados faltantes;\nDados duplicados;\nValores invariantes;\nCorreta atribuição do tipo de dados;\nDados não utilizados.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfibonacci &lt;- function(dataframe, x) {\n  vetor &lt;- dataframe[, x]\n  soma &lt;- rep(0, length(vetor))\n  for (j in 1:length(vetor)) {\n    a &lt;- 0\n    b &lt;- 1\n    num &lt;- a+b\n    soma[j] &lt;- 0\n    for (i in 1:vetor[j]) {\n      num &lt;- a+b\n      a &lt;- b\n      b &lt;- num\n      soma[j] &lt;- soma[j]+a\n    }\n  }\n  return(soma)\n}\n\n\n\n\n\n\n# dataframe\ndados &lt;- data.frame(a = seq(1, 5))\nstr(dados)\n\n'data.frame':   5 obs. of  1 variable:\n $ a: int  1 2 3 4 5\n\n# aplicando a função fibonacci\nfibonacci(dados, \"a\")\n\n[1]  1  2  4  7 12\n\n# aplicando a função com o operador pipe\ndados |&gt; \n  fibonacci(\"a\")\n\n[1]  1  2  4  7 12"
   },
   {
-    "objectID": "curso/r/wrangling/wrangling.html#a-importância-na-preparação-dos-dados",
-    "href": "curso/r/wrangling/wrangling.html#a-importância-na-preparação-dos-dados",
+    "objectID": "curso/r/wrangling/index.html#a-importância-na-preparação-dos-dados",
+    "href": "curso/r/wrangling/index.html#a-importância-na-preparação-dos-dados",
     "title": "Manipulação de dados com o pacote tidyverse",
-    "section": "A importância na preparação dos dados",
-    "text": "A importância na preparação dos dados\nCerca de 60% do trabalho em ciência de dados é gasto na limpeza, transformação e organização dos dados. O que inclui tarefas como…\n\n\n\n\n\n\n\nFonte: (Sarih et al., 2019)\n\n\n\n\n\n\nVerificação de outliers;\nDados faltantes;\nDados duplicados;\nValores invariantes;\nCorreta atribuição do tipo de dados;\nDados não utilizados."
+    "section": "",
+    "text": "Cerca de 60% do trabalho em ciência de dados é gasto na limpeza, transformação e organização dos dados. O que inclui tarefas como…\n\n\n\nknitr::include_graphics(path = \"img/spend_time.jpg\")\n\n\n\n\nFonte: (Sarih et al., 2019)\n\n\n\n\n\n\nVerificação de outliers;\nDados faltantes;\nDados duplicados;\nValores invariantes;\nCorreta atribuição do tipo de dados;\nDados não utilizados."
   },
   {
-    "objectID": "curso/r/wrangling/wrangling.html#tipos-de-variáveis-em-estatística",
-    "href": "curso/r/wrangling/wrangling.html#tipos-de-variáveis-em-estatística",
+    "objectID": "curso/r/wrangling/index.html#operador-pipe-ou",
+    "href": "curso/r/wrangling/index.html#operador-pipe-ou",
     "title": "Manipulação de dados com o pacote tidyverse",
-    "section": "Tipos de variáveis em estatística",
-    "text": "Tipos de variáveis em estatística"
-  },
-  {
-    "objectID": "curso/r/wrangling/wrangling.html#dataframes-e-tibbles",
-    "href": "curso/r/wrangling/wrangling.html#dataframes-e-tibbles",
-    "title": "Manipulação de dados com o pacote tidyverse",
-    "section": "Dataframes e tibbles",
-    "text": "Dataframes e tibbles"
-  },
-  {
-    "objectID": "curso/r/wrangling/wrangling.html#importação-de-dados-readr",
-    "href": "curso/r/wrangling/wrangling.html#importação-de-dados-readr",
-    "title": "Manipulação de dados com o pacote tidyverse",
-    "section": "Importação de dados (readr)",
-    "text": "Importação de dados (readr)"
-  },
-  {
-    "objectID": "curso/r/wrangling/wrangling.html#transformação-de-dados-dplyr",
-    "href": "curso/r/wrangling/wrangling.html#transformação-de-dados-dplyr",
-    "title": "Manipulação de dados com o pacote tidyverse",
-    "section": "Transformação de dados (dplyr)",
-    "text": "Transformação de dados (dplyr)"
-  },
-  {
-    "objectID": "curso/r/wrangling/wrangling.html#organização-de-dados-tidyr",
-    "href": "curso/r/wrangling/wrangling.html#organização-de-dados-tidyr",
-    "title": "Manipulação de dados com o pacote tidyverse",
-    "section": "Organização de dados (tidyr)",
-    "text": "Organização de dados (tidyr)"
-  },
-  {
-    "objectID": "curso/r/wrangling/wrangling.html#operador-pipe-ou",
-    "href": "curso/r/wrangling/wrangling.html#operador-pipe-ou",
-    "title": "Manipulação de dados com o pacote tidyverse",
-    "section": "Operador pipe (|> ou %>%)",
-    "text": "Operador pipe (|&gt; ou %&gt;%)\n\n\n\nDefinindo função Fibonacci\n\nfibonacci &lt;- function(dataframe, x) {\n  vetor &lt;- dataframe[, x]\n  soma &lt;- rep(0, length(vetor))\n  for (j in 1:length(vetor)) {\n    a &lt;- 0\n    b &lt;- 1\n    num &lt;- a+b\n    soma[j] &lt;- 0\n    for (i in 1:vetor[j]) {\n      num &lt;- a+b\n      a &lt;- b\n      b &lt;- num\n      soma[j] &lt;- soma[j]+a\n    }\n  }\n  return(soma)\n}\n\n\n\n\nAplicando operador pipe\n\n# dataframe\ndados &lt;- data.frame(a = seq(1, 5))\nstr(dados)\n\n'data.frame':   5 obs. of  1 variable:\n $ a: int  1 2 3 4 5\n\n# aplicando a função fibonacci\nfibonacci(dados, \"a\")\n\n[1]  1  2  4  7 12\n\n# aplicando a função com o operador pipe\ndados |&gt; \n  fibonacci(\"a\")\n\n[1]  1  2  4  7 12"
+    "section": "",
+    "text": "fibonacci &lt;- function(dataframe, x) {\n  vetor &lt;- dataframe[, x]\n  soma &lt;- rep(0, length(vetor))\n  for (j in 1:length(vetor)) {\n    a &lt;- 0\n    b &lt;- 1\n    num &lt;- a+b\n    soma[j] &lt;- 0\n    for (i in 1:vetor[j]) {\n      num &lt;- a+b\n      a &lt;- b\n      b &lt;- num\n      soma[j] &lt;- soma[j]+a\n    }\n  }\n  return(soma)\n}\n\n\n\n\n\n\n# dataframe\ndados &lt;- data.frame(a = seq(1, 5))\nstr(dados)\n\n'data.frame':   5 obs. of  1 variable:\n $ a: int  1 2 3 4 5\n\n# aplicando a função fibonacci\nfibonacci(dados, \"a\")\n\n[1]  1  2  4  7 12\n\n# aplicando a função com o operador pipe\ndados |&gt; \n  fibonacci(\"a\")\n\n[1]  1  2  4  7 12"
   },
   {
     "objectID": "blog.html",
@@ -270,88 +158,95 @@
     "href": "curso/r/curso_r.html",
     "title": "R",
     "section": "",
-    "text": "Conteúdo sobre R.\n\n\n\n\n\n\n\n\n\n\n\n\nConceitos básicos da linguagem R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nManipulação de dados com o pacote tidyverse\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualização de dados com ggplot2\n\n\n\n\n\n\n\n\n\n\n\n\n\nSem itens correspondentes"
+    "text": "Conteúdo sobre R.\n\n\n\n\n\n\n\n\n\n\n\n\nConceitos básicos da linguagem R\n\n\n\nr\n\n\n\n\n\n\n\nFlaviano Williams Fernandes\n\n\n04/08/2026\n\n\n\n\n\n\n\n\n\n\n\nManipulação de dados com o pacote tidyverse\n\n\n\nr\n\n\n\n\n\n\n\n\n\n\n04/08/2026\n\n\n\n\n\n\n\n\n\n\n\nVisualização de dados com ggplot2\n\n\n\nr\n\n\n\n\n\n\n\n\n\n\n04/08/2026\n\n\n\n\n\n\nSem itens correspondentes"
   },
   {
-    "objectID": "curso/r/ggplot2/ggplot2.html#estrutura-lógica-do-ggplot2",
-    "href": "curso/r/ggplot2/ggplot2.html#estrutura-lógica-do-ggplot2",
+    "objectID": "curso/r/ggplot2/index.html",
+    "href": "curso/r/ggplot2/index.html",
     "title": "Visualização de dados com ggplot2",
-    "section": "Estrutura lógica do ggplot2",
-    "text": "Estrutura lógica do ggplot2\n\n\nInspirado na obra “The grammar of graphics” de Leland Wilkinson (Wilkinson et al., 2005), Hadley Wickham publicou o seu artigo “A layered Grammar of Graphics” (Wickham, 2010; Wickham, 2009), onde menciona a lógica de construção de gráficos por camadas (“Stat 20 - A Grammar of Graphics”, [S.d.]; “Workshop 3”, [S.d.]). A figura ao lado mostra os principais componentes que podem formar cada camada.\n\n\n\n\n\n\nFonte: The Grammar of Graphics."
+    "section": "",
+    "text": "Inspirado na obra “The grammar of graphics” de Leland Wilkinson (Wilkinson et al., 2005), Hadley Wickham publicou o seu artigo “A layered Grammar of Graphics” (Wickham, 2010; Wickham, 2009), onde menciona a lógica de construção de gráficos por camadas (“Stat 20 - A Grammar of Graphics”, [S.d.]; “Workshop 3”, [S.d.]). A figura ao lado mostra os principais componentes que podem formar cada camada.\n\n\n\n\n\n\nFonte: The Grammar of Graphics."
   },
   {
-    "objectID": "curso/r/ggplot2/ggplot2.html#dados",
-    "href": "curso/r/ggplot2/ggplot2.html#dados",
+    "objectID": "curso/r/ggplot2/index.html#estrutura-lógica-do-ggplot2",
+    "href": "curso/r/ggplot2/index.html#estrutura-lógica-do-ggplot2",
+    "title": "Visualização de dados com ggplot2",
+    "section": "",
+    "text": "Inspirado na obra “The grammar of graphics” de Leland Wilkinson (Wilkinson et al., 2005), Hadley Wickham publicou o seu artigo “A layered Grammar of Graphics” (Wickham, 2010; Wickham, 2009), onde menciona a lógica de construção de gráficos por camadas (“Stat 20 - A Grammar of Graphics”, [S.d.]; “Workshop 3”, [S.d.]). A figura ao lado mostra os principais componentes que podem formar cada camada.\n\n\n\n\n\n\nFonte: The Grammar of Graphics."
+  },
+  {
+    "objectID": "curso/r/ggplot2/index.html#dados",
+    "href": "curso/r/ggplot2/index.html#dados",
     "title": "Visualização de dados com ggplot2",
     "section": "Dados",
     "text": "Dados\n\n\nPor questões óbvias, o primeiro passo para a construção de um gráfico seria os dados. ggplot reconhece estruturas de dados do tipo dataframes. Contudo, é recomendável que os dados sejam preparados utilizando técnicas de pré-processamento como limpeza, manipulação, transformação e organização da base de dados. Pacotes do ambiente tidyverse podem auxiliar nessa tarefa.\n\n\n\nRows: 58 Columns: 20\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (9): name, turma, registration, situacao, conceito_ip, conceito_prova, ...\ndbl (11): presenca, qde, questoes, aulas, frequencia_questoes, frequencia_au...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n\n\nMatrícula\nTurma\nPresença\nExercícios\nProva\nConceito\n\n\n\n\n20251IRA10030003\nLQ2N\n6\nC\nD\nD\n\n\n20241IRA10030007\nLQ2N\n6\nD\nD\nD\n\n\n20251IRA10030001\nLQ2N\n8\nC\nD\nC\n\n\n20241IRA10030006\nLQ3N\n4\nD\nC\nC\n\n\n20230021232\nLQ3N\n5\nC\nD\nD\n\n\n20241IRA10030003\nLQ3N\n6\nC\nB\nC\n\n\n20241IRA10030013\nLQ3N\n5\nD\nD\nD\n\n\n20230021152\nLQ4N\n5\nB\nC\nC\n\n\n20230021368\nLQ4N\n5\nB\nC\nC\n\n\n20230021170\nLQ4N\n5\nB\nD\nD"
   },
   {
-    "objectID": "curso/r/ggplot2/ggplot2.html#grafico---dados",
-    "href": "curso/r/ggplot2/ggplot2.html#grafico---dados",
+    "objectID": "curso/r/ggplot2/index.html#grafico---dados",
+    "href": "curso/r/ggplot2/index.html#grafico---dados",
     "title": "Visualização de dados com ggplot2",
     "section": "grafico <- Dados",
     "text": "grafico &lt;- Dados\n\n\n\nggplot(data = dados)"
   },
   {
-    "objectID": "curso/r/ggplot2/ggplot2.html#atributos-estéticos",
-    "href": "curso/r/ggplot2/ggplot2.html#atributos-estéticos",
+    "objectID": "curso/r/ggplot2/index.html#atributos-estéticos",
+    "href": "curso/r/ggplot2/index.html#atributos-estéticos",
     "title": "Visualização de dados com ggplot2",
     "section": "Atributos estéticos",
     "text": "Atributos estéticos\nA camada referente aos atributos estéticos é responsável por transformar valores numéricos em valores visuais. Nessa camada também faz parte as funções escala que possui a tarefa de fazer personalizações nesses valores visuais. O inverso das funções escala são as funções guia que convertem valores visuais em numéricos."
   },
   {
-    "objectID": "curso/r/ggplot2/ggplot2.html#grafico---dados-atributos-estéticos",
-    "href": "curso/r/ggplot2/ggplot2.html#grafico---dados-atributos-estéticos",
+    "objectID": "curso/r/ggplot2/index.html#grafico---dados-atributos-estéticos",
+    "href": "curso/r/ggplot2/index.html#grafico---dados-atributos-estéticos",
     "title": "Visualização de dados com ggplot2",
     "section": "grafico <- (Dados + atributos estéticos)",
     "text": "grafico &lt;- (Dados + atributos estéticos)\n\n\n\nggplot(data = dados, \n       aes(x = conceito)\n       )"
   },
   {
-    "objectID": "curso/r/ggplot2/ggplot2.html#escala",
-    "href": "curso/r/ggplot2/ggplot2.html#escala",
+    "objectID": "curso/r/ggplot2/index.html#escala",
+    "href": "curso/r/ggplot2/index.html#escala",
     "title": "Visualização de dados com ggplot2",
     "section": "Escala",
     "text": "Escala"
   },
   {
-    "objectID": "curso/r/ggplot2/ggplot2.html#elementos-geométricos",
-    "href": "curso/r/ggplot2/ggplot2.html#elementos-geométricos",
+    "objectID": "curso/r/ggplot2/index.html#elementos-geométricos",
+    "href": "curso/r/ggplot2/index.html#elementos-geométricos",
     "title": "Visualização de dados com ggplot2",
     "section": "Elementos geométricos",
     "text": "Elementos geométricos"
   },
   {
-    "objectID": "curso/r/ggplot2/ggplot2.html#grafico-elementos-geométricos-estatística",
-    "href": "curso/r/ggplot2/ggplot2.html#grafico-elementos-geométricos-estatística",
+    "objectID": "curso/r/ggplot2/index.html#grafico-elementos-geométricos-estatística",
+    "href": "curso/r/ggplot2/index.html#grafico-elementos-geométricos-estatística",
     "title": "Visualização de dados com ggplot2",
     "section": "grafico + (Elementos geométricos + estatística)",
     "text": "grafico + (Elementos geométricos + estatística)\n\n\n\nggplot(data = dados, \n       aes(x = conceito)\n       )+\n  geom_bar(stat = \"count\")"
   },
   {
-    "objectID": "curso/r/ggplot2/ggplot2.html#coordenadas",
-    "href": "curso/r/ggplot2/ggplot2.html#coordenadas",
+    "objectID": "curso/r/ggplot2/index.html#coordenadas",
+    "href": "curso/r/ggplot2/index.html#coordenadas",
     "title": "Visualização de dados com ggplot2",
     "section": "Coordenadas",
     "text": "Coordenadas"
   },
   {
-    "objectID": "curso/r/ggplot2/ggplot2.html#grafico-coordenadas",
-    "href": "curso/r/ggplot2/ggplot2.html#grafico-coordenadas",
+    "objectID": "curso/r/ggplot2/index.html#grafico-coordenadas",
+    "href": "curso/r/ggplot2/index.html#grafico-coordenadas",
     "title": "Visualização de dados com ggplot2",
     "section": "grafico + coordenadas",
     "text": "grafico + coordenadas\n\n\n\nggplot(data = dados, \n       aes(x = conceito)\n       )+\n  geom_bar(stat = \"count\")+\n  coord_flip()"
   },
   {
-    "objectID": "curso/r/ggplot2/ggplot2.html#facetas",
-    "href": "curso/r/ggplot2/ggplot2.html#facetas",
+    "objectID": "curso/r/ggplot2/index.html#facetas",
+    "href": "curso/r/ggplot2/index.html#facetas",
     "title": "Visualização de dados com ggplot2",
     "section": "Facetas",
     "text": "Facetas"
   },
   {
-    "objectID": "curso/r/ggplot2/ggplot2.html#grafico-facetas",
-    "href": "curso/r/ggplot2/ggplot2.html#grafico-facetas",
+    "objectID": "curso/r/ggplot2/index.html#grafico-facetas",
+    "href": "curso/r/ggplot2/index.html#grafico-facetas",
     "title": "Visualização de dados com ggplot2",
     "section": "grafico + facetas",
     "text": "grafico + facetas\n\n\n\nggplot(data = dados, \n       aes(x = conceito)\n       )+\n  geom_bar(stat = \"count\")+\n  coord_flip()+\n  facet_wrap(~ turma)"
@@ -432,5 +327,12 @@
     "title": "Amostragem",
     "section": "Amostragem por conveniência",
     "text": "Amostragem por conveniência\nA amostra é composta por elementos de fácil acesso.\n\nVantagens\n\nRedução de custo e tempo\n\n\n\nDesvantagem\n\nA amostra pode não ser representativa.\n\n\n\n\n\n\n\nDicaQual amostragem escolher?\n\n\n\nPor questões de representatividade, deve-se priorizar métodos de amostragem probabilísticas, especialmente os métodos AAS e extratificado. Caso não seja possível, métodos de amostragem não-probabilísticas podem ser usadas como alternativa."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Aprenda estatística, programação e ciência de dados",
+    "section": "",
+    "text": "contadores de visitas"
   }
 ]

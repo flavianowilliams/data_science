@@ -4,9 +4,9 @@
       "posts"
     ],
     "curso/r/curso_r.qmd": [
-      "r_base/r_base.qmd",
-      "wrangling/wrangling.qmd",
-      "ggplot2/ggplot2.qmd"
+      "r_base/index.qmd",
+      "wrangling/index.qmd",
+      "ggplot2/index.qmd"
     ],
     "curso/estatistica/curso_estatistica.qmd": [
       "planejamento_pesquisa/index.qmd",

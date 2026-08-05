@@ -1,24 +1,14 @@
 ---
 title: "Conceitos básicos da linguagem R"
+author: "Flaviano Williams Fernandes"
+date: "2026-08-04"
+date-modified: today
+categories: [r]
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(
-  echo = FALSE,
-  fig.align = "center",
-  fig.topcaption = TRUE,
-  out.width = "100%"
-  )
-```
+# Sobre o R
 
-## Sobre o R
-
-> "R é uma linguagem de programação dinâmica em um desenvolvimento em tempo real. Especialmente voltada para trabalhos em análises estatísticas, como a manipulação, análise e visualização de dados."
->
-> "Seu nome surge das iniciais dos seus criadores (<span style="color:red;">R</span>oss Ihaka e <span style="color:red;">R</span>obert Gentleman)."
->
-><p style = "text-align:right;">[@cranweb]</p>
-
+R é uma linguagem de programação dinâmica em um desenvolvimento em tempo real. Especialmente voltada para trabalhos em análises estatísticas, como a manipulação, análise e visualização de dados. Seu nome surge das iniciais dos seus criadores (<alerta>R</alerta>oss Ihaka e <alerta>R</alerta>obert Gentleman [@cranweb]).
 
 ## Aspectos gerais
 
@@ -34,21 +24,9 @@ knitr::opts_chunk$set(
 
 * Possui um grande repertório de pacotes e funções, onde muitos são focados em análises estatísticas.
 
-## RStudio: A principal IDE do R
+# RStudio: A principal IDE do R
 
-:::: {.columns}
-
-::: {.column}
-
-```{r}
-#| fig-cap: "Fonte: [@curso-rweb]"
-#| out-width: 85%
-  knitr::include_graphics("https://curso-r.github.io/livro-material/assets/img/rstudio/rstudio-editor.png")
-```
-
-:::
-
-::: {.column}
+![Fonte: [@curso-rweb]](https://curso-r.github.io/livro-material/assets/img/rstudio/rstudio-editor.png){width=80%}
 
 * **Editor**: Onde o código é escrito;
 
@@ -58,24 +36,23 @@ knitr::opts_chunk$set(
 
 * **Output**: Painel contendo navegador de arquivos, lista pacotes instalados, ajuda e visualização de relatórios, apresentações e dashboards.
 
-:::
-
-::::
-
 ## RStudio online
 
 * A versão Open Source do RStudio pode ser baixado e instalado gratuitamente nas plataformas windows ou linux, ambas disponíveis na página da Posit [@positweb]. 
 
 * A versão online está disponível na página da Posit Cloud [@positcloudweb].
 
-> <p style="color:red;">Atenção!</p>
-> O "R base" deverá estar previamente instalado no computador.
+::: {.callout-important}
+
+O "R base" deverá estar previamente instalado no computador.
+
+:::
 
 ## Objetos e funções no R
 
-* Objeto é tudo que pode ser criado e armazenado na memória (vetor, lista, função, gráfico, modelo estatístico, etc).
+* Objeto é tudo que pode ser criado e armazenado na memória (vetor, lista, função, gráfico, modelo estatístico, etc);
 
-* Um objeto pode ser criado utilizando o operador de atribuição `<-`,
+* Um objeto pode ser criado utilizando o operador de atribuição `<-`.
 
 ```r
 objeto <- função
@@ -83,46 +60,34 @@ objeto <- função
 
 Exemplo:
 
-```{r, echo=TRUE}
+```{r}
 valor <- function(x) {return(x)}
 print(valor)
 ```
 
 ## Estrutura de dados principais no R
 
-:::: {.columns}
-
-::: {.column}
-
 * Vetores atômicos: Formado por elementos do mesmo tipo.
 
-```{r, echo=TRUE}
+```{r}
   vetor_letras <- c("a", "b", "c", "d")
   vetor_letras
   vetor_numeros <- c(1, 2, 3, 4)
   vetor_numeros
 ```
 
-:::
-
-::: {.column}
-
 * Vetores recursivos (listas): Podem ser formados por elementos de tipos distintos.
 
-```{r, echo=TRUE}
+```{r}
   lista <- list("a", 1, TRUE, NA)
   lista
 ```
-
-:::
-
-::::
 
 ## Lista nomeada
 
 Os elementos de uma lista podem ser nomeados
 
-```{r, echo=TRUE}
+```{r}
   lista_nomeada <- list(caracter = "a", numero = 2, logico = TRUE, dado_faltante = NA)
   lista_nomeada
 ```
@@ -131,7 +96,7 @@ Os elementos de uma lista podem ser nomeados
 
 Para acessar um item da lista, basta usar o operador `$`.
 
-```{r, echo=TRUE}
+```{r}
   lista_nomeada$caracter
   is.na(lista_nomeada$dado_faltante)
   as.character(lista_nomeada$numero)
@@ -139,7 +104,7 @@ Para acessar um item da lista, basta usar o operador `$`.
   lista_nomeada$logico
 ```
 
-## Exercício
+:::{.callout-tip title="Exercício"}
 
 Construa uma lista com os seguintes dados de uma pessoa:
 
@@ -153,7 +118,9 @@ Construa uma lista com os seguintes dados de uma pessoa:
 
 Em seguida, atualize esta lista mudando o endereço desta pessoa para Rua Trajano Grácia, 240 - Centro, Irati-PR.
 
-## Exercício
+:::
+
+:::{.callout-tip title="Exercício"}
 
 Construa uma lista com os seguintes elementos:
 
@@ -165,11 +132,13 @@ Construa uma lista com os seguintes elementos:
 
 Em seguida, acesse o score da Letícia à partir desta lista.
 
+:::
+
 ## Vetores e listas aumentadas
 
 Vetores e listas aumentadas são vetores ou listas que possuem atributos. Os atributos podem ser acessados a partir do comando `attributes`.
 
-```{r, echo=TRUE}
+```{r}
 data <- as.Date("2026/06/09")
 attributes(data)
 vetor_atomico <- c(1, 2, 3, 4)
@@ -180,7 +149,7 @@ attributes(vetor_atomico)
 
 * Nome: Usados para nomear os elementos de uma lista ou um vetor.
 
-```{r, echo=TRUE}
+```{r}
 scores <- c(88, 92, 79)
 attr(scores, "names") <- c("Alice", "Bob", "Charlie")
 names(scores)
@@ -188,13 +157,7 @@ scores
 attributes(scores)
 ```
 
-## Atributos de vetores aumentados
-
 * Dimensão: Define a dimensão de matrizes e arrays que são construídos a partir de um vetor.
-
-:::: {.columns}
-
-::: {.column}
 
 ```{r, echo=TRUE}
 vec <- c(1, 2, 3, 4)
@@ -203,17 +166,9 @@ matriz
 dim(matriz)
 ```
 
-:::
-
-::: {.column}
-
 No comando ao lado, construimos uma matriz com o comando matrix a partir do vetor vec, em seguida acessamos o seu atributo dim, que no caso indica a ordem da matriz de 2 linhas e 2 colunas.
 
-:::
-
-::::
-
-## Exercício
+:::{.callout-tip title="Exercício"}
 
 Construa a matriz abaixo no R.
 
@@ -223,7 +178,9 @@ Construa a matriz abaixo no R.
   3 & 6 & 9
 \end{pmatrix}
 
-## Exercício
+:::
+
+:::{.callout-tip title="Exercício"}
 
 Faça o produto vetorial abaixo (Dica: utilize o operador `%*%`).
 
@@ -241,15 +198,19 @@ Faça o produto vetorial abaixo (Dica: utilize o operador `%*%`).
 = ?
 \end{equation}
 
-## Exercício
+:::
+
+:::{.callout-tip title="Exercício"}
 
 Construa a mesma matriz anterior a partir de um array e com a utilização do atributo *dim*.
+
+:::
 
 ## Atributos de vetores aumentados
 
 * Classe: Usado para implementar atributos e métodos da programação orientada a objetos.
 
-```{r, echo=TRUE}
+```{r}
   dados <- data.frame(nome = c("Roberto", "Vanessa", "Carlos"),
                       idade = c(12, 17, 21)
                       )
@@ -259,48 +220,48 @@ Construa a mesma matriz anterior a partir de um array e com a utilização do at
 
 É possível acessar os métodos de uma função a partir da classe com o comando `methods`.
 
-```{r, echo=TRUE}
+```{r}
 methods("as.Date")
 ```
 
-## Exercício
+:::{.callout-tip title="Exercício"}
 
 Acesse a documentação da função methods utilizando o comando `?methods`.
+
+:::
 
 ## Funções
 
 Uma função é definida pelo comando `function`
 
-```{r, echo=TRUE}
+```{r}
 funcao <- function(x) return(x)
 funcao(4)
 ```
 
 Também é possível obter uma função com o comando `\(x, y, ...)`.
 
-```{r, echo=TRUE}
+```{r}
 funcao <- \(x, y) x+y
 funcao(4, 5)
 ```
 
 A princípio o R possui um repertório imenso de funções para diversos tipos de tarefas
 
-```{r, echo=TRUE}
+```{r}
 exp(1)
 sqrt(2500)
 ```
 
-## Exercício
+:::{.callout-tip title="Exercício"}
 
 Use a função `polyroot` para obter as raízes do polinômio $f(x) = x²-3x+2$ (Dica: Utilize a função `Re` para extrair somente a parte real da solução).
+
+:::
 
 ## Vetorização
 
 Permite aplicar funções a um vetor inteiro de uma só vez. Isso permite realizar o cálculo de maneira mais limpa e rápida, ou seja, mais eficiente.
-
-:::: {.columns}
-
-::: {.column}
 
 ```{r, echo=TRUE}
   vetor_real <- -2:2
@@ -310,10 +271,6 @@ Permite aplicar funções a um vetor inteiro de uma só vez. Isso permite realiz
   sqrt(vetor_complexo)
 ```
 
-:::
-
-::: {.column}
-
 ```{r, echo=TRUE}
   vetor_fracoes <- 1:4
   vetor_fracoes
@@ -322,13 +279,11 @@ Permite aplicar funções a um vetor inteiro de uma só vez. Isso permite realiz
   cos(vetor_angulo)**2+sin(vetor_angulo)**2
 ```
 
-:::
-
-::::
-
-## Exercícios
+:::{.callout-tip title="Exercício"}
 
 A massa em gramas de cinco amostras foram coletadas e armazenadas em um vetor, amostra =  (112, 127, 108, 99, 115). Considerando que a balança não está calibrada, superestimando o valor da massa em 2,5 gramas, gostaríamos de calcular o peso de cada amostra em Newtons. Construa uma função que realiza esta tarefa em uma única operação.
+
+:::
 
 ## Blocos de repetição
 
@@ -338,4 +293,4 @@ xx
 
 xx
 
-## Bibliografia
+# Bibliografia
