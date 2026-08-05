@@ -24,7 +24,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 1em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -43,7 +63,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-b90f2dba50676705d3f41ad6e71a561e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-ce5f298f5152e93cdfb1672e89fb8683.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -161,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Data de Modificação</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">04/08/2026</p>
+        <p class="date-modified">05/08/2026</p>
       </div>
     </div>
       
@@ -299,7 +319,7 @@ Nota
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Um bom exemplo de como o viés afeta a nossa pesquisa, podemos citar como exemplo a pesquisa eleitoral da literary digest. A revista previu uma vitória esmagadora do candidato republicado “Al Landon” contra o democrata “Franklin Roosevelt”. Convencida de que para obter uma boa previsão seria necessário coletar o maior número possível de informações. Para isso ela aplicou uma pesquisa como toda a sua base de assinantes, além de listas adicionais como listas telefônicas assinantes de outras revistas e participantes de clubes privados. Por outro lado, o estatístico George Gallup afirmou que a vitória seria do partido democrata. Gallup chegou a essa conclusão realizando uma pesquisa bem menor e aplicando métodos de amostragem por cotas. Após o resultado das eleições, Roosevelt venceu com uma margem de votos próxima do resultado previsto por Gallup. Podemos dizer que o erro cometido pela literay digest se resume principalmente no processo de amostragem, enviesado pelo nível social dos eleitores que não representavam toda a comunidade dos EUA.</p>
+<p>Um bom exemplo de como o viés afeta a nossa pesquisa, podemos citar como exemplo a pesquisa eleitoral da literary digest. A revista previu uma vitória esmagadora do candidato republicado “Al Landon” contra o democrata “Franklin Roosevelt”. Convencida de que para obter uma boa previsão seria necessário coletar o maior número possível de informações. Para isso ela aplicou uma pesquisa como toda a sua base de assinantes, além de listas adicionais como listas telefônicas assinantes de outras revistas e participantes de clubes privados. Por outro lado, o estatístico George Gallup afirmou que a vitória seria do partido democrata. Gallup chegou a essa conclusão realizando uma pesquisa bem menor e aplicando métodos de amostragem por cotas. Após o resultado das eleições, Roosevelt venceu com uma margem de votos próxima do resultado previsto por Gallup. Podemos dizer que o erro cometido pela literay digest se resume principalmente no processo de amostragem, enviesado pelo nível social dos eleitores que não representavam toda a comunidade dos EUA <span class="citation" data-cites="Bruce2019">(<a href="#ref-Bruce2019" role="doc-biblioref">Bruce; Bruce, 2019</a>)</span>.</p>
 </div>
 </div>
 <section id="tipos-de-viés" class="level2">
@@ -559,11 +579,16 @@ Figura&nbsp;8: Amostragem por bola de neve.
 </div>
 
 
+
 </section>
 </section>
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referências</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="1" role="list">
+<div id="ref-Bruce2019" class="csl-entry" role="listitem">
+BRUCE, Andrew.; BRUCE, Peter. <strong>ESTATÍSTICA PRÁTICA PARA CIENTISTAS DE DADOS</strong>. Rio de Janeiro: Alta Books, 2019.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

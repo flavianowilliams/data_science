@@ -291,6 +291,4 @@ xx
 
 ## Blocos de condição
 
-xx
-
-# Bibliografia
+x
