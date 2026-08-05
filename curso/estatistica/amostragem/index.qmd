@@ -61,19 +61,21 @@ Na prática, a maneira eficiente de reduzir os vieses e aumentar a representativ
 
 # Delineamento experimental
 
-Conjunto de regras que determina como o experimento deverá acontecer, como o processo de amostragem deverá acontecer. Este processo se baseia em três tipos distintos.
+Conjunto de regras que determina como o experimento deverá acontecer, como o processo de amostragem deverá acontecer. Este processo se baseia em três tipos distintos: levantamento observacional, planejamento experimental e levantamento amostral.
 
-* Levantamento amostral
+## Levantamento observacional
 
-A amostra é obtida de uma população conhecida utilizando protocolos bem definidos
+O objetivo principal é analisar a relação entre variáveis, e geralmente é feito sem a intervenção do pesquisador. Geralmente possui custo menor que o anterior, tem baixa reprodutibilidade e alta representatividade. Comumente é utilizado no estudo de séries temporais. A @fig-serie_temporal mostra a evolução do número de passageiros em vôos internacionais de 1949 à 1961. Percebe-se um crescimento exponencial ao longo dos anos seguido de uma sazonalidade anual [@Box1994].
 
-* Planejamento experimental
-
-Processo de amostragem cujo objetivo principal é analisar o efeito de uma variável (variável independente) sobre outra (variável dependente). O experimento é geralmente realizado em laboratório e ambientes controlados. Pode apresentar custo elevado, tem alta reprodutibilidade e baixa representatividade.
-
-* Levantamento observacional: O objetivo principal é analisar a relação entre variáveis, e geralmente é feito sem a intervenção do pesquisador. Geralmente possui custo menor que o anterior, tem baixa reprodutibilidade e alta representatividade.
+```{r, echo=FALSE}
+#| label: fig-serie_temporal
+#| fig-cap: "Série temporal relatando o aumento do número de passageiros em vôos internacionais."
+forecast::autoplot(AirPassengers)+ggplot2::labs(x = "Ano", y = "Número de passageiros")+ggplot2::theme_bw()+ggplot2::theme(panel.grid = ggplot2::element_blank())
+```
 
 ## Levantamento amostral
+
+A amostra é obtida de uma população conhecida utilizando protocolos bem definidos.
 
 Os principais processos de amostragem se resumem especificamente em processos aleatórios ou probabilísticos e não aleatórios ou não probabilísticos. O conceito de amostragem probabilística se deve ao fato de que todos os indivíduos da população possuem a mesma probabilidade de serem escolhidos em cada amostragem. Neste caso, existe uma certa aleatoriedade na escolha dos indivíduos que irão compor a amostra. A @fig-amostragem apresenta os principais processos de amostragem aleatória e não aleatória.
 
@@ -85,15 +87,15 @@ O processo de amostragem pode ser feita com ou sem reposição dos indivíduos c
 
 ![Principais processos de amostragem.](amostragem.jpg){#fig-amostragem width=80%}
 
-## Amostragem aleatória simples
+### Amostragem aleatória simples
 
 Neste tipo de amostragem os elementos são escolhidos ao acaso. Na @fig-amostragem_aas temos uma população formada por 34 elementos. Foram escolhidos ao acaso cinco para compor a amostra.
 
-### Vantagens
+#### Vantagens
 
 O processo garante total aleatoriedade na amostragem e a máxima redução de vieses.
 
-### Desvantagens
+#### Desvantagens
 
 Ocorre o risco da não representatividade de parte da população, principalmente para amostras pequenas.
 
@@ -107,65 +109,65 @@ Ocorre o risco da não representatividade de parte da população, principalment
 
 ![Amostragem aleatória simples.](amostragem_aas.jpg){#fig-amostragem_aas width=80%}
 
-## Amostragem aleatória extratificada
+### Amostragem aleatória extratificada
 
 Neste tipo de amostragem, antes da coleta os elementos são agrupados de acordo com as suas características e a amostra é formada por integrantes de cada grupo de acordo com a sua quantidade. Na @fig-amostragem_extratificada temos a população formada por 30 elementos. Os elementos foram inicialmente agrupados de acordo com a sua cor. Os elementos da cor amarela contribuem com o dobro em comparação aos demais membros.
 
-### Vantagens
+#### Vantagens
 
 O processo garante a representatividade de todos os individuos da população.
 
-### Desvantagens
+#### Desvantagens
 
 Requer mais trabalho em relação ao método AAS, além do conhecimento de informações antecipadas a respeito da população.
 
 ![Amostragem aleatória extratificada.](amostragem_extratificada.jpg){#fig-amostragem_extratificada width=80%}
 
-### Exemplo
+#### Exemplo
 
 Agrupe todos os alunos do seu interesse de acordo com as características a serem analisadas (gênero, ano, curso, turma, etc).
 
-## Amostragem sistemática
+### Amostragem sistemática
 
 Ordena-se os indivíduos da população, em seguida os elementos da amostra são obtidos em intervalos pré-determinados. A aleatoriedade do processo acontece quando escolhemos ao acaso o primeiro indivíduo. Na @fig-amostragem_sistematica temos a população formada por 30 elementos. Ordenou-se os elementos da população e em seguida foi escolhido aleatoriamente o elemento de ordem dois. Os demais elementos foram escolhidos em intervalos fixos a cada quatro elementos.
 
-### Desvantagem
+#### Desvantagem
 
 A ordenação pode levar a subrepresentação de um ou mais grupos.
 
 ![Amostragem sistemática.](amostragem_sistematica.jpg){#fig-amostragem_sistematica width=80%}
 
-### Exemplo
+#### Exemplo
 
 Monte uma amostra seguindo o número de matrícula dos alunos.
 
-## Amostragem por conglomerados
+### Amostragem por conglomerados
 
 Neste caso, elementos individuais não são sorteados, mas sim um grupo de indivíduos. Na @fig-amostragem_conglomerado, os elementos da população foram separados em quatro grupos. Em seguida, o grupo cinza foi escolhido aleatoriamente para que os seus elementos representassem a amostra da população.
 
-### Vantagem
+#### Vantagem
 
 Redução de custo e tempo.
 
-### Desvantagem
+#### Desvantagem
 
 Ocorre o risco do grupo sorteado ser mais homogêneo que a população.
 
 ![Amostragem por conglomerado.](amostragem_conglomerado.jpg){#fig-amostragem_conglomerado width=80%}
 
-### Exemplo
+#### Exemplo
 
 Monte uma amostra contendo alunos de uma sala de aula que foi escolhida ao acaso.
 
-## Amostragem por bola de neve
+### Amostragem por bola de neve
 
 Identifica-se poucos elementos que o pesquisador tem acesso. Em seguida, solicita-se que esses elementos indiquem outros indivíduos para compor a amostra. Na @fig-amostragem_bola_neve dois elementos foram escolhidos convenientemente. Em seguida, cada elemento indicou mais quatro para compor a amostra. O processo continua até que o pesquisador tenha coletado a quantidade suficiente de elementos.
 
-### Vantagens
+#### Vantagens
 
 Redução de custo e tempo
 
-### Desvantagens
+#### Desvantagens
 
 * Ocorre o risco dos indivíduos indicarem outros similares, tornando a amostra mais homogênea que a população;
 
@@ -173,36 +175,68 @@ Redução de custo e tempo
 
 ![Amostragem por bola de neve.](amostragem_bola_neve.jpg){#fig-amostragem_bola_neve width=80%}
 
-### Exemplo
+#### Exemplo
 
 Monte uma amostra com alunos que você tem acesso e peça indicações para compor a amostra.
 
-## Amostragem por cotas
+### Amostragem por cotas
 
 Similar ao método de amostragem extratificada. Contudo, os elementos não são obtidos aleatoriamente (ao acaso) dentro de cada grupo que chamamos de cota.
 
-### Desvantagem
+#### Desvantagem
 
 Pode haver vieses durante a coleta em cada grupo.
 
-### Exemplo
+#### Exemplo
 
 Agrupe alunos que você tem acesso de acordo com as características de interesse (gênero, ano, curso, turma, etc).
 
-## Amostragem por conveniência
+### Amostragem por conveniência
 
 A amostra é composta por elementos de fácil acesso.
 
-### Vantagens
+#### Vantagens
 
 * Redução de custo e tempo
 
-### Desvantagem
+#### Desvantagem
 
 * A amostra pode não ser representativa.
 
 ::: {.callout-tip title="Qual amostragem escolher?"}
 
 Por questões de representatividade, deve-se priorizar métodos de amostragem probabilísticas, especialmente os métodos AAS e extratificado. Caso não seja possível, métodos de amostragem não-probabilísticas podem ser usadas como alternativa.
+
+:::
+
+## Planejamento experimental
+
+Processo de amostragem cujo objetivo principal é analisar o efeito de uma variável (variável independente) sobre outra (variável dependente). O experimento é geralmente realizado em laboratório e ambientes controlados. Pode apresentar custo elevado, tem alta reprodutibilidade e baixa representatividade.
+
+Os indivíduos são chamados de sujeitos e as variáveis estudadas de fatores.
+
+As unidades experimentais são analisados por vários fatores simultâneos, onde esse conjunto de fatores são chamados de <alerta>tratamento</alerta>.
+
+O planejamento experimental se baseia em três princípios básicos,
+
+* Controle: os efeitos de variáveis de não-interesse são controladas de modo que não interfira no resultado da variável dependente (também chamada de variável resposta);
+
+* Aleatorização: Os elementos amostrais são reproduzidos de forma aleatória;
+
+* Replicação: Amostras pequenas podem reduzir a precisão dos resultados. A replicação dos tratamentos pode aumentar o tamanho da amostra, reduzindo a sua variabilidade.
+
+### Organização das unidades experimentais
+
+A maneira como o experimento é realizado também pode aumentar ou reduzir à exposição de variáveis não-controláveis alterando assim a variabilidade do processo. Portanto, as unidades experimentais podem ser executadas seguindo um delineamento experimental específico. Os principais delineamentos experimentais são o delineamento inteiramente casualizadas (DCC), o delineamento em blocos casualizados (DBC) e quadrado latino.
+
+#### Exemplo
+
+Faça um teste de comparação de uma metodologia de ensino inovadora nos efeitos da aprendizagem dos alunos. Adote cada sala de aula como um bloco único.
+
+:::{.callout-note}
+
+* **Experimento cego**: somente o pesquisador tem conhecimento de quais tratamentos foram alocados às unidades experimentais. O avaliador desconhece essa informação;
+
+* **Experimento duplo cego**: tanto o pesquisador quanto o avaliador desconhecem quais tratamentos foram alocados às unidades experimentais.
 
 :::
