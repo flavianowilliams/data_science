@@ -1,5 +1,5 @@
 ---
-title: "Análise de dados de duas variáveis"
+title: "Análise descritiva de duas variáveis"
 author: "Flaviano Williams Fernandes"
 date: "2026-08-06"
 date-modified: today
