@@ -3,7 +3,7 @@ title: "Estatística"
 listing:
   contents:
     - planejamento_pesquisa/index.qmd
-    - amostragem/index.qmd
+    - amostragem/amostragem.qmd
   feed: false
   sort: "date desc"
   type: grid

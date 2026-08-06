@@ -10,7 +10,7 @@
     ],
     "curso/estatistica/curso_estatistica.qmd": [
       "planejamento_pesquisa/index.qmd",
-      "amostragem/index.qmd"
+      "amostragem/amostragem.qmd"
     ]
   }
 }

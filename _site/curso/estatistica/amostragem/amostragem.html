@@ -181,7 +181,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Data de Modificação</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">05/08/2026</p>
+        <p class="date-modified">06/08/2026</p>
       </div>
     </div>
       
@@ -217,6 +217,7 @@ div.csl-indent {
   <li><a href="#planejamento-experimental" id="toc-planejamento-experimental" class="nav-link" data-scroll-target="#planejamento-experimental">Planejamento experimental</a>
   <ul class="collapse">
   <li><a href="#organização-das-unidades-experimentais" id="toc-organização-das-unidades-experimentais" class="nav-link" data-scroll-target="#organização-das-unidades-experimentais">Organização das unidades experimentais</a></li>
+  <li><a href="#análise-de-superfície-de-resposta" id="toc-análise-de-superfície-de-resposta" class="nav-link" data-scroll-target="#análise-de-superfície-de-resposta">Análise de superfície de resposta</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -343,7 +344,7 @@ Nota
 <div id="fig-serie_temporal" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-serie_temporal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/figure-html/fig-serie_temporal-1.png" class="img-fluid figure-img" width="672">
+<img src="amostragem_files/figure-html/fig-serie_temporal-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-serie_temporal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;3: Série temporal relatando o aumento do número de passageiros em vôos internacionais.
@@ -565,18 +566,43 @@ Figura&nbsp;9: Amostragem por bola de neve.
 </section>
 <section id="planejamento-experimental" class="level2">
 <h2 class="anchored" data-anchor-id="planejamento-experimental">Planejamento experimental</h2>
-<p>Processo de amostragem cujo objetivo principal é analisar o efeito de uma variável (variável independente) sobre outra (variável dependente). O experimento é geralmente realizado em laboratório e ambientes controlados. Pode apresentar custo elevado, tem alta reprodutibilidade e baixa representatividade.</p>
-<p>Os indivíduos são chamados de sujeitos e as variáveis estudadas de fatores.</p>
-<p>As unidades experimentais são analisados por vários fatores simultâneos, onde esse conjunto de fatores são chamados de <alerta>tratamento</alerta>.</p>
+<p>Processo de amostragem cujo objetivo principal é analisar o efeito de uma ou mais variáveis chamadas independentes sobre outra chamada dependente. O experimento é geralmente realizado em laboratórios e ambientes controlados. Pode apresentar custo elevado, tem alta reprodutibilidade e baixa representatividade.</p>
+<p>Os indivíduos são chamados de <strong>sujeitos</strong> e as variáveis estudadas de <strong>fatores</strong>.</p>
+<p>As unidades experimentais são analisados por vários fatores simultâneos, onde esse conjunto de fatores são chamados de <strong>tratamento</strong>.</p>
 <p>O planejamento experimental se baseia em três princípios básicos,</p>
 <ul>
 <li><p>Controle: os efeitos de variáveis de não-interesse são controladas de modo que não interfira no resultado da variável dependente (também chamada de variável resposta);</p></li>
 <li><p>Aleatorização: Os elementos amostrais são reproduzidos de forma aleatória;</p></li>
 <li><p>Replicação: Amostras pequenas podem reduzir a precisão dos resultados. A replicação dos tratamentos pode aumentar o tamanho da amostra, reduzindo a sua variabilidade.</p></li>
 </ul>
+<p>A <a href="#fig-teste_hipotese" class="quarto-xref">Figura&nbsp;10</a> mostra um exemplo de planejamento experimental. Neste caso foi testada a ação repelente dos extratos de pessegueiro e louro sobre o consumo da lagarta Dione Juno-Juno em folhas de maracujá amarelo. As áreas consumidas pela lagarta (variável dependente) foram comparadas utilizando três tratamentos: folhas contendo água, extratos de louro e pessegueiro (variável independente). O estudo foi aplicado em um ambiente controlado de interferências de variáveis externas como temperatura e correntes de ar. As unidades experimentais foram agrupadas de forma independente umas das outras seguindo um delineamento em bloco casualizado.</p>
+<div id="fig-teste_hipotese" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-teste_hipotese-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="teste_hipotese.jpg" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-teste_hipotese-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;10: Comparação entre as áreas consumidas pela lagarta Dione Juno Juno em folhas de maracujá amarelo utilizando três tratamentos: água, extratos de pessegueiro e louro.
+</figcaption>
+</figure>
+</div>
 <section id="organização-das-unidades-experimentais" class="level3">
 <h3 class="anchored" data-anchor-id="organização-das-unidades-experimentais">Organização das unidades experimentais</h3>
-<p>A maneira como o experimento é realizado também pode aumentar ou reduzir à exposição de variáveis não-controláveis alterando assim a variabilidade do processo. Portanto, as unidades experimentais podem ser executadas seguindo um delineamento experimental específico. Os principais delineamentos experimentais são o delineamento inteiramente casualizadas (DCC), o delineamento em blocos casualizados (DBC) e quadrado latino.</p>
+<p>A maneira como o experimento é realizado também pode aumentar ou reduzir à exposição de variáveis não-controláveis alterando assim a variabilidade do processo. Portanto, as unidades experimentais podem ser executadas seguindo um delineamento experimental específico. Os principais delineamentos experimentais são o delineamento inteiramente casualizadas (DIC), o delineamento em blocos casualizados (DBC) e quadrado latino.</p>
+</section>
+<section id="análise-de-superfície-de-resposta" class="level3">
+<h3 class="anchored" data-anchor-id="análise-de-superfície-de-resposta">Análise de superfície de resposta</h3>
+<p>Delineamento experimental cujo objetivo é obter um modelo estatístico onde analisamos a influência de duas variáveis independentes sobre uma dependente. Para isso, os tratamentos são planejados de maneira a englobar dois fatores simultâneos. A <a href="#fig-analise_superficie" class="quarto-xref">Figura&nbsp;11</a> apresenta a vazão de gás hidrogênio (variável dependente) em um processo de eletrólise contendo água e NaOH. Este resultado foi obtido utilizando o método fatorial n3<sup>k</sup>, onde n representa a quantidade de réplicas dos tratamentos e k o número de fatores a serem analisados como variáveis independentes. Neste caso temos dois fatores, tensão e concentração de NaOH, então podemos dizer que k = 2.</p>
+<div id="fig-analise_superficie" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-analise_superficie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="analise_superficie.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-analise_superficie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;11: Valores de vazão de gás hidrogênio em um processo de eletrólise em função da tensão e concentração de NaOH.
+</figcaption>
+</figure>
+</div>
 <section id="exemplo-5" class="level4">
 <h4 class="anchored" data-anchor-id="exemplo-5">Exemplo</h4>
 <p>Faça um teste de comparação de uma metodologia de ensino inovadora nos efeitos da aprendizagem dos alunos. Adote cada sala de aula como um bloco único.</p>
@@ -609,7 +635,7 @@ Nota
 BOX, George E. P.; JENKINS, Gwilym M.; REINSEL, Gregory C. <strong>Time series analysis : forecasting and control</strong>. <em>[S.l.]</em>: Prentice Hall, 1994. p. 598
 </div>
 <div id="ref-Bruce2019" class="csl-entry" role="listitem">
-BRUCE, Andrew.; BRUCE, Peter. <strong>ESTATÍSTICA PRÁTICA PARA CIENTISTAS DE DADOS</strong>. <em>[S.l.]</em>: Alta Books, 2019.
+BRUCE, Andrew.; BRUCE, Peter. <strong>ESTATÍSTICA PRÁTICA PARA CIENTISTAS DE DADOS</strong>. Rio de Janeiro: Alta Books, 2019.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

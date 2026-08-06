@@ -211,11 +211,11 @@ Por questões de representatividade, deve-se priorizar métodos de amostragem pr
 
 ## Planejamento experimental
 
-Processo de amostragem cujo objetivo principal é analisar o efeito de uma variável (variável independente) sobre outra (variável dependente). O experimento é geralmente realizado em laboratório e ambientes controlados. Pode apresentar custo elevado, tem alta reprodutibilidade e baixa representatividade.
+Processo de amostragem cujo objetivo principal é analisar o efeito de uma ou mais variáveis chamadas independentes sobre outra chamada dependente. O experimento é geralmente realizado em laboratórios e ambientes controlados. Pode apresentar custo elevado, tem alta reprodutibilidade e baixa representatividade.
 
-Os indivíduos são chamados de sujeitos e as variáveis estudadas de fatores.
+Os indivíduos são chamados de **sujeitos** e as variáveis estudadas de **fatores**.
 
-As unidades experimentais são analisados por vários fatores simultâneos, onde esse conjunto de fatores são chamados de <alerta>tratamento</alerta>.
+As unidades experimentais são analisados por vários fatores simultâneos, onde esse conjunto de fatores são chamados de **tratamento**.
 
 O planejamento experimental se baseia em três princípios básicos,
 
@@ -225,9 +225,19 @@ O planejamento experimental se baseia em três princípios básicos,
 
 * Replicação: Amostras pequenas podem reduzir a precisão dos resultados. A replicação dos tratamentos pode aumentar o tamanho da amostra, reduzindo a sua variabilidade.
 
+A @fig-teste_hipotese mostra um exemplo de planejamento experimental. Neste caso foi testada a ação repelente dos extratos de pessegueiro e louro sobre o consumo da lagarta Dione Juno-Juno em folhas de maracujá amarelo. As áreas consumidas pela lagarta (variável dependente) foram comparadas utilizando três tratamentos: folhas contendo água, extratos de louro e pessegueiro (variável independente). O estudo foi aplicado em um ambiente controlado de interferências de variáveis externas como temperatura e correntes de ar. As unidades experimentais foram agrupadas de forma independente umas das outras seguindo um delineamento em bloco casualizado.
+
+![Comparação entre as áreas consumidas pela lagarta Dione Juno Juno em folhas de maracujá amarelo utilizando três tratamentos: água, extratos de pessegueiro e louro.](teste_hipotese.jpg){#fig-teste_hipotese width=70%}
+
 ### Organização das unidades experimentais
 
-A maneira como o experimento é realizado também pode aumentar ou reduzir à exposição de variáveis não-controláveis alterando assim a variabilidade do processo. Portanto, as unidades experimentais podem ser executadas seguindo um delineamento experimental específico. Os principais delineamentos experimentais são o delineamento inteiramente casualizadas (DCC), o delineamento em blocos casualizados (DBC) e quadrado latino.
+A maneira como o experimento é realizado também pode aumentar ou reduzir à exposição de variáveis não-controláveis alterando assim a variabilidade do processo. Portanto, as unidades experimentais podem ser executadas seguindo um delineamento experimental específico. Os principais delineamentos experimentais são o delineamento inteiramente casualizadas (DIC), o delineamento em blocos casualizados (DBC) e quadrado latino.
+
+### Análise de superfície de resposta
+
+Delineamento experimental cujo objetivo é obter um modelo estatístico onde analisamos a influência de duas variáveis independentes sobre uma dependente. Para isso, os tratamentos são planejados de maneira a englobar dois fatores simultâneos. A @fig-analise_superficie apresenta a vazão de gás hidrogênio (variável dependente) em um processo de eletrólise contendo água e NaOH. Este resultado foi obtido utilizando o método fatorial n3^k^, onde n representa a quantidade de réplicas dos tratamentos e k o número de fatores a serem analisados como variáveis independentes. Neste caso temos dois fatores, tensão e concentração de NaOH, então podemos dizer que k = 2.
+
+![Valores de vazão de gás hidrogênio em um processo de eletrólise em função da tensão e concentração de NaOH.](analise_superficie.png){#fig-analise_superficie width=80%}
 
 #### Exemplo
 

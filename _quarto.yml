@@ -38,4 +38,4 @@ lang: "pt-BR"
 date-format: DD/MM/YYYY
 
 execute:
-  freeze: false
+  freeze: auto
