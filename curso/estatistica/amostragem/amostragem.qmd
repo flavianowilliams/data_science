@@ -109,9 +109,9 @@ Ocorre o risco da não representatividade de parte da população, principalment
 
 ![Amostragem aleatória simples.](amostragem_aas.jpg){#fig-amostragem_aas width=80%}
 
-### Amostragem aleatória extratificada
+### Amostragem aleatória estratificada
 
-Neste tipo de amostragem, antes da coleta os elementos são agrupados de acordo com as suas características e a amostra é formada por integrantes de cada grupo de acordo com a sua quantidade. Na @fig-amostragem_extratificada temos a população formada por 30 elementos. Os elementos foram inicialmente agrupados de acordo com a sua cor. Os elementos da cor amarela contribuem com o dobro em comparação aos demais membros.
+Neste tipo de amostragem, antes da coleta os elementos são agrupados de acordo com as suas características e a amostra é formada por integrantes de cada grupo de acordo com a sua quantidade. Na @fig-amostragem_estratificada temos a população formada por 30 elementos. Os elementos foram inicialmente agrupados de acordo com a sua cor. Os elementos da cor amarela contribuem com o dobro em comparação aos demais membros.
 
 #### Vantagens
 
@@ -121,7 +121,7 @@ O processo garante a representatividade de todos os individuos da população.
 
 Requer mais trabalho em relação ao método AAS, além do conhecimento de informações antecipadas a respeito da população.
 
-![Amostragem aleatória extratificada.](amostragem_extratificada.jpg){#fig-amostragem_extratificada width=80%}
+![Amostragem aleatória estratificada.](amostragem_estratificada.jpg){#fig-amostragem_estratificada width=80%}
 
 #### Exemplo
 
