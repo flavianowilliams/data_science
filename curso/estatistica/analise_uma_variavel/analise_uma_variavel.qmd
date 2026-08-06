@@ -1,0 +1,7 @@
+---
+title: "Análise de dados de uma variável"
+author: "Flaviano Williams Fernandes"
+date: "2026-08-06"
+date-modified: today
+categories: [estatistica_descritiva]
+---

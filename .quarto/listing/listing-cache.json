@@ -9,8 +9,10 @@
       "ggplot2/index.qmd"
     ],
     "curso/estatistica/curso_estatistica.qmd": [
-      "planejamento_pesquisa/index.qmd",
-      "amostragem/amostragem.qmd"
+      "planejamento_pesquisa/planejamento_pesquisa.qmd",
+      "amostragem/amostragem.qmd",
+      "analise_uma_variavel/analise_uma_variavel.qmd",
+      "analise_duas_variaveis/analise_duas_variaveis.qmd"
     ]
   }
 }

@@ -2,8 +2,10 @@
 title: "Estatística"
 listing:
   contents:
-    - planejamento_pesquisa/index.qmd
+    - planejamento_pesquisa/planejamento_pesquisa.qmd
     - amostragem/amostragem.qmd
+    - analise_uma_variavel/analise_uma_variavel.qmd
+    - analise_duas_variaveis/analise_duas_variaveis.qmd
   feed: false
   sort: "date desc"
   type: grid

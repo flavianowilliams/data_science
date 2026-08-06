@@ -3,7 +3,7 @@ title: "Amostragem"
 author: "Flaviano Williams Fernandes"
 date: "2026-07-30"
 date-modified: today
-categories: [inferencia_estatistica]
+categories: [estatistica_descritiva]
 ---
 
 # População versus amostra

@@ -67,5 +67,14 @@
   },
   "curso/estatistica/amostragem/amostragem.qmd": {
     "amostragem.html": "52efaef9"
+  },
+  "curso/estatistica/analise_uma_variavel/analise_uma_variavel.qmd": {
+    "analise_uma_variavel.html": "5c999abf"
+  },
+  "curso/estatistica/analise_duas_variaveis/analise_duas_variaveis.qmd": {
+    "analise_duas_variaveis.html": "ce927eef"
+  },
+  "curso/estatistica/planejamento_pesquisa/planejamento_pesquisa.qmd": {
+    "planejamento_pesquisa.html": "1a1f7e12"
   }
 }
