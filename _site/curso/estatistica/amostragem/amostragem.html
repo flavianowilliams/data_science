@@ -181,7 +181,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Data de Modificação</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">06/08/2026</p>
+        <p class="date-modified">07/08/2026</p>
       </div>
     </div>
       
@@ -217,7 +217,7 @@ div.csl-indent {
   <li><a href="#planejamento-experimental" id="toc-planejamento-experimental" class="nav-link" data-scroll-target="#planejamento-experimental">Planejamento experimental</a>
   <ul class="collapse">
   <li><a href="#organização-das-unidades-experimentais" id="toc-organização-das-unidades-experimentais" class="nav-link" data-scroll-target="#organização-das-unidades-experimentais">Organização das unidades experimentais</a></li>
-  <li><a href="#análise-de-superfície-de-resposta" id="toc-análise-de-superfície-de-resposta" class="nav-link" data-scroll-target="#análise-de-superfície-de-resposta">Análise de superfície de resposta</a></li>
+  <li><a href="#planejamento-fatorial" id="toc-planejamento-fatorial" class="nav-link" data-scroll-target="#planejamento-fatorial">Planejamento fatorial</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -590,9 +590,18 @@ Figura&nbsp;10: Comparação entre as áreas consumidas pela lagarta Dione Juno 
 <h3 class="anchored" data-anchor-id="organização-das-unidades-experimentais">Organização das unidades experimentais</h3>
 <p>A maneira como o experimento é realizado também pode aumentar ou reduzir à exposição de variáveis não-controláveis alterando assim a variabilidade do processo. Portanto, as unidades experimentais podem ser executadas seguindo um delineamento experimental específico. Os principais delineamentos experimentais são o delineamento inteiramente casualizadas (DIC), o delineamento em blocos casualizados (DBC) e quadrado latino.</p>
 </section>
-<section id="análise-de-superfície-de-resposta" class="level3">
-<h3 class="anchored" data-anchor-id="análise-de-superfície-de-resposta">Análise de superfície de resposta</h3>
-<p>Delineamento experimental cujo objetivo é obter um modelo estatístico onde analisamos a influência de duas variáveis independentes sobre uma dependente. Para isso, os tratamentos são planejados de maneira a englobar dois fatores simultâneos. A <a href="#fig-analise_superficie" class="quarto-xref">Figura&nbsp;11</a> apresenta a vazão de gás hidrogênio (variável dependente) em um processo de eletrólise contendo água e NaOH. Este resultado foi obtido utilizando o método fatorial n3<sup>k</sup>, onde n representa a quantidade de réplicas dos tratamentos e k o número de fatores a serem analisados como variáveis independentes. Neste caso temos dois fatores, tensão e concentração de NaOH, então podemos dizer que k = 2.</p>
+<section id="planejamento-fatorial" class="level3">
+<h3 class="anchored" data-anchor-id="planejamento-fatorial">Planejamento fatorial</h3>
+<p>Delineamento experimental cujo objetivo é obter um modelo estatístico onde analisamos a influência de duas variáveis independentes sobre uma dependente. Para isso, os tratamentos são planejados de maneira a englobar dois fatores simultâneos.</p>
+<section id="principais-características" class="level4">
+<h4 class="anchored" data-anchor-id="principais-características">Principais características</h4>
+<ul>
+<li><p>Obtenção de modelos de regressão;</p></li>
+<li><p>Otimização de experimentos;</p></li>
+<li><p>Permite apenas 2 fatores;</p></li>
+<li><p>Os fatores devem ser quantitativos contínuos.</p></li>
+</ul>
+<p>A <a href="#fig-analise_superficie" class="quarto-xref">Figura&nbsp;11</a> apresenta a vazão de gás hidrogênio (variável dependente) em um processo de eletrólise contendo água e NaOH <span class="citation" data-cites="Luiz2025">(<a href="#ref-Luiz2025" role="doc-biblioref">Luiz et al., 2025</a>)</span>. Este resultado foi obtido utilizando o método fatorial n3<sup>k</sup>, onde n representa a quantidade de réplicas dos tratamentos e k o número de fatores a serem analisados como variáveis independentes. Neste caso temos dois fatores, tensão e concentração de NaOH, então podemos dizer que k = 2.</p>
 <div id="fig-analise_superficie" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-analise_superficie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -603,6 +612,7 @@ Figura&nbsp;11: Valores de vazão de gás hidrogênio em um processo de eletról
 </figcaption>
 </figure>
 </div>
+</section>
 <section id="exemplo-5" class="level4">
 <h4 class="anchored" data-anchor-id="exemplo-5">Exemplo</h4>
 <p>Faça um teste de comparação de uma metodologia de ensino inovadora nos efeitos da aprendizagem dos alunos. Adote cada sala de aula como um bloco único.</p>
@@ -636,6 +646,9 @@ BOX, George E. P.; JENKINS, Gwilym M.; REINSEL, Gregory C. <strong>Time series a
 </div>
 <div id="ref-Bruce2019" class="csl-entry" role="listitem">
 BRUCE, Andrew.; BRUCE, Peter. <strong>ESTATÍSTICA PRÁTICA PARA CIENTISTAS DE DADOS</strong>. Rio de Janeiro: Alta Books, 2019.
+</div>
+<div id="ref-Luiz2025" class="csl-entry" role="listitem">
+LUIZ, Nicolas Gabriel <em>et al.</em> <a href="https://doi.org/10.1007/s11701-011-0325-0">PRODUÇÃO DE HIDROGÊNIO VIA ELETRÓLISE ALCALINA</a>. <strong>XI Seminário de Inovação, Pesquisa, Ensino e Extensão (SIPEX)</strong>, 2025.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

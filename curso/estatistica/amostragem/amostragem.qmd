@@ -233,9 +233,21 @@ A @fig-teste_hipotese mostra um exemplo de planejamento experimental. Neste caso
 
 A maneira como o experimento é realizado também pode aumentar ou reduzir à exposição de variáveis não-controláveis alterando assim a variabilidade do processo. Portanto, as unidades experimentais podem ser executadas seguindo um delineamento experimental específico. Os principais delineamentos experimentais são o delineamento inteiramente casualizadas (DIC), o delineamento em blocos casualizados (DBC) e quadrado latino.
 
-### Análise de superfície de resposta
+### Planejamento fatorial
 
-Delineamento experimental cujo objetivo é obter um modelo estatístico onde analisamos a influência de duas variáveis independentes sobre uma dependente. Para isso, os tratamentos são planejados de maneira a englobar dois fatores simultâneos. A @fig-analise_superficie apresenta a vazão de gás hidrogênio (variável dependente) em um processo de eletrólise contendo água e NaOH. Este resultado foi obtido utilizando o método fatorial n3^k^, onde n representa a quantidade de réplicas dos tratamentos e k o número de fatores a serem analisados como variáveis independentes. Neste caso temos dois fatores, tensão e concentração de NaOH, então podemos dizer que k = 2.
+Delineamento experimental cujo objetivo é obter um modelo estatístico onde analisamos a influência de duas variáveis independentes sobre uma dependente. Para isso, os tratamentos são planejados de maneira a englobar dois fatores simultâneos.
+
+#### Principais características
+
+* Obtenção de modelos de regressão;
+
+* Otimização de experimentos;
+
+* Permite apenas 2 fatores;
+
+* Os fatores devem ser quantitativos contínuos.
+
+A @fig-analise_superficie apresenta a vazão de gás hidrogênio (variável dependente) em um processo de eletrólise contendo água e NaOH [@Luiz2025]. Este resultado foi obtido utilizando o método fatorial n3^k^, onde n representa a quantidade de réplicas dos tratamentos e k o número de fatores a serem analisados como variáveis independentes. Neste caso temos dois fatores, tensão e concentração de NaOH, então podemos dizer que k = 2.
 
 ![Valores de vazão de gás hidrogênio em um processo de eletrólise em função da tensão e concentração de NaOH.](analise_superficie.png){#fig-analise_superficie width=80%}
 
