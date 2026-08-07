@@ -6,7 +6,11 @@ date-modified: today
 categories: [estatistica_descritiva]
 ---
 
-# População versus amostra
+# Amostragem
+
+Conjunto de procedimentos cujo objetivo é a coleta de dados para compor uma amostra representativa de uma população.
+
+## População versus amostra
 
 * População: Conjunto de todos os indivíduos de interesse do pesquisador;
 
