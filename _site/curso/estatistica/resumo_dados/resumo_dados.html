@@ -1169,7 +1169,7 @@ Tabela&nbsp;1: Amostragem de bolas coloridas utilizando três técnicas diferent
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Cor"</span>, </span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Frequência"</span>, </span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Frequência acumulada"</span>,</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"(Frequência relativa"</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Frequência relativa"</span>,</span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Frequência relativa acumulada"</span></span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>                             )</span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>               ) <span class="sc">|&gt;</span></span>
@@ -1188,7 +1188,7 @@ Tabela&nbsp;2: Tabela de frequências
    <th style="text-align:center;"> Cor </th>
    <th style="text-align:center;"> Frequência </th>
    <th style="text-align:center;"> Frequência acumulada </th>
-   <th style="text-align:center;"> (Frequência relativa </th>
+   <th style="text-align:center;"> Frequência relativa </th>
    <th style="text-align:center;"> Frequência relativa acumulada </th>
   </tr>
  </thead>
@@ -1391,9 +1391,11 @@ Tabela&nbsp;3: Grupo de alunos com notas na disciplina de física. A identidade 
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(classe, ni, fi) <span class="sc">|&gt;</span> </span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rbind</span>(<span class="fu">list</span>(<span class="st">"Total"</span>, <span class="fu">sum</span>(dados_continuos<span class="sc">$</span>ni), <span class="fu">sum</span>(dados_continuos<span class="sc">$</span>fi))) <span class="sc">|&gt;</span> </span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"ccc"</span>,</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"classe"</span>, <span class="st">"ni"</span>, <span class="st">"fi"</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>               ) <span class="sc">|&gt;</span> </span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_classic</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"classe"</span>, <span class="st">"n&lt;sub&gt;i&lt;/sub&gt;"</span>, <span class="st">"f&lt;sub&gt;i&lt;/sub&gt;"</span>),</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">escape =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">format =</span> <span class="st">"html"</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>               ) <span class="sc">|&gt;</span> </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_classic</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-classe" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1406,8 +1408,8 @@ Tabela&nbsp;4: Distribuição de frequência da nota dos alunos.
  <thead>
   <tr>
    <th style="text-align:center;"> classe </th>
-   <th style="text-align:center;"> ni </th>
-   <th style="text-align:center;"> fi </th>
+   <th style="text-align:center;"> n<sub>i</sub> </th>
+   <th style="text-align:center;"> f<sub>i</sub> </th>
   </tr>
  </thead>
 <tbody>

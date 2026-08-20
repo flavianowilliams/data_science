@@ -97,7 +97,7 @@ dados |>
                col.names = c("Cor", 
                              "Frequência", 
                              "Frequência acumulada",
-                             "(Frequência relativa",
+                             "Frequência relativa",
                              "Frequência relativa acumulada"
                              )
                ) |>
@@ -150,7 +150,9 @@ dados_continuos |>
   select(classe, ni, fi) |> 
   rbind(list("Total", sum(dados_continuos$ni), sum(dados_continuos$fi))) |> 
   knitr::kable(align = "ccc",
-               col.names = c("classe", "ni", "fi")
+               col.names = c("classe", "n<sub>i</sub>", "f<sub>i</sub>"),
+               escape = FALSE,
+               format = "html"
                ) |> 
   kableExtra::kable_classic(full_width = FALSE)
 ```
