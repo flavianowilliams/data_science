@@ -5,6 +5,12 @@ date-modified: today
 categories: [r]
 ---
 
+```{r}
+#| include: false
+#
+source(here::here("", "_common.R"))
+```
+
 # O que é o tidyverse?
 
 Tidyverse é um ecossistema contendo diversos pacotes especializados na manipulação de dados estatísticos [@Wickham2019].

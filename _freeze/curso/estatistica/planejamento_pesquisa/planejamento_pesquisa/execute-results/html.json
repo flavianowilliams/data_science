@@ -1,0 +1,17 @@
+{
+  "hash": "cdfd8a09210df1bf0a2dcf7cbd4273cd",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Planejamento de uma pesquisa científica\"\nauthor: \"Flaviano Williams Fernandes\"\ndate: \"2026-07-27\"\ndate-modified: today\ncategories: [estatistica_descritiva]\n---\n\n\n\n# O que é a estatística?\n\n> Parte da matemática responsável pela coleta, organização, descrição, análise e interpretação de dados e sua utilização na tomada de decisão [@Crespo2009].\n\n![](plano_acao.jpg){width=80%}\n\n# O método científico\n\n![](metodo_cientifico.jpg){width=80%}\n\n# Estabelecendo os objetivos da pesquisa\n\n1. Qual é a pergunta da pesquisa?\n\n    - Aulas demonstrativas auxiliam na aprendizagem dos alunos?\n    - Caso sim, a aprendizagem melhora com a idade ou gênero dos alunos?\n\n2. Qual é o sujeito de interesse?\n\n    - Alunos do ensino médio no Brasil;\n  \n    - Alunos do IFPR, campus Irati.\n  \n3. Qual é a população desse sujeito?\n\n    - Todos os alunos do ensino médio no Brasil;\n  \n    - Alunos do IFPR, campus Irati.\n  \n4. Existe a necessidade de fazer amostram?\n\n    - Sim\n    - Não\n    \n5. Quantos dados devo obter? Qual o tamanho da amostra?\n\n6. Como devo obter os dados?\n\n7. Quais características de interesse dos indivíduos (variáveis) serão obtidas?\n\n    - Nota dos alunos\n    \n8. Quais informações da população devo obter?\n\n    - Média, mediana, moda, variância, proporção e frequência\n    \n# Variáveis\n\n## O que são variáveis em estatística?\n\nSão características do indivíduo da população e que podem assumir valores diferentes de um indivíduo para o outro.\n\n![](tipo_variaveis.jpg){width=80%}\n\n# Estatística descritiva\n\n![](areas_estatistica.jpg){width=80%}\n\n## O que é estatística descritiva?\n\nEmprega métodos numéricos afim de descrever e resumir um conjunto de dados obtidos a partir de uma amostra ou população.",
+    "supporting": [
+      "planejamento_pesquisa_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

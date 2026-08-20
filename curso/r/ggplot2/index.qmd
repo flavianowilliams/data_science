@@ -6,6 +6,8 @@ categories: [r]
 ---
 
 ```{r setup, include=FALSE}
+source(here::here("", "_common.R"))
+#
 knitr::opts_chunk$set(
   echo = FALSE,
   fig.align = "center",

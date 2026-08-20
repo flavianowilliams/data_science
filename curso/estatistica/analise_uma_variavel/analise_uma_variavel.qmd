@@ -4,4 +4,96 @@ author: "Flaviano Williams Fernandes"
 date: "2026-08-06"
 date-modified: today
 categories: [estatistica_descritiva]
+format:
+  html:
+    html-table-processing: none
+    html-math-method: mathjax
 ---
+
+# Gráfico para variáveis qualitativas
+
+```{r}
+#| include: false
+#
+source(here::here("", "_common.R"))
+#
+library(knitr)
+library(kableExtra)
+library(latex2exp)
+library(ggbrace)
+#
+dados <- read.csv(file = "dados.csv", stringsAsFactors = TRUE)
+#
+dados_continuos <- read.csv(file = "nota.csv")
+#
+dados_continuos <- dados_continuos |> 
+  select(registration, nota) |> 
+  filter(!is.na(nota))
+#
+dados <- dados |> 
+  mutate(cor = case_when(cor == "VE" ~ "Vermelho",
+                         cor == "BR" ~ "Branco",
+                         cor == "AM" ~ "Amarelo",
+                         cor == "LA" ~ "Laranja",
+                         cor == "RO" ~ "Rosa",
+                         cor == "AZ" ~ "Azul",
+                         cor == "VR" ~ "Verde",
+                         cor == "VI" ~ "Violeta",
+                         .default = cor))
+```
+
+Considere a seguinte base de dados contendo `r nrow(dados)` elementos coletados por  `r dados |> summarize(n = n(), .by="amostragem") |> nrow()` processos de amostragem diferentes. As amostras foram coletadas de um conjunto contendo 192 bolinhas de 8 cores distintas (vermelho, branco, amarelo, laranja, rosa, azul, verde e violeta).
+
+Através de uma tabela de frequência é possível obter conclusões à respeito de uma base de dados. Entretanto, às vezes uma análise mais visual apresenta uma forma mais simples de realizar uma análise do que número distribuídos um ao lado do outro. No caso da frequência absoluta ou relativa, ela pode ser representada em um gráfico de barras. Neste gráfico, as barras verticais ou horizontais podem representar tanto a frequência absoluta quanto a relativa. A @fig-grafico_qualitativa mostra a frequência relativa das cores em uma amostra de 50 bolinhas. Com a análise desse gráfico podemos concluir que a frequência de cada cor possui valores próximos da frequência na população (linha pontilhada).
+
+:::{.callout-tip}
+Pessoas possuem mais facilidade em interpretar objetos visuais do que números, portanto caso seja possível dê preferência por gráficos ao invés de tabelas para representar os seus dados.
+:::
+
+```{r}
+#| label: fig-grafico_qualitativa
+#| fig-cap: "Gráfico de barras representando a quantidade de alunos por turma. A linha pontilhada mostra a probabilidade teórica referente à cada cor na população."
+#| fig-subcap: ["Os valores da categoria estão no eixo x.", "Os valores estão no eixo y."]
+#| layout-ncol: 2
+#| code-fold: true
+g1 <- ggplot(data = dados |> filter(amostragem == "AAS"), aes(x = fct_rev(fct_infreq(cor)), y = after_stat(prop), group = 1))+
+  geom_bar()+
+  geom_hline(aes(yintercept = 0.125), linetype = "dotted")+
+  labs(x = "Cor", y = "Frequência")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+g2 <- g1+
+  theme_bw()+
+  coord_flip()+
+  theme(panel.grid = element_blank())
+
+g1
+g2
+```
+
+#### Características
+
+* Pode ser utilizada para comparação entre elementos da mesma variável;
+
+* O eixo vertical representa a frequência;
+
+* O eixo horizontal representa a variável **categórica** a ser analisada.
+
+:::{.callout-important}
+* devido à dificuldade em fazer comparações entre ângulos pequenos, alguns autores sugerem que gráficos do tipo setores devem ser evitados para representar a frequência dos valores;
+* O eixo indicando a frequência deve ser o mesmo para todos os itens do gráfico.
+:::
+
+# Variáveis quantitativas
+
+```{r}
+#| label: fig-histograma
+#| fig-cap: ""
+#| code-fold: true
+ggplot(data = dados_continuos, aes(x = nota))+
+  geom_histogram(bins = 10, color = "red")+
+  stat_brace(data = data.frame(x = c(95, 100), y = c(0, 3.0)),
+             aes(x = x, y = y),
+             rotate = 90
+             )
+```

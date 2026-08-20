@@ -6,6 +6,12 @@ date-modified: today
 categories: [estatistica_descritiva]
 ---
 
+```{r}
+#| include: false
+#
+source(here::here("", "_common.R"))
+```
+
 # Amostragem
 
 Conjunto de procedimentos cujo objetivo é a coleta de dados para compor uma amostra representativa de uma população.
@@ -74,7 +80,7 @@ O objetivo principal é analisar a relação entre variáveis, e geralmente é f
 ```{r, echo=FALSE}
 #| label: fig-serie_temporal
 #| fig-cap: "Série temporal relatando o aumento do número de passageiros em vôos internacionais."
-forecast::autoplot(AirPassengers)+ggplot2::labs(x = "Ano", y = "Número de passageiros")+ggplot2::theme_bw()+ggplot2::theme(panel.grid = ggplot2::element_blank())
+forecast::autoplot(AirPassengers)+ggplot2::labs(x = "Ano", y = "Número de passageiros")
 ```
 
 ## Levantamento amostral

@@ -1,0 +1,15 @@
+{
+  "hash": "41542006f4443d1addf5ca6c60ee6bdd",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Análise descritiva entre duas variáveis\"\nauthor: \"Flaviano Williams Fernandes\"\ndate: \"2026-08-06\"\ndate-modified: today\ncategories: [estatistica_descritiva]\n---\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

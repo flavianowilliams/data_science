@@ -6,6 +6,12 @@ date-modified: today
 categories: [estatistica_descritiva]
 ---
 
+```{r}
+#| include: false
+#
+source(here::here("", "_common.R"))
+```
+
 # O que é a estatística?
 
 > Parte da matemática responsável pela coleta, organização, descrição, análise e interpretação de dados e sua utilização na tomada de decisão [@Crespo2009].

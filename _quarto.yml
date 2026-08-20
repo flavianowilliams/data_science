@@ -19,19 +19,31 @@ website:
       - about.qmd
       - icon: github
         href: https://github.com/flavianowilliams/education
-  
+  sidebar:
+    - id: curso_estatistica
+      title: "Estatística"
+      style: "docked"
+      search: true
+      contents:
+        - curso/estatistica/planejamento_pesquisa/planejamento_pesquisa.qmd
+        - curso/estatistica/amostragem/amostragem.qmd
+        - curso/estatistica/resumo_dados/resumo_dados.qmd
+        - curso/estatistica/analise_uma_variavel/analise_uma_variavel.qmd
+        - curso/estatistica/analise_duas_variaveis/analise_duas_variaveis.qmd
+
 format:
   html:
+    toc: true
+    toc-location: right
     grid:
       sidebar-width: 300px
-      body-width: 900px
-      margin-width: 300px
+      body-width: 1000px
+      margin-width: 200px
       gutter-width: 1.5rem
     theme:
       - sketchy
       - brand
     css: styles.css
-    toc: true
 bibliography: bibliografia.bib
 csl: abnt.csl
 lang: "pt-BR"

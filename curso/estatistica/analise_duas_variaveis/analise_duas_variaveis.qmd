@@ -5,3 +5,10 @@ date: "2026-08-06"
 date-modified: today
 categories: [estatistica_descritiva]
 ---
+
+```{r}
+#| include: false
+#
+source(here::here("", "_common.R"))
+```
+

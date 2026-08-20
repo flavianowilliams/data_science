@@ -6,6 +6,12 @@ date-modified: today
 categories: [r]
 ---
 
+```{r}
+#| include: false
+#
+source(here::here("", "_common.R"))
+```
+
 # Sobre o R
 
 R é uma linguagem de programação dinâmica em um desenvolvimento em tempo real. Especialmente voltada para trabalhos em análises estatísticas, como a manipulação, análise e visualização de dados. Seu nome surge das iniciais dos seus criadores (<alerta>R</alerta>oss Ihaka e <alerta>R</alerta>obert Gentleman [@cranweb]).

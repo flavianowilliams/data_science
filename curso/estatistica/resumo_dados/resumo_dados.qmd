@@ -1,0 +1,501 @@
+---
+title: "Resumo de dados"
+author: "Flaviano Williams Fernandes"
+date: "2026-08-06"
+date-modified: today
+categories: [estatistica_descritiva]
+format:
+  html:
+    html-table-processing: none
+    html-math-method: mathjax
+---
+
+# Distribuição de frequências
+
+## Variáveis qualitativas
+
+Uma das maneiras de analisar o conjunto de dados seria olhar para sua tabela original de valores. Entretanto, para uma quantidade alta isso torna praticamente inviável. Portanto, às vezes seria interessante fazer um resumo dessa quantidade. Isso pode ser feito olhando para a sua ocorrência, o seja, a frequência que os seus valores estão sendo distribuídos. Isso torna útil para se ter uma ideia global sobre elas, além do fato que eles podem ser representados em uma tabela chamada tabela de frequências.
+
+```{r}
+#| include: false
+#
+source(here::here("", "_common.R"))
+#
+library(knitr)
+library(kableExtra)
+library(latex2exp)
+library(ggpubr)
+library(stringr)
+#
+dados <- read.csv(file = "dados.csv", stringsAsFactors = TRUE)
+#
+dados_continuos <- read.csv(file = "nota.csv")
+#
+dados_continuos <- dados_continuos |> 
+  select(registration, nota) |> 
+  filter(!is.na(nota))
+#
+dados <- dados |> 
+  mutate(cor = case_when(cor == "VE" ~ "Vermelho",
+                         cor == "BR" ~ "Branco",
+                         cor == "AM" ~ "Amarelo",
+                         cor == "LA" ~ "Laranja",
+                         cor == "RO" ~ "Rosa",
+                         cor == "AZ" ~ "Azul",
+                         cor == "VR" ~ "Verde",
+                         cor == "VI" ~ "Violeta",
+                         .default = cor))
+#
+amostra <- c(7.6, 5.2, 7.4, 5.2, 6.8, 6.8, 7.4, 7.4, 7.6, 6.6, 6.8, 2.5, 7.4, 5.2, 6.6)
+```
+
+Considere a seguinte base de dados contendo `r nrow(dados)` indivíduos coletados por  `r dados |> summarize(n = n(), .by="amostragem") |> nrow()` processos de amostragem diferentes. As amostras foram coletadas de um conjunto contendo 192 bolinhas de 8 cores distintas (vermelho, branco, amarelo, laranja, rosa, azul, verde e violeta).
+
+```{r}
+#| label: tbl-tabela_full
+#| tbl-cap: "Amostragem de bolas coloridas utilizando três técnicas diferentes."
+#| code-fold: true
+kable(dados, col.names = c("i", "Amostragem", "Cor"), align = "ccc") |> 
+  kable_classic(full_width = TRUE, position = "center") |> 
+  scroll_box(height = "400px", width = "100%")
+```
+
+Ao observar uma base desse tamanho, percebe-se que torna inviável tentar uma análise eficaz afim de compreender o comportamento de conjuntos de dados relativamente grandes, como por exemplo verificar qual amostragem reproduz melhor o conjunto total de dados.
+
+### Frequência absoluta
+
+Definimos frequência absoluta, ou simplesmente frequência, como a quantidade de vezes que determinado valor aparece no conjunto de dados.
+
+### Frequência absoluta acumulada
+
+Definimos frequência absoluta acumulada como a quantidade de vezes que o valor aparece entre as categorias de forma acumulada.
+
+### Frequência relativa ou proporção
+
+Definimos frequência relativa como a fração que determinado valor $n_i$ aparece em relação ao total n, ou seja, $f_i=\frac{n_i}{n}$. A Frequência relativa também recebe o nome de probabilidade experimental e possui relação direta com a probabilidade teórica no contexto da modelagem probabilística.
+
+### Frequência relativa acumulada
+
+Definimos frequência absoluta acumulada como a quantidade de vezes que o valor aparece em relação ao total de valores n entre as categorias de forma acumulada.
+
+Supondo que estamos interessados em estudar a variável **cor** no processo de amostragem AAS, o primeiro passo seria verificar quantas vezes ela aparece na base de dados. Para isso, contabilizamos a sua frequência relativa afim de obter uma noção da quantidade em relação ao tamanho da amostra,
+
+```{r}
+#| label: tbl-tabela_frequencia
+#| tbl-cap: "Tabela de frequências"
+#| code-fold: true
+dados |> 
+  filter(amostragem == "AAS") |> 
+  summarise(n = n(), .by = c("cor")) |> 
+  mutate(f = round(n/sum(n), 3)) |> 
+  mutate(fa = cumsum(n),
+         fra = cumsum(f)) |> 
+  select(cor, n, fa, f, fra) |> 
+  knitr::kable(align = "ccccc",
+               format = "html",
+               escape = FALSE,
+               col.names = c("Cor", 
+                             "Frequência", 
+                             "Frequência acumulada",
+                             "(Frequência relativa",
+                             "Frequência relativa acumulada"
+                             )
+               ) |>
+  kable_classic(full_width = FALSE)
+```
+
+Percebe-se que ao substituir a tabela original de dados em uma tabela de frequências, estamos resumindo uma tabela de `r dados |> filter(amostragem == "AAS") |> nrow()` linhas em uma de apenas `r dados |> filter(amostragem == "AAS") |> summarize(n = n(), .by = "cor") |> nrow()` linhas.
+
+:::{.callout-warning}
+Quanto mais resumirmos, invevitavelmente mais informações serão perdidas a respeito do conjunto de dados.
+:::
+
+## Variáveis quantitativas
+
+A frequência de variáveis contínuas são determinadas em intervalos equivalentes chamados de classe. Considere um grupo de `r nrow(dados_continuos)` alunos com notas de uma determinada disciplina do ensino médio e graduação, como mostra a @tbl-dados_continuos. A amplitude de cada intervalo é obtida pela razão da amplitude dos dados pelo número de classes desejado. Para este conjunto de dados temos uma amplitude de `r diff(range(dados_continuos$nota))`. Considerando uma quantidade de 10 classes, teremos que a amplitude das classes será `r diff(range(dados_continuos$nota))`.
+
+:::{.callout-tip}
+A amplitude dos dados é também considerada uma medida de dispersão, sendo obtida pela diferença dos valores máximo e mínimo.
+:::
+
+```{r}
+#| label: tbl-dados_continuos
+#| tbl-cap: "Grupo de alunos com notas na disciplina de física. A identidade dos alunos está sendo preservada pelo número de matrícula."
+#| code-fold: true
+dados_continuos <- dados_continuos |> 
+  mutate(classe = cut_interval(nota, n = 10)) |> 
+  mutate(classe = str_replace_all(classe, fixed(c("(" = "", "]" = "")))) |> 
+  mutate(classe = str_replace(classe, fixed(","), " ⊣ "))
+
+dados_continuos |> 
+  head(n = 9) |> 
+  rbind(c("...", "...", "...")) |> 
+knitr::kable(align = "ccc", 
+             col.names = c("Matrícula", "Nota", "Classe")
+             ) |> 
+  kable_classic(full_width = FALSE)
+```
+
+Neste caso, temos a amplitude das notas separadas em `r dados_continuos |> summarize(.by = "classe") |> nrow()` intervalos fixos como mostra a @tbl-classe. Os valores de frequência são obtidos à partir da contagem dos valores de notas pertencentes em cada intervalo. Distribuição de frequências de variáveis contínuas serão discutidas com mais detalhes posteriormente, na seção envolvendo histogramas.
+
+```{r}
+#| label: tbl-classe
+#| tbl-cap: "Distribuição de frequência da nota dos alunos."
+#| code-fold: true
+dados_continuos <- dados_continuos |> 
+  summarise(ni = n(), .by = "classe") |> 
+  mutate(fi = round(ni/sum(ni), 3))
+
+dados_continuos |> 
+  select(classe, ni, fi) |> 
+  rbind(list("Total", sum(dados_continuos$ni), sum(dados_continuos$fi))) |> 
+  knitr::kable(align = "ccc",
+               col.names = c("classe", "ni", "fi")
+               ) |> 
+  kableExtra::kable_classic(full_width = FALSE)
+```
+
+# Medidas resumo
+
+## Medidas de tendência central
+
+Vimos na tabela @tbl-tabela_frequencia que podemos resumir um conjunto de `r dados |> filter(amostragem == "AAS") |>  nrow()` dados em apenas `r dados |> filter(amostragem == "AAS") |> summarize(.by = "cor") |> nrow()` valores. Contudo, podemos resumir ainda mais, ou seja, em apenas um único valor. Este valor chamamos de **medida de tendência central**, que podem ser medidas de posição como média, mediana e moda [@Morettin2023].
+
+:::{.callout-warning}
+As medidas de tendência central são aplicadas somente para variáveis quantitativas.
+:::
+
+* Média: Soma das observações dividido pelo número delas.
+
+Considerando um conjunto de dados da variável X de tamanho n, teríamos como média
+
+$$
+\begin{align}
+ \bar{x} &= \frac{x_1+x_2+\cdots +x_n}{n},\\
+ &= \frac{1}{n}\sum_{i=1}^{n}x_i
+\end{align}
+$${#eq-media}
+
+Como exemplo, suponha o seguinte conjunto de dados abaixo,
+
+```{r}
+#| label: tbl-amostra_pequena
+#| tbl-cap: !expr paste("Conjunto de dados de tamanho ", length(amostra), " .")
+#| code-fold: true
+amostra <- c(7.6, 5.2, 7.4, 5.2, 6.8, 6.8, 7.4, 7.4, 7.6, 6.6, 6.8, 2.5, 7.4, 5.2, 6.6) # conjunto amostral de ordem ímpar.
+
+dados_pequeno <- data.frame(i = 1:15, valor = amostra)
+
+getmode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+dados_pequeno <- dados_pequeno |> 
+  mutate(valor_string = cell_spec(valor, color = ifelse(valor == getmode(amostra),
+                                                        "red",
+                                                        "black"
+                                                        )
+                                  )
+         )
+
+knitr::kable(x = dados_pequeno |> select(i, valor_string), 
+             align = "cc",
+             col.names = c("i", "x"),
+             escape = FALSE,
+             format = "html"
+             ) |> 
+  kableExtra::kable_classic(full_width = FALSE)
+```
+
+Neste caso, a média seria
+
+\begin{aligned}
+ \bar{x} & = \frac{7,6+5,2+\cdots +6,6}{15},\\
+ \bar{x} & = 6,4.
+\end{aligned}
+
+:::{.callout-important}
+A média é uma medida de tendência central muito influenciada por valores extremos. Portanto, nessas situações outras medidas como mediana são mais adequadas.
+:::
+
+Desde que temos valores repetidos, podemos substituir a @eq-media por
+
+$$
+\begin{align}
+  \bar{x} &= \frac{n_1x_1+n_2x_2+\cdots +n_nx_n}{n},\\
+  &= \sum_{i=1}^{n}\frac{n_i}{n}x_i,\\
+  &= \sum_{i=1}^{n}f_ix_i,
+\end{align}
+$${#eq-media_ponderada}
+
+onde $n_i$ representa a frequência absoluta e $f_i$ a frequência relativa de cada valor $x_i$ (veja a @tbl-tabela_frequencia).
+
+* Moda: Medida mais frequente do conjunto de dados. A distribuição pode assumir valores unimodais, bimodais, etc. Na @tbl-amostra_pequena podemos ver que `r getmode(amostra)` é o valor com maior frequência, ou seja, `r amostra[which(amostra == getmode(amostra))] |> length()` vezes. Portanto, `r getmode(amostra)` é a moda para esse conjunto de dados.
+
+A @fig-moda mostra a moda (linha pontilhada) de uma distribuição de dados. Perceba que se encontra no ponto mais elevado da distribuição.
+
+```{r}
+#| label: fig-moda
+#| fig-cap: "Moda"
+#| code-fold: true
+alfa = 2
+beta = 8
+dados_med <- data.frame(x = seq(0, 1, 0.01),
+                        neg = dbeta(x = seq(0, 1, 0.01), shape1 = alfa, shape2 = beta)
+                        )
+
+dados_resumo <- data.frame(medida = c("Média", "Moda", "Mediana"),
+                           valor = c(alfa/(alfa+beta), (alfa-1)/(alfa+beta-2), (alfa-1/3)/(alfa+beta-2/3))
+                           )
+
+ggplot(data = dados_med, aes(x = x, y = neg))+
+  geom_line(linewidth = 1.0)+
+  annotate(x = (alfa-1)/(alfa+beta-2), y = dbeta(x = (alfa-1)/(alfa+beta-2),
+                                                 shape1 = alfa,
+                                                 shape2 = beta
+                                                 ),
+           geom = "point",
+           color = "red",
+           size = 2.0
+           )+
+  annotate(x = (alfa-1)/(alfa+beta-2),
+           y = dbeta(x = (alfa-1)/(alfa+beta-2),
+                    shape1 = alfa,
+                    shape2 = beta
+                     ), 
+           geom = "text",
+           label = "Moda",
+           vjust = -0.75
+           )+
+  scale_y_continuous(name = NULL, 
+                     limits = c(0, 4), 
+                     expand = expansion(add = c(0.1, 0))
+                     )+
+  scale_x_continuous(name = NULL, 
+                     expand = expansion(add = c(0, 0))
+                     )+
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        panel.border = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.line.x = element_line(colour = "black")
+        )
+```
+
+* Mediana: Separa o conjunto de dados em duas partes iguais. Ou seja, a mediana representa 50% da quantidade de dados.
+
+Consideremos agora as observações ordenadas em ordem crescente. Em seguida separamos em duas partes iguais como mostra a @tbl-amostra_pequena_ordenada,
+
+```{r}
+#| label: tbl-amostra_pequena_ordenada
+#| tbl-cap: "Conjunto de dados ordenados em ordem crescente. O valor em vermelho representa a mediana dos dados separando o conjunto em duas partes (laranja e azul claro)."
+#| tbl-subcap: ["Conjunto de dados ímpar.", "Conjunto de dados par."]
+#| code-fold: true
+#| layout-ncol: 2
+dados_pequeno_ordenado <- dados_pequeno |> 
+  arrange(valor)
+
+i_md <- as.integer(0.5*(length(amostra)+1))
+
+# Conjunto de dados ímpar
+dados_pequeno_ordenado <- dados_pequeno_ordenado |>
+  mutate(i = 1:length(amostra)) |> 
+  mutate(valor_string = cell_spec(valor, 
+                                  background = case_when(i < i_md ~"orange",
+                                                         i > i_md ~"skyblue",
+                                                         i == i_md ~ "red"
+                                                         )
+                                  )
+         )
+
+knitr::kable(x = dados_pequeno_ordenado |> select(i, valor_string), 
+             align = "cc",
+             col.names = c("i", "x"),
+             escape = FALSE,
+             format = "html"
+             ) |> 
+  kableExtra::kable_classic(full_width = FALSE) |> 
+  row_spec(i_md, background = "red")
+
+# Conjunto de dados par.
+dados_pequeno_ordenado <- dados_pequeno_ordenado |>
+  mutate(i = 1:length(amostra)) |> 
+  mutate(valor_string = cell_spec(valor, 
+                                  background = case_when(i < (i_md-1) ~"orange",
+                                                         i >= (i_md+1) ~"skyblue",
+                                                         .default = "red"
+                                                         )
+                                  )
+         )
+
+knitr::kable(x = dados_pequeno_ordenado |> 
+               select(i, valor_string) |> 
+               filter(i < length(amostra)), 
+             align = "cc",
+             col.names = c("i", "x"),
+             escape = FALSE,
+             format = "html"
+             ) |> 
+  kableExtra::kable_classic(full_width = FALSE) |> 
+  row_spec((i_md-1):i_md, background = "red")
+```
+
+Podemos ver que o elemento de ordem `r i_md` representa a mediana do conjunto de dados, pois acima dele temos `r i_md-1` valores e abaixo também `r i_md-1` valores. No caso da distribuição ser de tamanho par, a mediana é obtida pela média dos termos de ordem `r i_md-1` e `r i_md`, ou seja, (`r dados_pequeno_ordenado$valor[i_md]` + `r dados_pequeno_ordenado$valor[i_md+1]`)/2 = `r 0.5*(dados_pequeno_ordenado$valor[i_md]+dados_pequeno_ordenado$valor[i_md+1])`.
+
+A @fig-mediana apresenta a mediana `r median(amostra)` (linha pontilhada), separando em duas partes equivalentes a distribuição de dados. Além do mais, perceba que neste caso seu valor difere da média, `r round(mean(amostra), 1)`, obtido anteriormente.
+
+```{r}
+#| label: fig-mediana
+#| fig-cap: "Mediana"
+#| code-fold: true
+alfa = 2
+beta = 8
+dados_med <- data.frame(x = seq(0, 1, 0.01),
+                        neg = dbeta(x = seq(0, 1, 0.01), shape1 = alfa, shape2 = beta)
+                        )
+
+ggplot(data = dados_med, aes(x = x, y = neg))+
+  geom_line(linewidth = 1.0)+
+  annotate(geom = "segment",
+           x = (alfa-1/3)/(alfa+beta-2/3),
+           xend = (alfa-1/3)/(alfa+beta-2/3),
+           y = 0,
+           yend = dbeta(x = (alfa-1/3)/(alfa+beta-2/3), 
+                     shape1 = alfa,
+                     shape2 = beta
+                     ),
+           linetype = "dotted"
+           )+
+  annotate(x = (alfa-1/3)/(alfa+beta-2/3),
+           y = dbeta(x = (alfa-1/3)/(alfa+beta-2/3),
+                    shape1 = alfa,
+                    shape2 = beta
+                     ), 
+           geom = "text",
+           label = "Mediana",
+           hjust = -0.1,
+           vjust = -0.5
+           )+
+  annotate(x = 0.5*(alfa-1/3)/(alfa+beta-2/3),
+           y = 0.5*max(dados_med$neg),
+           geom = "text",
+           label = "50%"
+           )+
+  annotate(x = 1.3*(alfa-1/3)/(alfa+beta-2/3),
+           y = 0.5*max(dados_med$neg),
+           geom = "text",
+           label = "50%"
+           )+
+  scale_y_continuous(name = NULL, expand = expansion(add = c(0.1, 0.5)))+
+  scale_x_continuous(name = NULL, expand = expansion(add = c(0, 0)))+
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        panel.border = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.line.x = element_line(colour = "black")
+        )
+```
+
+Definimos a mediana da variável X de tamanho n como
+
+$$
+md(X) = \left\{
+\begin{array}{ll}
+x_{\left(\frac{n+1}{2}\right)}, &\quad\text{n ímpar};\\
+\frac{x_{\left(\frac{n}{2}\right)}+x_{\left(\frac{n}{2}+1\right)}}{2}, &\quad\text{n par}.
+\end{array}
+\right.
+$${#eq-mediana}
+
+## Medidas de dispersão
+
+Geralmente, o resumo dos dados em apenas um único valor não é suficiente para representar todas as suas características. Contudo, podemos incluir valores que indicam como os dados estão distribuídos em torno das medidas de tendência central. Esses valores são chamados de **medidas de dispersão**.
+
+### Medidas de dispersão para a média.
+
+Vamos considerar o caso da média. A @fig-variancia apresenta a distância relativa dos valores da @tbl-amostra_pequena em relação ao valor médio. A linha vermelha representa a média dos dados. As distâncias relativas entre os valores e a média estão sendo representados pelas linhas pontilhadas.
+
+```{r}
+#| label: fig-variancia
+#| fig-cap: "Dispersão dos dados em torno da média. A linha vermelha indica o valor médio e os números a distância relativa em relação à média."
+#| code-fold: true
+ggplot(data = dados_pequeno, aes(x = i, y = valor))+
+  geom_point(size = 3)+
+  geom_hline(aes(yintercept = mean(valor)), colour = "red")+
+  geom_segment(aes(x = i, y = mean(valor), yend = valor), linetype = "dotted")+
+  geom_text(aes(x = i, y = 0.5*(valor+mean(valor))), 
+            label = scales::number(dados_pequeno$valor-mean(dados_pequeno$valor),
+                                   accuracy = 0.1,
+                                   decimal.mark = ","),
+            hjust = -0.25, size = 4)+
+  scale_y_continuous(name = "x")+
+  scale_x_continuous(name = "i",
+                     limits = c(0, 16), 
+                     n.breaks = 8,
+                     expand = expansion(add = 0)
+                     )
+```
+
+Afim de obter uma noção de como os dados estão espalhados em torno da média, podemos estimar um valor médio dessas distâncias relativas,
+
+$$
+\begin{align}
+ &= \frac{(x_1-\bar{x})+(x_2-\bar{x})+\cdots}{n},\\
+ &= \frac{1,2-1,2+1,0+\cdots}{15},\\
+\end{align}
+$$
+
+onde n representa a quantidade de diferenças. Entretanto, ao realizar a soma das diferenças obtemos sempre o valor `r round(sum(amostra-mean(amostra)), 0)`, independente do conjunto de dados. Para contornar esse inconveniente, duas situações são possíveis: definimos o módulo de cada diferença e desprezando os sinais, ou elevamos ao quadrado. No segundo caso, teremos a @eq-variancia,
+
+$$
+\begin{align}
+var(X) &= \frac{(x_1-\bar{x})²+(x_2-\bar{x})²+\cdots}{n},\\
+ &= \frac{1,2²+(-1,2)²+1,0²+\cdots}{15},\\
+ &= 1,93
+\end{align}
+$$
+
+Definimos o valor 1,93 de **variância** dos dados. Matematicamente, podemos expressá-lo como mostra a @eq-variancia
+
+$$
+\begin{align}
+var(X) &= \frac{1}{n}\sum_{i=1}^n(x_i-\bar{x})^2,\\
+       &= \frac{1}{n}\sum x_i^2-2\bar{x}\underbrace{\left(\frac{1}{n}\sum x_i\right)}_{\bar{x}}+\frac{1}{n}\underbrace{\sum\bar{x}^2}_{n\bar{x}^2},\\
+       &= \frac{\sum_{i=1}^nx_i^2}{n}-\bar{x}.
+\end{align}
+$${#eq-variancia}
+
+No caso de k medidas repetidas temos
+
+$$
+\begin{align}
+  var(X) &= \frac{\sum_{i=1}^nx_i^2}{n}-\bar{x},\\
+         &= \frac{\sum_{i=1}^kn_ix_i^2}{n}-\bar{x},\\
+         &= \sum_{i=1}^kf_ix_i^2-\bar{x}.
+\end{align}
+$${#eq-variancia_frequencia}
+
+:::{.callout-tip}
+A variância é útil em representar a variabilidade dos dados em torno da média e está diretamente associado com a precisão dos dados. Quanto maior for a variância, maior será a incerteza em relação à tomada de decisões.
+:::
+
+Entretanto a variância possui unidade de medida equivalente ao quadrado das unidades usada para os dados e da média. Isso gera um outro inconveniente se desejarmos fazer uma comparação entre a média e a variabilidade dos dados. Uma solução para isso seria representar outra medida chamada **desvio padrão**, que neste caso é a raiz quadrada da variância, @eq-desvio_padrao,
+
+$$
+dp(X) = \sqrt{var(X)}.
+$${#eq-desvio_padrao}
+
+:::{.callout-tip}
+Desvio padrão é uma medida útil afim de obter uma comparação entre a variabilidade dos dados e a média. Isso é possível pois ambos estão na mesma unidade de medida.
+:::
+
+#### Coeficiente de variação
+
+Como foi mencionado anteriormente, o desvio padrão permite fazer uma comparação da variabilidade dos dados em relação a média. Entretanto, tão quanto podemos dizer se o seu valor está alto ou não? Uma dica é medir a razão entre o desvio e a média. Assim podemos ter uma noção de quantidade que o desvio padrão corresponde em proporção do valor médio,
+
+$$
+cv = \frac{S}{\bar{x}}.
+$${#eq-coeficiente_variacao}
