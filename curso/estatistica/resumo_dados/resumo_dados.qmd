@@ -19,7 +19,6 @@ Uma das maneiras de analisar o conjunto de dados seria olhar para sua tabela ori
 ```{r}
 #| include: false
 #
-install.packages("here")
 source(here::here("", "_common.R"))
 #
 library(knitr)
@@ -27,7 +26,7 @@ library(kableExtra)
 library(latex2exp)
 library(ggpubr)
 library(stringr)
-library(ggforce)
+#library(ggforce)
 #
 dados <- read.csv(file = "dados.csv", stringsAsFactors = TRUE)
 #
@@ -430,18 +429,18 @@ samples <- data.frame(x = runif(n = 20, min = -5, max = 5),
                       y = runif(n = 20, min = -5, max = 5)
                       )
 
-ggplot()+
-  geom_circle(data = data.frame(x0 = rep(0, 5),
-                                y0 = rep(0, 5),
-                                r = c(5, 4, 3, 2, 1)
-                                ),
-              aes(x0 = x0, y0 = y0, r = r))+
-  geom_point(data = samples, aes(x = x, y = y))+
-  geom_segment(data = samples, aes(x = x, xend = 0, y = y, yend = 0), 
-               linetype = "dotted")+
-  geom_point(aes(x = 0, y = 0), size = 5, color = "red")+
-  labs(x = NULL, y = NULL)+
-  coord_fixed()
+#ggplot()+
+#  geom_circle(data = data.frame(x0 = rep(0, 5),
+#                                y0 = rep(0, 5),
+#                                r = c(5, 4, 3, 2, 1)
+#                                ),
+#              aes(x0 = x0, y0 = y0, r = r))+
+#  geom_point(data = samples, aes(x = x, y = y))+
+#  geom_segment(data = samples, aes(x = x, xend = 0, y = y, yend = 0), 
+#               linetype = "dotted")+
+#  geom_point(aes(x = 0, y = 0), size = 5, color = "red")+
+#  labs(x = NULL, y = NULL)+
+#  coord_fixed()
 ```
 
 Considere um outro exemplo utilizando os valores da @tbl-amostra_pequena. A @fig-variancia apresenta a distância relativa dos valores em relação ao valor médio. A linha vermelha representa a média dos dados. As distâncias relativas entre os valores e a média estão sendo representados por linhas pontilhadas.
