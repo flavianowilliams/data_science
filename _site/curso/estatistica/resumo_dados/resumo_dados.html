@@ -263,7 +263,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Data de Modificação</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">20/08/2026</p>
+        <p class="date-modified">24/08/2026</p>
       </div>
     </div>
       
@@ -2017,25 +2017,59 @@ x_{\left(\frac{n+1}{2}\right)}, &amp;\quad\text{n ímpar};\\
 <p>Geralmente, o resumo dos dados em apenas um único valor não é suficiente para representar todas as suas características. Contudo, podemos incluir valores que indicam como os dados estão distribuídos em torno das medidas de tendência central. Esses valores são chamados de <strong>medidas de dispersão</strong>.</p>
 <section id="medidas-de-dispersão-para-a-média." class="level3">
 <h3 class="anchored" data-anchor-id="medidas-de-dispersão-para-a-média.">Medidas de dispersão para a média.</h3>
-<p>Vamos considerar o caso da média. A <a href="#fig-variancia" class="quarto-xref">Figura&nbsp;3</a> apresenta a distância relativa dos valores da <a href="#tbl-amostra_pequena" class="quarto-xref">Tabela&nbsp;5</a> em relação ao valor médio. A linha vermelha representa a média dos dados. As distâncias relativas entre os valores e a média estão sendo representados pelas linhas pontilhadas.</p>
+<p>Considere um alvo onde atiradores do mundo inteiro podem testar as suas armas de precisão. Devido ao erro aleatório, dificilmente os atiradores irão acerta o alvo sempre. Além do mais, podemos dizer que a distância entre os disparos atingidos e o alvo poderiam representar as medidas de dispersão desses disparos em relação ao alvo, e quanto maiores forem essas distâncias, maior será a incerteza que a arma ou o atirador irá fornecer (veja a <a href="#fig-alvo" class="quarto-xref">Figura&nbsp;3</a>),</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dados_pequeno, <span class="fu">aes</span>(<span class="at">x =</span> i, <span class="at">y =</span> valor))<span class="sc">+</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept =</span> <span class="fu">mean</span>(valor)), <span class="at">colour =</span> <span class="st">"red"</span>)<span class="sc">+</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> i, <span class="at">y =</span> <span class="fu">mean</span>(valor), <span class="at">yend =</span> valor), <span class="at">linetype =</span> <span class="st">"dotted"</span>)<span class="sc">+</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> i, <span class="at">y =</span> <span class="fl">0.5</span><span class="sc">*</span>(valor<span class="sc">+</span><span class="fu">mean</span>(valor))), </span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">label =</span> scales<span class="sc">::</span><span class="fu">number</span>(dados_pequeno<span class="sc">$</span>valor<span class="sc">-</span><span class="fu">mean</span>(dados_pequeno<span class="sc">$</span>valor),</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">accuracy =</span> <span class="fl">0.1</span>,</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">decimal.mark =</span> <span class="st">","</span>),</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.25</span>, <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"x"</span>)<span class="sc">+</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"i"</span>,</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">16</span>), </span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>                     <span class="at">n.breaks =</span> <span class="dv">8</span>,</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>                     <span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">add =</span> <span class="dv">0</span>)</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>                     )</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>samples <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">min =</span> <span class="sc">-</span><span class="dv">5</span>, <span class="at">max =</span> <span class="dv">5</span>),</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y =</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">min =</span> <span class="sc">-</span><span class="dv">5</span>, <span class="at">max =</span> <span class="dv">5</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                      )</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_circle</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">x0 =</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">5</span>),</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                                <span class="at">y0 =</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">5</span>),</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>                                <span class="at">r =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>                                ),</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x0 =</span> x0, <span class="at">y0 =</span> y0, <span class="at">r =</span> r))<span class="sc">+</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> samples, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y))<span class="sc">+</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data =</span> samples, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">xend =</span> <span class="dv">0</span>, <span class="at">y =</span> y, <span class="at">yend =</span> <span class="dv">0</span>), </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">linetype =</span> <span class="st">"dotted"</span>)<span class="sc">+</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">0</span>), <span class="at">size =</span> <span class="dv">5</span>, <span class="at">color =</span> <span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>)<span class="sc">+</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-alvo" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-alvo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="resumo_dados_files/figure-html/fig-alvo-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-alvo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3: Alvo localizado no ponto vermelho. Os pontos pretos representam disparos feitos com armas de precisão. As linhas pontilhadas representam a dispersão dos alvos em relação ao alvo.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Considere um outro exemplo utilizando os valores da <a href="#tbl-amostra_pequena" class="quarto-xref">Tabela&nbsp;5</a>. A <a href="#fig-variancia" class="quarto-xref">Figura&nbsp;4</a> apresenta a distância relativa dos valores em relação ao valor médio. A linha vermelha representa a média dos dados. As distâncias relativas entre os valores e a média estão sendo representados pelas linhas pontilhadas.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dados_pequeno, <span class="fu">aes</span>(<span class="at">x =</span> i, <span class="at">y =</span> valor))<span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept =</span> <span class="fu">mean</span>(valor)), <span class="at">colour =</span> <span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> i, <span class="at">y =</span> <span class="fu">mean</span>(valor), <span class="at">yend =</span> valor), <span class="at">linetype =</span> <span class="st">"dotted"</span>)<span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> i, <span class="at">y =</span> <span class="fl">0.5</span><span class="sc">*</span>(valor<span class="sc">+</span><span class="fu">mean</span>(valor))), </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">label =</span> scales<span class="sc">::</span><span class="fu">number</span>(dados_pequeno<span class="sc">$</span>valor<span class="sc">-</span><span class="fu">mean</span>(dados_pequeno<span class="sc">$</span>valor),</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">accuracy =</span> <span class="fl">0.1</span>,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">decimal.mark =</span> <span class="st">","</span>),</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.25</span>, <span class="at">size =</span> <span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"x"</span>)<span class="sc">+</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"i"</span>,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">16</span>), </span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>                     <span class="at">n.breaks =</span> <span class="dv">8</span>,</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>                     <span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">add =</span> <span class="dv">0</span>)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>                     )</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-variancia" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -2044,7 +2078,7 @@ x_{\left(\frac{n+1}{2}\right)}, &amp;\quad\text{n ímpar};\\
 <img src="resumo_dados_files/figure-html/fig-variancia-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-variancia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3: Dispersão dos dados em torno da média. A linha vermelha indica o valor médio e os números a distância relativa em relação à média.
+Figura&nbsp;4: Dispersão dos dados em torno da média. A linha vermelha indica o valor médio e os números a distância relativa em relação à média.
 </figcaption>
 </figure>
 </div>

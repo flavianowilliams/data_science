@@ -26,6 +26,7 @@ library(kableExtra)
 library(latex2exp)
 library(ggpubr)
 library(stringr)
+library(ggforce)
 #
 dados <- read.csv(file = "dados.csv", stringsAsFactors = TRUE)
 #
@@ -418,7 +419,31 @@ Geralmente, o resumo dos dados em apenas um único valor não é suficiente para
 
 ### Medidas de dispersão para a média.
 
-Vamos considerar o caso da média. A @fig-variancia apresenta a distância relativa dos valores da @tbl-amostra_pequena em relação ao valor médio. A linha vermelha representa a média dos dados. As distâncias relativas entre os valores e a média estão sendo representados pelas linhas pontilhadas.
+Considere um alvo onde atiradores do mundo inteiro podem testar as suas armas de precisão. Devido ao erro aleatório, dificilmente os atiradores irão acerta o alvo sempre. Além do mais, podemos dizer que a distância entre os disparos atingidos e o alvo poderiam representar as medidas de dispersão desses disparos em relação ao alvo, e quanto maiores forem essas distâncias, maior será a incerteza que a arma ou o atirador irá fornecer (veja a @fig-alvo),
+
+```{r}
+#| label: fig-alvo
+#| fig-cap: "Alvo localizado no ponto vermelho. Os pontos pretos representam disparos feitos com armas de precisão. As linhas pontilhadas representam a dispersão dos alvos em relação ao alvo."
+#| code-fold: true
+samples <- data.frame(x = runif(n = 20, min = -5, max = 5),
+                      y = runif(n = 20, min = -5, max = 5)
+                      )
+
+ggplot()+
+  geom_circle(data = data.frame(x0 = rep(0, 5),
+                                y0 = rep(0, 5),
+                                r = c(5, 4, 3, 2, 1)
+                                ),
+              aes(x0 = x0, y0 = y0, r = r))+
+  geom_point(data = samples, aes(x = x, y = y))+
+  geom_segment(data = samples, aes(x = x, xend = 0, y = y, yend = 0), 
+               linetype = "dotted")+
+  geom_point(aes(x = 0, y = 0), size = 5, color = "red")+
+  labs(x = NULL, y = NULL)+
+  coord_fixed()
+```
+
+Considere um outro exemplo utilizando os valores da @tbl-amostra_pequena. A @fig-variancia apresenta a distância relativa dos valores em relação ao valor médio. A linha vermelha representa a média dos dados. As distâncias relativas entre os valores e a média estão sendo representados por linhas pontilhadas.
 
 ```{r}
 #| label: fig-variancia
