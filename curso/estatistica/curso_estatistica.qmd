@@ -4,7 +4,6 @@ listing:
   contents:
     - planejamento_pesquisa/planejamento_pesquisa.qmd
     - amostragem/amostragem.qmd
-    - resumo_dados/resumo_dados.qmd
     - analise_uma_variavel/analise_uma_variavel.qmd
     - analise_duas_variaveis/analise_duas_variaveis.qmd
   feed: false
