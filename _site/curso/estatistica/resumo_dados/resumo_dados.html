@@ -337,6 +337,7 @@ window.Quarto = {
   <li><a href="#medidas-de-dispersão" id="toc-medidas-de-dispersão" class="nav-link" data-scroll-target="#medidas-de-dispersão">Medidas de dispersão</a>
   <ul class="collapse">
   <li><a href="#medidas-de-dispersão-para-a-média." id="toc-medidas-de-dispersão-para-a-média." class="nav-link" data-scroll-target="#medidas-de-dispersão-para-a-média.">Medidas de dispersão para a média.</a></li>
+  <li><a href="#medidas-de-dispersão-para-a-mediana" id="toc-medidas-de-dispersão-para-a-mediana" class="nav-link" data-scroll-target="#medidas-de-dispersão-para-a-mediana">Medidas de dispersão para a mediana</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -2051,7 +2052,7 @@ Figura&nbsp;3: Alvo localizado no ponto vermelho. Os pontos pretos representam d
 </div>
 </div>
 </div>
-<p>Considere um outro exemplo utilizando os valores da <a href="#tbl-amostra_pequena" class="quarto-xref">Tabela&nbsp;5</a>. A <a href="#fig-variancia" class="quarto-xref">Figura&nbsp;4</a> apresenta a distância relativa dos valores em relação ao valor médio. A linha vermelha representa a média dos dados. As distâncias relativas entre os valores e a média estão sendo representados pelas linhas pontilhadas.</p>
+<p>Considere um outro exemplo utilizando os valores da <a href="#tbl-amostra_pequena" class="quarto-xref">Tabela&nbsp;5</a>. A <a href="#fig-variancia" class="quarto-xref">Figura&nbsp;4</a> apresenta a distância relativa dos valores em relação ao valor médio. A linha vermelha representa a média dos dados. As distâncias relativas entre os valores e a média estão sendo representados por linhas pontilhadas.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>
@@ -2151,10 +2152,35 @@ Dica
 <p><span id="eq-coeficiente_variacao"><span class="math display">\[
 cv = \frac{S}{\bar{x}}.
 \tag{7}\]</span></span></p>
-
-
-
 </section>
+</section>
+<section id="medidas-de-dispersão-para-a-mediana" class="level3">
+<h3 class="anchored" data-anchor-id="medidas-de-dispersão-para-a-mediana">Medidas de dispersão para a mediana</h3>
+<p>Às vezes média e desvio padrão não representam de maneira adequada o conjunto de dados, pois</p>
+<ul>
+<li>São fortemente afetados por valores extremos;</li>
+<li>Não reproduzem adequadamente certas características, como simetria na distribuição de dados. Vimos que a mediana é uma boa alternativa quando temos valores extremos influenciando a média. Agora, qual medida poderemos utilizar para representar melhor casos de simetria do problema? Uma maneira seria particionar a distribuição de dados em parcelas fixas chamadas de <strong>quantis empíricos</strong>.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dica
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Chamamos de quartil os quantis que fatiam o conjunto de dados em 25%;</li>
+<li>A mediana é chamada de segundo quartil.</li>
+</ul>
+</div>
+</div>
+<p>Considere o conjunto de dados par da <a href="#tbl-amostra_pequena_ordenada" class="quarto-xref">Tabela&nbsp;6</a>. Podemos dizer que os valores 2,5, 5,2, 5,2 e 5,2 representam 25% dos dados. Essas parcela chamamos de primeiro quartil.</p>
+
+
+
 </section>
 </section>
 </section>

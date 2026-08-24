@@ -19,6 +19,7 @@ Uma das maneiras de analisar o conjunto de dados seria olhar para sua tabela ori
 ```{r}
 #| include: false
 #
+install.packages("here")
 source(here::here("", "_common.R"))
 #
 library(knitr)
@@ -526,3 +527,21 @@ Como foi mencionado anteriormente, o desvio padrão permite fazer uma comparaç�
 $$
 cv = \frac{S}{\bar{x}}.
 $${#eq-coeficiente_variacao}
+
+### Medidas de dispersão para a mediana
+
+Às vezes média e desvio padrão não representam de maneira adequada o conjunto de dados, pois
+
+* São fortemente afetados por valores extremos;
+* Não reproduzem adequadamente certas características, como simetria na distribuição de dados. Vimos que a mediana é uma boa alternativa quando temos valores extremos influenciando a média. Agora, qual medida poderemos utilizar para representar melhor casos de simetria do problema? Uma maneira seria particionar a distribuição de dados em parcelas fixas chamadas de **quantis empíricos**.
+
+Considere o conjunto de dados da @tbl-amostra_pequena_ordenada. Chamamos de quartil os quantis que fatiam o conjunto de dados em 25%, veja a @eq-quartis,
+
+$$
+\underbrace{2,5\quad 5,2\quad 5,2\quad 5,2\quad}_{1^o\;\text{quartil}}
+\underbrace{2,5\quad 5,2\quad 5,2\quad 5,2\quad}_{1^o\;\text{quartil}}
+$${#eq-quartis}
+
+:::{.callout-tip}
+Chamamos a mediana de segundo quartil.
+:::
