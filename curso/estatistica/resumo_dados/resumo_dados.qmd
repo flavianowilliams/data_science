@@ -28,12 +28,15 @@ library(ggpubr)
 library(stringr)
 library(ggforce)
 #
-#dados <- read.csv(file = "dados.csv", stringsAsFactors = TRUE)
+url <- "https://raw.githubusercontent.com/flavianowilliams/data_science/master/dados/amostragem.csv"
+
+dados <- read.csv(url)
 #
-dados_continuos <- read.csv(file = "nota.csv")
+url <- "https://raw.githubusercontent.com/flavianowilliams/data_science/master/dados/nota.csv"
+
+dados_continuos <- read.csv(url)
 #
 dados_continuos <- dados_continuos |> 
-  select(registration, nota) |> 
   filter(!is.na(nota))
 #
 dados <- dados |> 

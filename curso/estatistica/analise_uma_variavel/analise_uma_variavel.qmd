@@ -36,10 +36,8 @@ dados <- read.csv(url)
 url <- "https://raw.githubusercontent.com/flavianowilliams/data_science/master/dados/nota.csv"
 
 dados_continuos <- read.csv(url)
-#dados_continuos <- read.csv(file = "nota.csv")
 #
 dados_continuos <- dados_continuos |> 
-  select(registration, nota) |> 
   filter(!is.na(nota))
 #
 dados <- dados |> 
