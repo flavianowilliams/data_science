@@ -1,9 +1,11 @@
 {
-  "hash": "41542006f4443d1addf5ca6c60ee6bdd",
+  "hash": "29fa825d6aa7379d26a21a288c30800a",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Análise descritiva entre duas variáveis\"\nauthor: \"Flaviano Williams Fernandes\"\ndate: \"2026-08-06\"\ndate-modified: today\ncategories: [estatistica_descritiva]\n---\n\n\n\n",
-    "supporting": [],
+    "markdown": "---\ntitle: \"Análise descritiva entre duas variáveis\"\nauthor: \"Flaviano Williams Fernandes\"\ndate: \"2026-08-06\"\ndate-modified: today\ncategories: [estatistica_descritiva]\n---\n\n\n\n# Qualitativa versus qualitativa\n\n## Gráfico de barras\n\nx",
+    "supporting": [
+      "analise_duas_variaveis_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

@@ -1,0 +1,17 @@
+{
+  "hash": "7f86d4f5d4d7aa7ac446c9417aee9f4d",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Análise descritiva multivariada\"\nauthor: \"Flaviano Williams Fernandes\"\ndate: \"2026-08-06\"\ndate-modified: today\ncategories: [estatistica_descritiva]\n---\n\n\n\n# Entre variáveis qualitativas\n\n## Escala Likert\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndata(\"pisaitems\")\n\npisaitems <- pisaitems |> \n  select(starts_with(\"ST24Q\"))\n\nperguntas <- c(\"Q1\", \"Q2\", \"Q3\", \"Q4\", \"Q5\", \"Q6\", \"Q7\", \"Q8\", \"Q9\", \"Q10\", \"Q11\")\n\nnames(pisaitems) <- perguntas\n\npisaitems[, names(pisaitems)] <- lapply(pisaitems[, names(pisaitems)], \n                                        factor,\n                                        levels = levels(pisaitems[[1]]),\n                                        labels = c(\"Discordo totalmente\",\n                                                   \"Discordo\",\n                                                   \"Concordo\",\n                                                   \"Concordo totalmente\"\n                                                   ),\n                                        ordered = TRUE\n                                        )\n\ndados <- likert(pisaitems)\n\nlikert.bar.plot(dados)+\n  labs(y = \"Porcentagem\")\n```\n\n::: {.cell-output-display}\n![](analise_multivariada_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n\n",
+    "supporting": [
+      "analise_multivariada_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

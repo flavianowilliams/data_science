@@ -2,9 +2,11 @@
 title: "R"
 listing:
   contents:
-    - r_base/index.qmd
-    - wrangling/index.qmd
-    - ggplot2/index.qmd
+    - introducao/introducao.qmd
+    - r_base/r_base.qmd
+    - estrutura_dados/estrutura_dados.qmd
+    - wrangling/wrangling.qmd
+    - ggplot2/ggplot2.qmd
   feed: false
   sort: "date desc"
   type: grid

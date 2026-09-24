@@ -4,16 +4,19 @@
       "posts"
     ],
     "curso/r/curso_r.qmd": [
-      "r_base/index.qmd",
-      "wrangling/index.qmd",
-      "ggplot2/index.qmd"
+      "introducao/introducao.qmd",
+      "r_base/r_base.qmd",
+      "estrutura_dados/estrutura_dados.qmd",
+      "wrangling/wrangling.qmd",
+      "ggplot2/ggplot2.qmd"
     ],
     "curso/estatistica/curso_estatistica.qmd": [
       "planejamento_pesquisa/planejamento_pesquisa.qmd",
       "amostragem/amostragem.qmd",
       "resumo_dados/resumo_dados.qmd",
       "analise_uma_variavel/analise_uma_variavel.qmd",
-      "analise_duas_variaveis/analise_duas_variaveis.qmd"
+      "analise_duas_variaveis/analise_duas_variaveis.qmd",
+      "analise_multivariada/analise_multivariada.qmd"
     ]
   }
 }

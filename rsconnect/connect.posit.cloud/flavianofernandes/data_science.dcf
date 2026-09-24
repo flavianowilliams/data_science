@@ -1,0 +1,12 @@
+name: data_science
+title: data_science
+username: flavianofernandes
+account: flavianofernandes
+server: connect.posit.cloud
+hostUrl: https://api.connect.posit.cloud/v1
+appId: 01a0347a-3423-e081-baa9-e9f4d3298ea1
+bundleId:
+url: https://connect.posit.cloud/flavianofernandes/content/01a0347a-3423-e081-baa9-e9f4d3298ea1
+version: 1
+asMultiple: FALSE
+asStatic: TRUE

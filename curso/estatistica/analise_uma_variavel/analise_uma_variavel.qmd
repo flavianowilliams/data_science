@@ -1,5 +1,5 @@
 ---
-title: "Análise descritiva de uma variável"
+title: "Análise descritiva univariada"
 author: "Flaviano Williams Fernandes"
 date: "2026-08-06"
 date-modified: today
@@ -10,21 +10,33 @@ format:
     html-math-method: mathjax
 ---
 
-# Gráfico para variáveis qualitativas
-
 ```{r}
 #| include: false
-#
 source(here::here("", "_common.R"))
-#
+```
+
+:::{.callout-tip}
+Execute o template abaixo no seu ambiente R de desenvolvimento (em conjunto com o pacote tidyverse) caso queira praticar as linhas de comando que estão nesta atividade.
+
+```{r}
+#| echo: true
+#| message: false
+#| code-fold: true
 library(knitr)
 library(kableExtra)
 library(latex2exp)
-library(ggbrace)
+library(ggbeeswarm)
+library(ggdist)
+library(RCurl)
 #
-dados <- read.csv(file = "dados.csv", stringsAsFactors = TRUE)
+url <- "https://raw.githubusercontent.com/flavianowilliams/data_science/master/dados/amostragem.csv"
+
+dados <- read.csv(url)
 #
-dados_continuos <- read.csv(file = "nota.csv")
+url <- "https://raw.githubusercontent.com/flavianowilliams/data_science/master/dados/nota.csv"
+
+dados_continuos <- read.csv(url)
+#dados_continuos <- read.csv(file = "nota.csv")
 #
 dados_continuos <- dados_continuos |> 
   select(registration, nota) |> 
@@ -41,6 +53,9 @@ dados <- dados |>
                          cor == "VI" ~ "Violeta",
                          .default = cor))
 ```
+:::
+
+# Gráfico para variáveis qualitativas
 
 Considere a seguinte base de dados contendo `r nrow(dados)` elementos coletados por  `r dados |> summarize(n = n(), .by="amostragem") |> nrow()` processos de amostragem diferentes. As amostras foram coletadas de um conjunto contendo 192 bolinhas de 8 cores distintas (vermelho, branco, amarelo, laranja, rosa, azul, verde e violeta).
 
@@ -84,16 +99,399 @@ g2
 * O eixo indicando a frequência deve ser o mesmo para todos os itens do gráfico.
 :::
 
-# Variáveis quantitativas
+# Gráfico para Variáveis quantitativas
+
+Gráficos de variáveis quantitativas geralmente são úteis para a visualização da distribuição representada em frequência, além de obter valores de medidas de tendência central e dispersão.
+
+## A distribuição normal
+
+Antes de falarmos sobre os tipos de gráficos para variável quantitativas, vamos falar um pouco sobre curvas de distribuição normal. Este gráfico tem a forma de um sino de igreja e uma de suas características está no fato da distribuição ser simétrica em torno do ponto central, onde a média $(\mu)$, a mediana e a moda se coincidem.
+
+```{r}
+#| label: fig-normal
+#| fig-cap: "Distribuição normal de média zero e variância 1."
+#| code-fold: true
+dados_normal <- data.frame(x = seq(-5, 5, 0.1),
+                           d = dnorm(x = seq(-5, 5, 0.1), mean = 0, sd = 1)
+                           )
+ggplot(data = dados_normal, aes(x = x, y = d))+
+  geom_line(stat = "identity")+
+  annotate(geom = "segment",
+           x = 0, 
+           xend = 0,
+           y = 0, 
+           yend = max(dados_normal$d),
+           linetype = "dotted"
+           )+
+  annotate(geom = "text",
+           x = 0,
+           y = max(dados_normal$d), 
+           label = TeX("$\\mu$"),
+           vjust = -1.0
+           )+
+  scale_y_continuous(name = NULL, expand = expansion(add = c(0, 0.05)))+
+  scale_x_continuous(name = "")+
+  theme(axis.ticks.x = element_blank(),
+        axis.text.x = element_blank()
+        )
+```
+
+## Gráfico de pontos
+
+Neste gráfico, o eixo y indica os valores da variável e a forma de visualização são pontos distribuídos ao longo do eixo x. Em amostras grandes, pode haver superposição dos pontos o que dificulta a visualização.
+```{r}
+#| label: fig-pontos
+#| fig-cap: "Gráfico de pontos"
+#| code-fold: true
+dados_discretos <- data.frame(y = rnorm(n = 50, mean = 0, sd = 0.5))
+
+ggplot(data = dados_discretos, aes(x = "", y = y))+
+  geom_beeswarm(cex = 4)+
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())
+```
+
+### Características
+
+* Utilizado para variáveis discretas e contínuas;
+
+* Sugerido para amostras pequenas
+
+## Histograma
+
+Considere um conjunto de dados distribuidos em 10 classes como mostra a @tbl-classe,
+
+```{r}
+#| label: tbl-classe
+#| tbl-cap: "Distribuição de frequência da nota dos alunos."
+#| code-fold: true
+classe <- diff(range(dados_continuos$nota))/10
+classe <- ceiling(classe)
+
+dados_freq <- dados_continuos |> 
+  arrange(nota) |> 
+  mutate(classe = cut_width(nota, width = classe)) |> 
+  mutate(classe = str_replace_all(classe, fixed(c("(" = "", "]" = "", "[" = "")))) |> 
+  mutate(classe = str_replace(classe, fixed(","), " ⊣ "))
+
+dados_freq <- dados_freq |> 
+  summarise(ni = n(), .by = "classe") |> 
+  mutate(fi = round(ni/sum(ni), 4))
+
+dados_freq |> 
+  select(classe, ni, fi) |> 
+  rbind(list("Total", sum(dados_freq$ni), sum(dados_freq$fi))) |> 
+  knitr::kable(align = "ccc",
+               col.names = c("classe", "n<sub>i</sub>", "f<sub>i</sub>"),
+               escape = FALSE,
+               format = "html"
+               ) |> 
+  kableExtra::kable_classic(full_width = FALSE)
+```
+
+A melhor maneira de representar esses valores na forma de um gráfico seria usando um histograma. Este gráfico é formado por retângulos de largura equivalente a amplitude $\Delta x$ dos intervalos (eixo x) e altura que pode corresponder os valores de frequência ou densidade (eixo y). A densidade é escalonada de forma que a área total dos retângulos represente o valor unitário ($f_i/\Delta x$) ou o total de observações $n_i/\Delta x$,
 
 ```{r}
 #| label: fig-histograma
 #| fig-cap: ""
+#| warning: false
 #| code-fold: true
-ggplot(data = dados_continuos, aes(x = nota))+
-  geom_histogram(bins = 10, color = "red")+
-  stat_brace(data = data.frame(x = c(95, 100), y = c(0, 3.0)),
-             aes(x = x, y = y),
-             rotate = 90
-             )
+
+max_freq <- max(dados_freq$fi/classe)
+max_clss <- 5+5*classe
+
+ggplot()+
+  geom_histogram(data = dados_continuos,
+                 stat = "bin",
+                 aes(x = nota, y = after_stat(density)),
+                 binwidth = 9,
+                 color = "black"
+                 )+
+  annotate(geom = "segment", 
+           x = max_clss, 
+           xend = max_clss+classe, 
+           y = 1.05*max_freq, 
+           yend = 1.05*max_freq,
+           color = "red",
+           arrow = arrow(ends = "both", length = unit(0.2, "cm"), type = "closed")
+           )+
+  annotate(geom = "text", 
+           x = max_clss+0.5*classe, 
+           y = 1.05*max_freq,
+           label = TeX("$\\Delta x$"),
+           color = "red",
+           vjust = -0.5
+           )+
+  annotate(geom = "segment", 
+           x = max_clss+1.1*classe, 
+           xend = max_clss+1.1*classe, 
+           y = 0, 
+           yend = max_freq,
+           color = "red",
+           arrow = arrow(ends = "both", length = unit(0.2, "cm"), type = "closed")
+           )+
+  annotate(geom = "text", 
+           x = max_clss+1.1*classe, 
+           y = 0.5*max_freq,
+           label = TeX("$\\frac{f_i}{\\Delta x}$"),
+           color = "red",
+           hjust = -0.5
+           )+
+  scale_x_continuous(name = "Nota",
+                     n.breaks = 25,
+                     limits = c(0, 100),
+                     expand = expansion(add = 0.0)
+                     )+
+  scale_y_continuous(name = "Densidade",
+                     expand = expansion(mult = c(0, 0.2))
+                     )
 ```
+
+O histograma permite de maneira um pouco grosseira a visualização do formato da distribuição, e suas principais características, como assimetria, curtose a valores modais. Devido a essa característica, geralmente é utilizado em trabalhos experimentais afim de verificar a normalidade dos dados.
+
+### Características
+
+* Utilizado para variáveis quantitativas contínuas;
+
+* Sugerido para amostras de tamanho médio.
+
+## Gráfico de densidade
+
+```{r}
+#| label: fig-densidade
+#| fig-cap: ""
+#| warning: false
+#| code-fold: true
+
+dados_continuos <- data.frame(variavel = rnorm(n = 1000, mean = 0, sd = 50))
+
+ggplot()+
+  geom_histogram(data = dados_continuos,
+                 stat = "bin",
+                 aes(x = variavel, y = after_stat(density)),
+                 bins = 30,
+                 color = "black"
+                 )+
+  geom_density(data = dados_continuos,
+                  aes(x = variavel),
+               fill = "cadetblue",
+               alpha = 0.5
+                  )+
+  scale_x_continuous(name = "Variável",
+                     n.breaks = 10,
+                     expand = expansion(add = 0.0)
+                     )+
+  scale_y_continuous(name = "Densidade",
+                     expand = expansion(mult = c(0, 0.2))
+                     )
+
+```
+
+### Características
+
+* Utilizado para variáveis quantitativas contínuas;
+
+* Permite visualizar com mais clareza distribuições multimodais;
+
+* Útil para comparações entre distribuições;
+
+* Sugerido para amostras grandes.
+
+## Boxplot
+
+O boxplot também é conhecido como caixa de bigodes, devido ao seu formato. Este tipo de gráfico é muito utilizado em distribuições não-normais para verificar a assimetria dos dados, valores de mediana e a presença de valores discrepantes, que por sua vez são responsáveis pelo desvio da média e a não-normalidade dos dados.
+
+```{r}
+#| label: fig-boxplot
+#| fig-cap: "Boxplot de uma distribuição de dados contínuo."
+#| code-fold: true
+dados_quantis <- data.frame(q = boxplot.stats(dados_continuos$variavel)$stats,
+                                      label = c("Limite inferior", 
+                                        "Primeiro quantil", 
+                                        "Mediana", 
+                                        "Terceiro quantil", 
+                                        "Limite superior")
+                            )
+
+ggplot(data = dados_continuos)+
+  geom_boxplot(aes(x = variavel), fill = "gray")+
+  geom_point(data = data.frame(x = boxplot.stats(dados_continuos$variavel)$out), 
+             aes(x = x, y = 0),
+             color = "red",
+             size = 2.0
+             )+
+  geom_text(data = dados_quantis,
+            stat = "identity",
+            aes(x = q, y = -0.75, label = label))+
+  geom_segment(data = dados_quantis,
+               stat = "identity",
+               aes(x = q, xend = q, y = -0.5, yend = -0.4), arrow = arrow(ends = "last", type = "closed", length = unit(0.2, "cm")))+
+  annotate(geom = "segment", x = dados_quantis$q[1], xend = dados_quantis$q[2], y = 0.5, yend = 0.5, arrow = arrow(ends = "both", 
+                                                                                                                                       type = "closed",
+                                                                                                                                       length = unit(0.2, "cm"))
+           )+
+  annotate(geom = "text", x = dados_quantis$q[3], y = 0.5, label = "IQR", hjust = -0.5)+
+  annotate(geom = "segment", x = dados_quantis$q[2], xend = dados_quantis$q[4], y = 0.5, yend = 0.5, arrow = arrow(ends = "both", 
+                                                                                                                                       type = "closed",
+                                                                                                                                       length = unit(0.2, "cm"))
+           )+
+  annotate(geom = "text",
+           x = 0.5*(dados_quantis$q[4]+dados_quantis$q[5]),
+           y = 0.5, label = "1,5 IQR",
+           hjust = -0.25
+           )+
+  annotate(geom = "segment", x = dados_quantis$q[4], xend = dados_quantis$q[5], y = 0.5, yend = 0.5, arrow = arrow(ends = "both", 
+                                                                                                                                       type = "closed",
+                                                                                                                                       length = unit(0.2, "cm"))
+           )+
+  annotate(geom = "text",
+           x = 0.5*(dados_quantis$q[1]+dados_quantis$q[2]),
+           y = 0.5, label = "1,5 IQR",
+           hjust = -0.25
+           )+
+  coord_flip(ylim = c(-1, 1))+
+  theme(axis.title = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank(),
+        plot.caption = element_text(hjust = 0.0)
+        )+
+  labs(caption = "Observação: Pontos vermelhos são valores discrepantes (outliers).")
+```
+
+### Características
+
+* Permite a visualização
+
+  * dos principais quantis;
+  
+  * de valores discrepantes;
+  
+  * de assimetria da distribuição.
+
+## Violino
+
+O gráfico violino é equivalente a curva de densidade representada no eixo vertical refletida ao longo do eixo x. A sua forma lembra um violino, o que dá origem ao seu nome.
+
+```{r}
+#| label: fig-violino
+#| fig-cap: "Gráfico violino"
+#| code-fold: true
+ggplot(data = dados_continuos, aes(x = 0, y = variavel))+
+  geom_violin()+
+  scale_y_continuous(name = "Variável")+
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank()
+        )
+```
+
+### Características
+
+Este é um tipo de gráfico mais frequentemente utilizado em combinações com boxplot.
+
+# Combinações
+
+Afim de melhorar a visualização dos dados, é comumente útil a prática de combinações envolvendo vários gráficos.
+
+## Boxplot + violino
+
+```{r}
+#| label: fig-violino_boxplot
+#| fig-cap: "Gráfico violino"
+#| code-fold: true
+ggplot(data = dados_continuos, aes(x = 0, y = variavel))+
+  geom_violin()+
+  geom_boxplot(fill = "gray75", width = 0.6)+
+  scale_y_continuous(name = "Variável")+
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank()
+        )
+```
+
+### Características
+
+Combinação entre o gráfico violino e boxplot. Permite preencher algumas lacunas que o boxplot possui, como a visualização de valores multimodais, por exemplo.
+
+## boxplot + pontos
+
+```{r}
+#| label: fig-boxplot_pontos
+#| fig-cap: "Gráfico violino"
+#| code-fold: true
+ggplot(data = dados_continuos, aes(x = 0, y = variavel))+
+  geom_boxplot(fill = "gray75")+
+  geom_jitter()+
+  scale_y_continuous(name = "Variável")+
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.x = element_blank()
+        )
+```
+
+### Características
+
+Possui as mesmas qualidades do gráfico violino+boxplot, porém aplicado para amostras pequenas.
+
+## Densidade+pontos (raincloud)
+
+```{r}
+#| label: fig-raincloud
+#| fig-cap: "Gráfico de nuvem e chuva."
+#| code-fold: true
+ggplot(data = dados_continuos, aes(x = 0, y = variavel))+
+  stat_halfeye(adjust = 0.5, 
+               .width = 0, 
+               point_colour = NA,
+               fill = "cadetblue"
+               )+
+  stat_dots(side = "left", 
+            justification = 1.1,
+            alpha = 0.3,
+            fill = "cadetblue"
+            )+
+  scale_y_continuous(name = "Variável")+
+  coord_flip()+
+  theme(axis.title.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.text.y = element_blank()
+        )
+```
+
+### Características
+
+Tipo de gráfico que equivale a combinação de um gráfico de pontos com a curva de densidade. Permite a visualização de maneira elegante a distribuição dos dados, identificando a forma geral da curva, como assimetria, curtose e valores multimodais. Útil para amostras de tamanho mediano.
+
+## Densidade+pontos+boxplot (raincloud)
+
+```{r}
+#| label: fig-raincloud_boxplot
+#| fig-cap: "Gráfico de nuvem e chuva."
+#| code-fold: true
+ggplot(data = dados_continuos, aes(x = 0, y = variavel))+
+  stat_halfeye(adjust = 0.5, 
+               .width = 0, 
+               point_colour = NA,
+               justification = -0.2,
+               fill = "cadetblue"
+               )+
+  geom_boxplot(width = 0.15, 
+               outliers = FALSE
+               )+
+  stat_dots(side = "left",
+            justification = 1.2,
+            alpha = 0.3,
+            fill = "cadetblue"
+            )+
+  scale_y_continuous(name = "Variável")+
+  coord_flip()+
+  theme(axis.title.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.text.y = element_blank()
+        )
+```
+
+### Características
+
+Vem a complementar o gráfico anterior, adicionando as características do boxplot.

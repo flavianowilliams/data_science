@@ -1,0 +1,139 @@
+---
+title: "R base"
+author: "Flaviano Williams Fernandes"
+date: "2026-08-04"
+date-modified: today
+categories: [r]
+---
+
+```{r}
+#| include: false
+#
+source(here::here("", "_common.R"))
+```
+
+# Funções
+
+Uma função é definida pelo comando `function` [@rcienciadadoswebsite],
+
+```r
+funcao <- function(ARGUMENTOS) {
+  CORPO
+}
+```
+
+Também é possível obter uma função com o comando `\(x, y, ...)`.
+
+```{r}
+funcao <- \(x, y) x+y
+funcao(4, 5)
+```
+
+A princípio o R possui um repertório imenso de funções para diversos tipos de tarefas
+
+```{r}
+exp(1)
+sqrt(2500)
+```
+
+:::{.callout-note title="Exercício"}
+
+Use a função `polyroot` para obter as raízes do polinômio $f(x) = x²-3x+2$ (Dica: Utilize a função `Re` para extrair somente a parte real da solução).
+
+:::
+
+## Vetorização
+
+Permite aplicar funções a um vetor inteiro de uma só vez. Isso permite realizar o cálculo de maneira mais limpa e rápida, ou seja, mais eficiente.
+
+```{r, echo=TRUE}
+  vetor_real <- -2:2
+  vetor_real
+  vetor_complexo <- as.complex(vetor_real)
+  vetor_complexo
+  sqrt(vetor_complexo)
+```
+
+```{r, echo=TRUE}
+  vetor_fracoes <- 1:4
+  vetor_fracoes
+  vetor_angulo <- pi*vetor_fracoes/2
+  vetor_angulo
+  cos(vetor_angulo)**2+sin(vetor_angulo)**2
+```
+
+:::{.callout-note title="Exercício"}
+
+A massa em gramas de cinco amostras foram coletadas e armazenadas em um vetor, amostra =  (112, 127, 108, 99, 115). Considerando que a balança não está calibrada, superestimando o valor da massa em 2,5 gramas, gostaríamos de calcular o peso de cada amostra em Newtons. Construa uma função que realiza esta tarefa em uma única operação.
+
+:::
+
+# Blocos de repetição
+
+Operações envolvendo repetições poderão ser feitas com a função `for()`,
+
+```r
+for (elemento in vetor) {
+  # operação 1
+  # operação 2
+  # ...
+}
+```
+
+### Exemplo
+
+```{r}
+n <- 0
+for (i in 1:5) {
+  n <- n+i
+}
+n
+```
+
+:::{callout-tip}
+Por questões de performance, recomenda-se priorizar funções vetorizadas ao invés do loop literal.
+:::
+
+# Blocos de condição
+
+Operações condicionais poderão ser feitas com a função `if()`,
+
+```r
+if(CONDIÇÃO) {
+  # operação 1
+  # operação 2
+  # ...
+} else {
+  # operação ...
+}
+```
+
+### Exemplo
+
+```{r}
+a <- 10
+b <- 3
+if (a %% b == 0) {
+  print("a é divisível por b")
+} else {
+  print("a NÃO é divisível por b")
+}
+```
+
+:::{callout-tip}
+Na prática, a função `ifelse()` é muito utilizada, inclusive combinada com outras funções,
+
+```{r}
+vetor <- c(1, 2, 3, 4, 5)
+ifelse(vetor %% 2 == 0, "par", "impar")
+```
+
+:::
+
+# A família de funções `apply`
+
+x
+
+# Análise descritiva
+
+x

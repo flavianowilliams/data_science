@@ -10,6 +10,8 @@ categories: [estatistica_descritiva]
 #| include: false
 #
 source(here::here("", "_common.R"))
+#
+library(ggforce)
 ```
 
 # Amostragem
@@ -30,15 +32,58 @@ Erros de amostragem produzidos de maneira sistemática diferentemente de erros a
 
 Suponha uma arma de fogo que realiza vários disparos em um alvo. Se a mira da arma estiver calibrada, podemos dizer que os disparos de aproximarão do alvo (neste caso todos os disparos não atingirão exatamente o alvo devido a influência de fatores externos não controláveis, como velocidade do vento, variação da densidade do ar, força da gravidade, raio de curvatura da Terra, etc). Entretanto se a mira estiver ligeiramente descalibrada para a esquerda, os disparos ocorrerão aproximadamente em um lugar à direita do alvo. Podemos dizer que no segundo caso a arma está viesada pela mira mal calibrada, e este viés destruiu a representatividade dessa arma em relação as demais armas de precisão, cuja estimativa é acertar o alvo.
 
-::: {#fig-vieses layout-ncol=2}
+```{r}
+#| label: fig-vieses
+#| fig-cap: "Disparos de armas de fogo."
+#| fig-subcap: ["Arma não viesada.", "Arma viesada"]
+#| code-fold: true
+#| layout-ncol: 2
+sample <- data.frame(x = runif(n = 20, min = -2, max = 2),
+                      y = runif(n = 20, min = -2, max = 2)
+                      )
 
-![Arma não viesada](arma_nao_viesada.jpg){#fig-naoviesada width=70%}
+g1 <- ggplot()+
+  geom_circle(data = data.frame(x0 = rep(0, 5),
+                                y0 = rep(0, 5),
+                                r = c(5, 4, 3, 2, 1)
+                                ),
+              aes(x0 = x0, y0 = y0, r = r))+
+  geom_text(data = data.frame(x = seq(0.5, 6), 
+                              y = rep(0, 6),
+                              valor = seq(100, 0, -20)
+                              ),
+            aes(x = x, y = y, label = valor),
+            size = 3,
+            alpha = 0.7
+            )+
+  geom_point(data = sample, aes(x = x, y = y))+
+  labs(x = NULL, y = NULL)+
+  coord_fixed()
 
-![Arma viesada](arma_viesada.jpg){#fig-viesada width=70%}
+sample <- data.frame(x = runif(n = 20, min = 1, max = 5),
+                      y = runif(n = 20, min = -2, max = 2)
+                      )
+g2 <- ggplot()+
+  geom_circle(data = data.frame(x0 = rep(0, 5),
+                                y0 = rep(0, 5),
+                                r = c(5, 4, 3, 2, 1)
+                                ),
+              aes(x0 = x0, y0 = y0, r = r))+
+  geom_text(data = data.frame(x = seq(0.5, 6), 
+                              y = rep(0, 6),
+                              valor = seq(100, 0, -20)
+                              ),
+            aes(x = x, y = y, label = valor),
+            size = 3,
+            alpha = 0.7
+            )+
+  geom_point(data = sample, aes(x = x, y = y))+
+  labs(x = NULL, y = NULL)+
+  coord_fixed()
 
-Exemplo de um tipo de viés
-
-:::
+g1
+g2
+```
 
 ::: {.callout-note} 
 

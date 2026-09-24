@@ -12,3 +12,8 @@ categories: [estatistica_descritiva]
 source(here::here("", "_common.R"))
 ```
 
+# Qualitativa versus qualitativa
+
+## Gráfico de barras
+
+x

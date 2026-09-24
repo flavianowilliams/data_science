@@ -82,5 +82,14 @@
   },
   "curso/estatistica/resumo_dados/resumo_dados.qmd": {
     "resumo_dados.html": "b980cef7"
+  },
+  "curso/r/estrutura_dados/estrutura_dados.qmd": {
+    "estrutura_dados.html": "86eb2738"
+  },
+  "curso/r/introducao/introducao.qmd": {
+    "introducao.html": "aa5129b4"
+  },
+  "curso/estatistica/analise_multivariada/analise_multivariada.qmd": {
+    "analise_multivariada.html": "f5dc4cf7"
   }
 }

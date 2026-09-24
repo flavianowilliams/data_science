@@ -30,6 +30,17 @@ website:
         - curso/estatistica/resumo_dados/resumo_dados.qmd
         - curso/estatistica/analise_uma_variavel/analise_uma_variavel.qmd
         - curso/estatistica/analise_duas_variaveis/analise_duas_variaveis.qmd
+        - curso/estatistica/analise_multivariada/analise_multivariada.qmd
+    - id: curso_r
+      title: "R"
+      style: "docked"
+      search: true
+      contents:
+        - curso/r/introducao/introducao.qmd
+        - curso/r/r_base/r_base.qmd
+        - curso/r/estrutura_dados/estrutura_dados.qmd
+        - curso/r/wrangling/wrangling.qmd
+        - curso/r/ggplot2/ggplot2.qmd
 
 format:
   html:
@@ -41,8 +52,7 @@ format:
       margin-width: 200px
       gutter-width: 1.5rem
     theme:
-      - sketchy
-      - brand
+      - flatly
     css: styles.css
 bibliography: bibliografia.bib
 csl: abnt.csl

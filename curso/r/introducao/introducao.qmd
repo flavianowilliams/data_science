@@ -1,0 +1,114 @@
+---
+title: "Introdução"
+author: "Flaviano Williams Fernandes"
+date: "2026-08-04"
+date-modified: today
+categories: [r]
+---
+
+```{r}
+#| include: false
+#
+source(here::here("", "_common.R"))
+library(rvest)
+```
+
+# Sobre o R
+
+R é uma linguagem de programação dinâmica em um desenvolvimento em tempo real. Especialmente voltada para trabalhos em análises estatísticas, como a manipulação, análise e visualização de dados. Seu nome surge das iniciais dos seus criadores (<alerta>R</alerta>oss Ihaka e <alerta>R</alerta>obert Gentleman [@cranweb]) da universidade de Auckland, na Nova Zelândia, na década da 1990.
+
+:::{.callout-note}
+Atualmente existem diversos materiais on-line onde se pode aprender mais sobre R e seus pacotes, como livros digitais [@rcienciadadoswebsite], comunidades on-line [@rbloggerswebsite], RPbus [@rpubswebsite], guias de referência [@cheatsheetwebsite], etc.
+:::
+
+## Aspectos gerais
+
+* Fundamentalmente forte em análises estatísticas (teste de hipóteses, análises descritivas, desenvolvimento de modelos estatísticos robustos);
+
+* Excelente para a produção de gráficos e relatórios;
+
+* É uma das linguagens mais utilizadas em ciência de dados, especialmente em trabalhos que envolvam análise exploratória [@Morettin2025]. Entretanto, python ainda é a preferida em trabalhos envolvendo aprendizado de máquina;
+
+* Perde desempenho em trabalhos que envolvam grande volume de dados (como alternativa a linguagem possui recursos extras, como data.tables ou a integração com outras ferramentas como Apache Sparkly);
+
+* Possui uma curva de aprendizado maior em comparação com python para usuários iniciantes ou não-estatísticos;
+
+* Muito utilizado no meio acadêmico, especialmente em pesquisas experimentais;
+
+* Atualmente, R está em 9^o^ lugar entre as linguagens de programação no quesito popularidade [@tiobewebsite];
+
+* Possui um grande repertório de pacotes e funções, onde muitos são focados em análises estatísticas.
+
+## Pacotes
+
+```{r}
+#| include: false
+cran_date_url <- "https://cran.r-project.org/web/packages/available_packages_by_date.html"
+cran_page <- read_html(cran_date_url)
+
+# Extract the table elements to filter or sort programmatically
+cran_table <- cran_page |>
+  html_element("table") |> 
+  html_table()
+
+cran_table_resumo <- cran_table |> 
+  mutate(data = as.Date(Date)) |> 
+  arrange(data) |> 
+  summarise(n = n(), .by = data) |> 
+  mutate(total = cumsum(n))
+```
+
+Atualmente, existem `r max(cran_table_resumo$total)` pacotes no repositório oficial [@cranweb]. Além de outros como aqueles hospedados no GitHub, R-Universe [@runiverseweb], etc. Além do mais, a @fig-pacotes mostra um perceptível crescimento exponencial ao longo dos anos.
+
+```{r}
+#| echo: true
+#| label: fig-pacotes
+#| fig-cap: "Quantidade de pacotes hospedados a cada ano no CRAN."
+#| code-fold: true
+#
+ggplot(data = cran_table_resumo)+
+  geom_line(aes(x = data, y = total))+
+  scale_x_date(name = "Data")+
+  scale_y_continuous(name = "Total de pacotes")
+```
+
+# RStudio: A principal IDE
+
+![Fonte: [@curso-rweb]](https://curso-r.github.io/livro-material/assets/img/rstudio/rstudio-editor.png){width=80%}
+
+* **Editor**: Onde o código é escrito;
+
+* **Console**: Onde o R é executado;
+
+* **Environment**: Painel com todos os objetos armazenados na memória;
+
+* **Output**: Painel contendo navegador de arquivos, lista pacotes instalados, ajuda e visualização de relatórios, apresentações e dashboards.
+
+## RStudio online
+
+* A versão Open Source do RStudio pode ser baixado e instalado gratuitamente nas plataformas windows ou linux, ambas disponíveis na página da Posit [@positweb]. 
+
+* A versão online está disponível na página da Posit Cloud [@positcloudweb].
+
+::: {.callout-important}
+
+O "R base" deverá estar previamente instalado no computador.
+
+:::
+
+# Objetos e funções
+
+* Objeto é tudo que pode ser criado e armazenado na memória (vetor, lista, função, gráfico, modelo estatístico, etc);
+
+* Um objeto pode ser criado utilizando o operador de atribuição (`<-` ou `=`).
+
+```r
+objeto <- função
+```
+
+Exemplo:
+
+```{r}
+valor <- function(x) {return(x)}
+print(valor)
+```

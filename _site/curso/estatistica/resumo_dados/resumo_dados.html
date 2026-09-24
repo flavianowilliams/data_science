@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -14,10 +14,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -98,10 +101,10 @@ div.csl-indent {
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-8b1c474ff103adfcd80594ea9692ca33.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-9c9a1ec7920fb690340ded9e61832b2e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -133,7 +136,7 @@ div.csl-indent {
 <link href="../../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -263,7 +266,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Data de Modificação</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">24/08/2026</p>
+        <p class="date-modified">24/09/2026</p>
       </div>
     </div>
       
@@ -301,13 +304,19 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../curso/estatistica/analise_uma_variavel/analise_uma_variavel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Análise descritiva de uma variável</span></a>
+ <span class="menu-text">Análise descritiva univariada</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../curso/estatistica/analise_duas_variaveis/analise_duas_variaveis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Análise descritiva entre duas variáveis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../curso/estatistica/analise_multivariada/analise_multivariada.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Análise descritiva multivariada</span></a>
   </div>
 </li>
     </ul>
@@ -355,7 +364,7 @@ window.Quarto = {
 <section id="variáveis-qualitativas" class="level2">
 <h2 class="anchored" data-anchor-id="variáveis-qualitativas">Variáveis qualitativas</h2>
 <p>Uma das maneiras de analisar o conjunto de dados seria olhar para sua tabela original de valores. Entretanto, para uma quantidade alta isso torna praticamente inviável. Portanto, às vezes seria interessante fazer um resumo dessa quantidade. Isso pode ser feito olhando para a sua ocorrência, o seja, a frequência que os seus valores estão sendo distribuídos. Isso torna útil para se ter uma ideia global sobre elas, além do fato que eles podem ser representados em uma tabela chamada tabela de frequências.</p>
-<p>Considere a seguinte base de dados contendo 150 indivíduos coletados por 3 processos de amostragem diferentes. As amostras foram coletadas de um conjunto contendo 192 bolinhas de 8 cores distintas (vermelho, branco, amarelo, laranja, rosa, azul, verde e violeta).</p>
+<p>Considere a seguinte base de dados contendo 150 indivíduos coletados por 3 processos de amostragem diferentes. As amostras foram coletadas de um conjunto contendo 192 bolinhas de 8 cores distintas. Podemos dizer que o conjunto de dados é constituído por duas variáveis qualitativas categóricas e nominais. A variável “Amostragem” contendo 3 níveis (AAS, sistemática e conveniência) e a variável “Cor” contendo 8 níveis (vermelho, branco, amarelo, laranja, rosa, azul, verde e violeta),</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>
@@ -1276,7 +1285,7 @@ Aviso
 </section>
 <section id="variáveis-quantitativas" class="level2">
 <h2 class="anchored" data-anchor-id="variáveis-quantitativas">Variáveis quantitativas</h2>
-<p>A frequência de variáveis contínuas são determinadas em intervalos equivalentes chamados de classe. Considere um grupo de 51 alunos com notas de uma determinada disciplina do ensino médio e graduação, como mostra a <a href="#tbl-dados_continuos" class="quarto-xref">Tabela&nbsp;3</a>. A amplitude de cada intervalo é obtida pela razão da amplitude dos dados pelo número de classes desejado. Para este conjunto de dados temos uma amplitude de 87.2. Considerando uma quantidade de 10 classes, teremos que a amplitude das classes será 87.2.</p>
+<p>A frequência de variáveis contínuas são determinadas em intervalos equivalentes chamados de classe. Considere um grupo de 51 alunos com notas de uma determinada disciplina do ensino médio e graduação, como mostra a <a href="#tbl-dados_continuos" class="quarto-xref">Tabela&nbsp;3</a>. A amplitude de cada classe é obtida pela razão da amplitude dos dados pelo número de classes desejado. Caso o resultado seja fracionário, devemos substituir pelo número inteiro justamente acima. Para este conjunto de dados temos uma amplitude de 87.2. Considerando uma quantidade de 10 classes, teremos que a amplitude das classes será 8.72, e arrodando para o valor inteiro acima teremos o tamanho 9.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1293,18 +1302,23 @@ Dica
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dados_continuos <span class="ot">&lt;-</span> dados_continuos <span class="sc">|&gt;</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">classe =</span> <span class="fu">cut_interval</span>(nota, <span class="at">n =</span> <span class="dv">10</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">classe =</span> <span class="fu">str_replace_all</span>(classe, <span class="fu">fixed</span>(<span class="fu">c</span>(<span class="st">"("</span> <span class="ot">=</span> <span class="st">""</span>, <span class="st">"]"</span> <span class="ot">=</span> <span class="st">""</span>)))) <span class="sc">|&gt;</span> </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">classe =</span> <span class="fu">str_replace</span>(classe, <span class="fu">fixed</span>(<span class="st">","</span>), <span class="st">" ⊣ "</span>))</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>dados_continuos <span class="sc">|&gt;</span> </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">9</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="st">"..."</span>, <span class="st">"..."</span>, <span class="st">"..."</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"ccc"</span>, </span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Matrícula"</span>, <span class="st">"Nota"</span>, <span class="st">"Classe"</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>             ) <span class="sc">|&gt;</span> </span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>classe <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">range</span>(dados_continuos<span class="sc">$</span>nota))<span class="sc">/</span><span class="dv">10</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>classe <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(classe)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>dados_continuos <span class="ot">&lt;-</span> dados_continuos <span class="sc">|&gt;</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(nota) <span class="sc">|&gt;</span> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">classe =</span> <span class="fu">cut_width</span>(nota, <span class="at">width =</span> classe)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">classe =</span> <span class="fu">str_replace_all</span>(classe, <span class="fu">fixed</span>(<span class="fu">c</span>(<span class="st">"("</span> <span class="ot">=</span> <span class="st">""</span>, <span class="st">"]"</span> <span class="ot">=</span> <span class="st">""</span>, <span class="st">"["</span> <span class="ot">=</span> <span class="st">""</span>)))) <span class="sc">|&gt;</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">classe =</span> <span class="fu">str_replace</span>(classe, <span class="fu">fixed</span>(<span class="st">","</span>), <span class="st">" ⊣ "</span>))</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>dados_continuos <span class="sc">|&gt;</span> </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#  head(n = 9) |&gt; </span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#  rbind(c("...", "...", "...")) |&gt; </span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"ccc"</span>, </span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Matrícula"</span>, <span class="st">"Nota"</span>, <span class="st">"Classe"</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>             ) <span class="sc">|&gt;</span> </span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">height =</span> <span class="st">"400px"</span>, <span class="at">width =</span> <span class="st">"100%"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-dados_continuos" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1313,74 +1327,279 @@ Tabela&nbsp;3: Grupo de alunos com notas na disciplina de física. A identidade 
 </figcaption>
 <div aria-describedby="tbl-dados_continuos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; "><table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
-   <th style="text-align:center;"> Matrícula </th>
-   <th style="text-align:center;"> Nota </th>
-   <th style="text-align:center;"> Classe </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> Matrícula </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> Nota </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> Classe </th>
   </tr>
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:center;"> 20251IRA10030003 </td>
-   <td style="text-align:center;"> 20.8 </td>
-   <td style="text-align:center;"> 16.3 ⊣ 25 </td>
+   <td style="text-align:center;"> 20233017126 </td>
+   <td style="text-align:center;"> 7.60 </td>
+   <td style="text-align:center;"> 4.5 ⊣ 13.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20233015088 </td>
+   <td style="text-align:center;"> 17.20 </td>
+   <td style="text-align:center;"> 13.5 ⊣ 22.5 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 20241IRA10030007 </td>
-   <td style="text-align:center;"> 19.2 </td>
-   <td style="text-align:center;"> 16.3 ⊣ 25 </td>
+   <td style="text-align:center;"> 19.20 </td>
+   <td style="text-align:center;"> 13.5 ⊣ 22.5 </td>
   </tr>
   <tr>
-   <td style="text-align:center;"> 20251IRA10030001 </td>
-   <td style="text-align:center;"> 50.8 </td>
-   <td style="text-align:center;"> 42.5 ⊣ 51.2 </td>
+   <td style="text-align:center;"> 20251IRA10030003 </td>
+   <td style="text-align:center;"> 20.80 </td>
+   <td style="text-align:center;"> 13.5 ⊣ 22.5 </td>
   </tr>
   <tr>
-   <td style="text-align:center;"> 20241IRA10030006 </td>
-   <td style="text-align:center;"> 57 </td>
-   <td style="text-align:center;"> 51.2 ⊣ 59.9 </td>
+   <td style="text-align:center;"> 20190008113 </td>
+   <td style="text-align:center;"> 24.80 </td>
+   <td style="text-align:center;"> 22.5 ⊣ 31.5 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 20230021232 </td>
-   <td style="text-align:center;"> 25.6 </td>
-   <td style="text-align:center;"> 25 ⊣ 33.8 </td>
+   <td style="text-align:center;"> 25.60 </td>
+   <td style="text-align:center;"> 22.5 ⊣ 31.5 </td>
   </tr>
   <tr>
-   <td style="text-align:center;"> 20241IRA10030003 </td>
-   <td style="text-align:center;"> 73.6 </td>
-   <td style="text-align:center;"> 68.6 ⊣ 77.4 </td>
+   <td style="text-align:center;"> 20251IRA0020034 </td>
+   <td style="text-align:center;"> 27.60 </td>
+   <td style="text-align:center;"> 22.5 ⊣ 31.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20233028120 </td>
+   <td style="text-align:center;"> 28.00 </td>
+   <td style="text-align:center;"> 22.5 ⊣ 31.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20230021377 </td>
+   <td style="text-align:center;"> 30.00 </td>
+   <td style="text-align:center;"> 22.5 ⊣ 31.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20251IRA0020040 </td>
+   <td style="text-align:center;"> 32.40 </td>
+   <td style="text-align:center;"> 31.5 ⊣ 40.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20241IRA0020034 </td>
+   <td style="text-align:center;"> 33.20 </td>
+   <td style="text-align:center;"> 31.5 ⊣ 40.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20251IRA0020051 </td>
+   <td style="text-align:center;"> 35.40 </td>
+   <td style="text-align:center;"> 31.5 ⊣ 40.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20241IRA0020055 </td>
+   <td style="text-align:center;"> 35.80 </td>
+   <td style="text-align:center;"> 31.5 ⊣ 40.5 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 20241IRA10030013 </td>
-   <td style="text-align:center;"> 36 </td>
-   <td style="text-align:center;"> 33.8 ⊣ 42.5 </td>
+   <td style="text-align:center;"> 36.00 </td>
+   <td style="text-align:center;"> 31.5 ⊣ 40.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20251IRA0020031 </td>
+   <td style="text-align:center;"> 36.60 </td>
+   <td style="text-align:center;"> 31.5 ⊣ 40.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20251IRA0020037 </td>
+   <td style="text-align:center;"> 42.20 </td>
+   <td style="text-align:center;"> 40.5 ⊣ 49.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20241IRA0020024 </td>
+   <td style="text-align:center;"> 44.20 </td>
+   <td style="text-align:center;"> 40.5 ⊣ 49.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20230021170 </td>
+   <td style="text-align:center;"> 45.00 </td>
+   <td style="text-align:center;"> 40.5 ⊣ 49.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20241IRA0020038 </td>
+   <td style="text-align:center;"> 45.00 </td>
+   <td style="text-align:center;"> 40.5 ⊣ 49.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20251IRA0020048 </td>
+   <td style="text-align:center;"> 48.00 </td>
+   <td style="text-align:center;"> 40.5 ⊣ 49.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20200017121 </td>
+   <td style="text-align:center;"> 49.25 </td>
+   <td style="text-align:center;"> 40.5 ⊣ 49.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20251IRA0020033 </td>
+   <td style="text-align:center;"> 49.60 </td>
+   <td style="text-align:center;"> 49.5 ⊣ 58.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20251IRA10030001 </td>
+   <td style="text-align:center;"> 50.80 </td>
+   <td style="text-align:center;"> 49.5 ⊣ 58.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20251IRA0020047 </td>
+   <td style="text-align:center;"> 52.00 </td>
+   <td style="text-align:center;"> 49.5 ⊣ 58.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20241IRA0020037 </td>
+   <td style="text-align:center;"> 52.20 </td>
+   <td style="text-align:center;"> 49.5 ⊣ 58.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20233017190 </td>
+   <td style="text-align:center;"> 53.20 </td>
+   <td style="text-align:center;"> 49.5 ⊣ 58.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20251IRA0020036 </td>
+   <td style="text-align:center;"> 53.40 </td>
+   <td style="text-align:center;"> 49.5 ⊣ 58.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20241IRA0020018 </td>
+   <td style="text-align:center;"> 54.80 </td>
+   <td style="text-align:center;"> 49.5 ⊣ 58.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20241IRA0020035 </td>
+   <td style="text-align:center;"> 55.80 </td>
+   <td style="text-align:center;"> 49.5 ⊣ 58.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20241IRA0020045 </td>
+   <td style="text-align:center;"> 55.80 </td>
+   <td style="text-align:center;"> 49.5 ⊣ 58.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20241IRA0020042 </td>
+   <td style="text-align:center;"> 55.80 </td>
+   <td style="text-align:center;"> 49.5 ⊣ 58.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20241IRA10030006 </td>
+   <td style="text-align:center;"> 57.00 </td>
+   <td style="text-align:center;"> 49.5 ⊣ 58.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20241IRA0020044 </td>
+   <td style="text-align:center;"> 57.00 </td>
+   <td style="text-align:center;"> 49.5 ⊣ 58.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20251IRA0020052 </td>
+   <td style="text-align:center;"> 57.40 </td>
+   <td style="text-align:center;"> 49.5 ⊣ 58.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20251IRA0020032 </td>
+   <td style="text-align:center;"> 57.60 </td>
+   <td style="text-align:center;"> 49.5 ⊣ 58.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20251IRA0020044 </td>
+   <td style="text-align:center;"> 58.60 </td>
+   <td style="text-align:center;"> 58.5 ⊣ 67.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20251IRA0020038 </td>
+   <td style="text-align:center;"> 60.40 </td>
+   <td style="text-align:center;"> 58.5 ⊣ 67.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20241IRA0020022 </td>
+   <td style="text-align:center;"> 61.20 </td>
+   <td style="text-align:center;"> 58.5 ⊣ 67.5 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 20230021152 </td>
    <td style="text-align:center;"> 63.45 </td>
-   <td style="text-align:center;"> 59.9 ⊣ 68.6 </td>
+   <td style="text-align:center;"> 58.5 ⊣ 67.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20241IRA0020010 </td>
+   <td style="text-align:center;"> 64.20 </td>
+   <td style="text-align:center;"> 58.5 ⊣ 67.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20251IRA0020054 </td>
+   <td style="text-align:center;"> 64.80 </td>
+   <td style="text-align:center;"> 58.5 ⊣ 67.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20251IRA0020059 </td>
+   <td style="text-align:center;"> 65.20 </td>
+   <td style="text-align:center;"> 58.5 ⊣ 67.5 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 20230021368 </td>
-   <td style="text-align:center;"> 66 </td>
-   <td style="text-align:center;"> 59.9 ⊣ 68.6 </td>
+   <td style="text-align:center;"> 66.00 </td>
+   <td style="text-align:center;"> 58.5 ⊣ 67.5 </td>
   </tr>
   <tr>
-   <td style="text-align:center;"> ... </td>
-   <td style="text-align:center;"> ... </td>
-   <td style="text-align:center;"> ... </td>
+   <td style="text-align:center;"> 20241IRA0020026 </td>
+   <td style="text-align:center;"> 67.20 </td>
+   <td style="text-align:center;"> 58.5 ⊣ 67.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20241IRA0020039 </td>
+   <td style="text-align:center;"> 70.20 </td>
+   <td style="text-align:center;"> 67.5 ⊣ 76.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20241IRA10030003 </td>
+   <td style="text-align:center;"> 73.60 </td>
+   <td style="text-align:center;"> 67.5 ⊣ 76.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20241IRA0020008 </td>
+   <td style="text-align:center;"> 76.80 </td>
+   <td style="text-align:center;"> 76.5 ⊣ 85.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20251IRA0020045 </td>
+   <td style="text-align:center;"> 81.60 </td>
+   <td style="text-align:center;"> 76.5 ⊣ 85.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20241IRA0020005 </td>
+   <td style="text-align:center;"> 85.20 </td>
+   <td style="text-align:center;"> 76.5 ⊣ 85.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20241IRA0020004 </td>
+   <td style="text-align:center;"> 92.00 </td>
+   <td style="text-align:center;"> 85.5 ⊣ 94.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 20241IRA0020080 </td>
+   <td style="text-align:center;"> 94.80 </td>
+   <td style="text-align:center;"> 94.5 ⊣ 104 </td>
   </tr>
 </tbody>
-</table>
+</table></div>
 
 </div>
 </div>
 </figure>
 </div>
 </div>
-<p>Neste caso, temos a amplitude das notas separadas em 10 intervalos fixos como mostra a <a href="#tbl-classe" class="quarto-xref">Tabela&nbsp;4</a>. Os valores de frequência são obtidos à partir da contagem dos valores de notas pertencentes em cada intervalo. Distribuição de frequências de variáveis contínuas serão discutidas com mais detalhes posteriormente, na seção envolvendo histogramas.</p>
+<p>Neste caso, temos a amplitude das notas separadas em 11 intervalos fixos como mostra a <a href="#tbl-classe" class="quarto-xref">Tabela&nbsp;4</a>. Os valores de frequência são obtidos à partir da contagem dos valores de notas pertencentes em cada intervalo. Distribuição de frequências de variáveis contínuas serão discutidas com mais detalhes posteriormente, na seção envolvendo histogramas.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>
@@ -1415,59 +1634,64 @@ Tabela&nbsp;4: Distribuição de frequência da nota dos alunos.
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:center;"> 16.3 ⊣ 25 </td>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 0.078 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 42.5 ⊣ 51.2 </td>
-   <td style="text-align:center;"> 7 </td>
-   <td style="text-align:center;"> 0.137 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 51.2 ⊣ 59.9 </td>
-   <td style="text-align:center;"> 13 </td>
-   <td style="text-align:center;"> 0.255 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 25 ⊣ 33.8 </td>
-   <td style="text-align:center;"> 6 </td>
-   <td style="text-align:center;"> 0.118 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 68.6 ⊣ 77.4 </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 0.059 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 33.8 ⊣ 42.5 </td>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> 0.098 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 59.9 ⊣ 68.6 </td>
-   <td style="text-align:center;"> 8 </td>
-   <td style="text-align:center;"> 0.157 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 77.4 ⊣ 86.1 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.039 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> [7.6 ⊣ 16.3 </td>
+   <td style="text-align:center;"> 4.5 ⊣ 13.5 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 0.020 </td>
   </tr>
   <tr>
-   <td style="text-align:center;"> 86.1 ⊣ 94.8 </td>
+   <td style="text-align:center;"> 13.5 ⊣ 22.5 </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 0.059 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 22.5 ⊣ 31.5 </td>
+   <td style="text-align:center;"> 5 </td>
+   <td style="text-align:center;"> 0.098 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 31.5 ⊣ 40.5 </td>
+   <td style="text-align:center;"> 6 </td>
+   <td style="text-align:center;"> 0.118 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 40.5 ⊣ 49.5 </td>
+   <td style="text-align:center;"> 6 </td>
+   <td style="text-align:center;"> 0.118 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 49.5 ⊣ 58.5 </td>
+   <td style="text-align:center;"> 14 </td>
+   <td style="text-align:center;"> 0.275 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 58.5 ⊣ 67.5 </td>
+   <td style="text-align:center;"> 9 </td>
+   <td style="text-align:center;"> 0.176 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 67.5 ⊣ 76.5 </td>
    <td style="text-align:center;"> 2 </td>
    <td style="text-align:center;"> 0.039 </td>
   </tr>
   <tr>
+   <td style="text-align:center;"> 76.5 ⊣ 85.5 </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 0.059 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 85.5 ⊣ 94.5 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.020 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 94.5 ⊣ 104 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.020 </td>
+  </tr>
+  <tr>
    <td style="text-align:center;"> Total </td>
    <td style="text-align:center;"> 51 </td>
-   <td style="text-align:center;"> 1.000 </td>
+   <td style="text-align:center;"> 1.002 </td>
   </tr>
 </tbody>
 </table>
@@ -1649,6 +1873,19 @@ Importante
 <ul>
 <li>Moda: Medida mais frequente do conjunto de dados. A distribuição pode assumir valores unimodais, bimodais, etc. Na <a href="#tbl-amostra_pequena" class="quarto-xref">Tabela&nbsp;5</a> podemos ver que 7.4 é o valor com maior frequência, ou seja, 4 vezes. Portanto, 7.4 é a moda para esse conjunto de dados.</li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dica
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Uma distribuição de dados pode ter mais de uma moda. No caso da <a href="#tbl-tabela_frequencia" class="quarto-xref">Tabela&nbsp;2</a> podemos dizer que é bimodal, pois possui duas modas (branco e vermelho).</p>
+</div>
+</div>
 <p>A <a href="#fig-moda" class="quarto-xref">Figura&nbsp;1</a> mostra a moda (linha pontilhada) de uma distribuição de dados. Perceba que se encontra no ponto mais elevado da distribuição.</p>
 <div class="cell">
 <details class="code-fold">
@@ -2022,7 +2259,7 @@ x_{\left(\frac{n+1}{2}\right)}, &amp;\quad\text{n ímpar};\\
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>samples <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">min =</span> <span class="sc">-</span><span class="dv">5</span>, <span class="at">max =</span> <span class="dv">5</span>),</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sample <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">min =</span> <span class="sc">-</span><span class="dv">5</span>, <span class="at">max =</span> <span class="dv">5</span>),</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y =</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">min =</span> <span class="sc">-</span><span class="dv">5</span>, <span class="at">max =</span> <span class="dv">5</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                      )</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -2032,12 +2269,20 @@ x_{\left(\frac{n+1}{2}\right)}, &amp;\quad\text{n ímpar};\\
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>                                <span class="at">r =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>                                ),</span>
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x0 =</span> x0, <span class="at">y0 =</span> y0, <span class="at">r =</span> r))<span class="sc">+</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> samples, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y))<span class="sc">+</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data =</span> samples, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">xend =</span> <span class="dv">0</span>, <span class="at">y =</span> y, <span class="at">yend =</span> <span class="dv">0</span>), </span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">linetype =</span> <span class="st">"dotted"</span>)<span class="sc">+</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">0</span>), <span class="at">size =</span> <span class="dv">5</span>, <span class="at">color =</span> <span class="st">"red"</span>)<span class="sc">+</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>)<span class="sc">+</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">seq</span>(<span class="fl">0.5</span>, <span class="dv">6</span>), </span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>                              <span class="at">y =</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">6</span>),</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>                              <span class="at">valor =</span> <span class="fu">seq</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">20</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>                              ),</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">label =</span> valor),</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">alpha =</span> <span class="fl">0.7</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>            )<span class="sc">+</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> sample, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y))<span class="sc">+</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data =</span> sample, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">xend =</span> <span class="dv">0</span>, <span class="at">y =</span> y, <span class="at">yend =</span> <span class="dv">0</span>), </span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>               <span class="at">linetype =</span> <span class="st">"dotted"</span>)<span class="sc">+</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">0</span>), <span class="at">size =</span> <span class="dv">5</span>, <span class="at">color =</span> <span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>)<span class="sc">+</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-alvo" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -2161,6 +2406,10 @@ cv = \frac{S}{\bar{x}}.
 <li>São fortemente afetados por valores extremos;</li>
 <li>Não reproduzem adequadamente certas características, como simetria na distribuição de dados. Vimos que a mediana é uma boa alternativa quando temos valores extremos influenciando a média. Agora, qual medida poderemos utilizar para representar melhor casos de simetria do problema? Uma maneira seria particionar a distribuição de dados em parcelas fixas chamadas de <strong>quantis empíricos</strong>.</li>
 </ul>
+<p>Considere o conjunto de dados da <a href="#tbl-amostra_pequena_ordenada" class="quarto-xref">Tabela&nbsp;6</a>. Chamamos de quartil os quantis que separam o conjunto de dados em quatro parcelas de tamanhos iguais,</p>
+<p><span id="eq-quartis"><span class="math display">\[
+x = \{2,5;\; 5,2;\; 5,2;\; \underbrace{\textcolor{red}{5,2}}_{1^o\text{quartil}}; 6,6;\; 6,6;\; 6,8;\; \underbrace{\textcolor{red}{6,8}}_{2^o\text{quartil}\atop \text{(mediana)}};\; 6,8;\; 7,4;\; 7,4;\; \underbrace{\textcolor{red}{7,4}}_{3^o\text{quartil}};\; 7,4;\; 7,6;\; 7,6\}
+\tag{8}\]</span></span></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2172,12 +2421,11 @@ Dica
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Chamamos de quartil os quantis que fatiam o conjunto de dados em 25%;</li>
-<li>A mediana é chamada de segundo quartil.</li>
+<li>A mediana é também chamada de segundo quartil;</li>
+<li>Usamos o intervalo interquartil (<span class="math inline">\(Q_3\)</span>-<span class="math inline">\(Q_1\)</span>) como medida de dispersão para a mediana.</li>
 </ul>
 </div>
 </div>
-<p>Considere o conjunto de dados par da <a href="#tbl-amostra_pequena_ordenada" class="quarto-xref">Tabela&nbsp;6</a>. Podemos dizer que os valores 2,5, 5,2, 5,2 e 5,2 representam 25% dos dados. Essas parcela chamamos de primeiro quartil.</p>
 
 
 
@@ -2187,7 +2435,7 @@ Dica
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referências</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="1" role="list">
 <div id="ref-Morettin2023" class="csl-entry" role="listitem">
-MORETTIN, Pedro Alberto; OLIVEIRA BUSSAB, Wilton de. <strong>Estatística básica</strong>. 10. ed. São Paulo: SaraivaUni, 2023.
+MORETTIN, Pedro Alberto; OLIVEIRA BUSSAB, Wilton de. <strong>Estatística básica</strong>. 10. ed. <em>[S.l.]</em>: SaraivaUni, 2023.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -2597,8 +2845,8 @@ MORETTIN, Pedro Alberto; OLIVEIRA BUSSAB, Wilton de. <strong>Estatística básic
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../curso/estatistica/analise_uma_variavel/analise_uma_variavel.html" class="pagination-link" aria-label="Análise descritiva de uma variável">
-        <span class="nav-page-text">Análise descritiva de uma variável</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../curso/estatistica/analise_uma_variavel/analise_uma_variavel.html" class="pagination-link" aria-label="Análise descritiva univariada">
+        <span class="nav-page-text">Análise descritiva univariada</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,0 +1,46 @@
+---
+title: "Análise descritiva multivariada"
+author: "Flaviano Williams Fernandes"
+date: "2026-08-06"
+date-modified: today
+categories: [estatistica_descritiva]
+---
+
+```{r}
+#| include: false
+#
+source(here::here("", "_common.R"))
+library(likert)
+```
+
+# Entre variáveis qualitativas
+
+## Escala Likert
+
+```{r}
+data("pisaitems")
+
+pisaitems <- pisaitems |> 
+  select(starts_with("ST24Q"))
+
+perguntas <- c("Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10", "Q11")
+
+names(pisaitems) <- perguntas
+
+pisaitems[, names(pisaitems)] <- lapply(pisaitems[, names(pisaitems)], 
+                                        factor,
+                                        levels = levels(pisaitems[[1]]),
+                                        labels = c("Discordo totalmente",
+                                                   "Discordo",
+                                                   "Concordo",
+                                                   "Concordo totalmente"
+                                                   ),
+                                        ordered = TRUE
+                                        )
+
+dados <- likert(pisaitems)
+
+likert.bar.plot(dados)+
+  labs(y = "Porcentagem")
+```
+
